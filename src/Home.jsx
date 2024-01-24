@@ -1,15 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import "./Home.css";
+import "./Home.scss";
 
 function Home() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route></Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <h1>Hello</h1>;
 }
 
 export default Home;
