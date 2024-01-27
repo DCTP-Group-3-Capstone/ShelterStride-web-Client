@@ -3,6 +3,7 @@ $breakpoint-mobile: 430px;
 
 $backcolor: #F6F9F6;
 
+
 $black-50: rgb(233, 235, 235);
 $black-100: rgb(188, 191, 193);
 $black-200: rgb(155, 161, 163);
@@ -24,22 +25,24 @@ $green-300: rgb(152, 221, 187);
 $green-400: rgb(133, 214, 173);
 $green-500: rgb(102, 204, 153);
 
-.Login-page {
+.signup-page {
     background-color: $backcolor;
+    //justify-self: center;
+    // margin: 100px;
+    //height: 1024px;
+    // width: 1400px;;
+    margin-top: 30px;
+    min-height: 100vh;
 
-    margin: 0px 0 0 5px;
-   // padding: auto;
-
-   // display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; // 100% of the viewport height
+    @media (max-width: $breakpoint-mobile) {
+        background-color: $backcolor;
+    }
 
     .logolabel {
         display: flex;
         justify-content: center;
         align-items: center;
-   
+        //   background-color: red;
     }
 
     .logolabel img {
@@ -58,21 +61,22 @@ $green-500: rgb(102, 204, 153);
         }
     }
 
-    .Login-container {
+    .signup-container {
         align-items: center;
+
         justify-content: center;
         align-self: center;
         display: grid;
         padding: 20px;
 
         @media (max-width: $breakpoint-mobile) {
-           
+
             text-align: center;
-        
+         
         }
     }
 
-    h2 {
+   .signup-container h2 {
         font-size: 32px;
         width: 336px;
         color: $black-500;
@@ -84,12 +88,13 @@ $green-500: rgb(102, 204, 153);
         @media (max-width: $breakpoint-mobile) {
             width: 100%;
             margin-left: 0;
+            margin-bottom: 10px;
             text-align: center;
 
         }
     }
 
-    .Login-form {
+    .signup-form {
         display: flex;
         border: 1px solid $blue-500;
         border-radius: 10px;
@@ -97,17 +102,21 @@ $green-500: rgb(102, 204, 153);
         align-content: center;
         text-align: center;
         width: 446px;
-        height: 390px;
+        height: 733px;
+      //  background-color: $backcolor;
         flex-direction: column;
 
         @media (max-width: $breakpoint-mobile) {
-            border: 0px;
+
             padding: 20px;
             border: 0px;
             border-radius: 0px;
+            align-content: center;
+            text-align: center;
             width: 430px;
-            height: auto;
-
+            height: 643px;
+          //  margin-bottom: 20px;
+            flex-direction: column;
         }
     }
 
@@ -115,41 +124,28 @@ $green-500: rgb(102, 204, 153);
         margin-top: 30px;
         align-self: center;
         width: 390px;
-     //   height: 91px;
+        height: 91px;
 
         //position: relative;
         @media (max-width: $breakpoint-mobile) {
             width: 390px;
+            margin-top: 20px;
+            margin-left: 20px;
         }
     }
 
-    
     label {
         display: flex;
         margin-bottom: 10px;
-        color: $black-500;
+        color: $black-300;
         line-height: 27px;
         font-size: 18px;
         font-weight: 500;
     }
 
-    .forgot-password{
-        text-align: right;
-
-     a {
-        color: $black-500;
-        text-decoration: none;
-         font-weight: 400;
-         font-size: 12px;
-         margin: 0 30px 0 0px;
-       // margin-bottom : 5px ;
-        transition: color 0.3s;
-
-        &:hover {
-            color: $black-200;
-        }
-    }
-
+    .acclabel {
+        //  color: blue;
+        margin-top: 5px;
     }
 
     .form-group {
@@ -163,7 +159,8 @@ $green-500: rgb(102, 204, 153);
         }
     }
 
-    input {
+    input,
+    select {
         box-sizing: border-box;
         width: 390px;
         height: 48px;
@@ -179,6 +176,40 @@ $green-500: rgb(102, 204, 153);
         font-weight: 500;
         text-indent: 35px;
         margin: 5px 10px 3px 0px;
+    }
+
+    select {
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            border-color: $green-400;
+
+        }
+    }
+
+    .dropdown-div {
+        position: relative;
+        display: inline-block;
+
+        select {
+            text-indent: 0px;
+
+            //  &:focus + .dropdown-icon-container img {
+            //  background-color: aquamarine;
+            //   }
+
+        }
+
+    }
+
+    .dropdown-icon-container {
+        position: absolute;
+        top: 50%;
+        margin-top: 5px;
+        right: 20px; // Adjust the distance from the right side
+        transform: translateY(-50%);
+        pointer-events: none; // Ensure the icon doesn't interfere with the select
     }
 
     .password-input-container {
@@ -206,38 +237,51 @@ $green-500: rgb(102, 204, 153);
         height: 48px;
         color: $black-50;
         gap: 8px;
-        border: 1px solid $blue-500;
         font-size: 18px;
         background-color: $blue-500;
         padding: 15px 20px 15px 20px;
-      //  margin-top: 0px;
+        margin-top: 25px;
         border-radius: 16px;
         font-weight: 600px;
-
         
         &:hover {
             background-color: $blue-300;
         }
     }
 
-    .Login-text {
+    .terms-text {
+        margin: 0px 0 0 15px;
+        font-size: 12px;
+        font-weight: 400px;
+        text-align: center;
+
+        @media (max-width: $breakpoint-mobile) {
+            margin: 15px 0 0 15px; 
+        }
+    }
+
+    a {
+        color: $green-500;
+        text-decoration: none;
+        //   font-weight: 400;
+        margin: 0 5px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $green-200;
+        }
+    }
+
+    .signin-text {
         font-size: 18px;
         font-weight: 400px;
         text-align: center;
-        color: $black-500;
-        margin-top: 40px;
+        margin: 30px 0 0 0;
 
-        a {
-            color: $green-500;
-            text-decoration: none;
-            //   font-weight: 400;
-            margin: 0 5px;
-            transition: color 0.3s;
-    
-            &:hover {
-                color: $green-200;
-            }
+        @media (max-width: $breakpoint-mobile) {
+            margin: 40px 0 0 0;
+
         }
-    } 
+    }
 
 }
