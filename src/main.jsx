@@ -3,11 +3,13 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home";
 import SignUp from "./pages/Registeration/SignUp";
+import SignUpBenefactor from "./pages/Registeration/SignUpBenefactor";
 import Signin from "./pages/Registeration/Login";
 import "./Global.scss";
 import ErrorPage from "./Error-page";
 import CreateAccount from "./pages/Registeration/CreateAccount";
 // import { Outlet } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
     element: <Signin />,
     errorElement: <ErrorPage />,
   },
+
+
+  {
+    path: "/Signupbenefactor",
+    element: <SignUpBenefactor />,
+    errorElement: <ErrorPage />,
+  },
+
 
 
   // {

@@ -1,287 +1,362 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+//font family
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+// mobile size variable declaration
 $breakpoint-mobile: 430px;
 
-$backcolor: #F6F9F6;
+//imported variable
+@import "../base/variables";
 
+//signup scss body
+.Signupsponsor-page {
+  background-color: $white;
+  margin: 0px 0 0 5px;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // 100% of the viewport height
 
-$black-50: rgb(233, 235, 235);
-$black-100: rgb(188, 191, 193);
-$black-200: rgb(155, 161, 163);
-$black-300: rgb(110, 118, 122);
-$black-400: rgb(81, 91, 96);
-$black-500: rgb(38, 50, 56);
+  //mobile responsiveness styling
+  @media (max-width: $breakpoint-mobile) {
+    width: 430px;
+    padding: 0px;
+    margin: 20px 0 0 0px;
+  }
 
-$blue-50: rgb(232, 240, 245);
-$blue-100: rgb(183, 209, 222);
-$blue-200: rgb(148, 186, 207);
-$blue-300: rgb(100, 155, 185);
-$blue-400: rgb(69, 136, 171);
-$blue-500: rgb(23, 106, 150);
-
-$green-50: rgb(240, 250, 245);
-$green-100: rgb(208, 239, 223);
-$green-200: rgb(185, 232, 208);
-$green-300: rgb(152, 221, 187);
-$green-400: rgb(133, 214, 173);
-$green-500: rgb(102, 204, 153);
-
-.signup-page {
-    background-color: $backcolor;
-    //justify-self: center;
-    // margin: 100px;
-    //height: 1024px;
-    // width: 1400px;;
-    margin-top: 30px;
-    min-height: 100vh;
+  //logo&label styling
+  .logolabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: $breakpoint-mobile) {
-        background-color: $backcolor;
+    }
+  }
+
+  .logolabel img {
+    width: 224px; //  width
+    height: 51px; //  height
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 224px; //  width
+      height: 51px; //  height
+    }
+  }
+
+  //container header and body styling
+  .Signupsponsor-container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    display: grid;
+    padding: 20px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+      padding: 10px 0 0 0px;
+    }
+  }
+
+  //container header text styling
+  .Signupsponsor-container h2 {
+    font-size: 32px;
+    font-family: 'Poppins';
+    width: 336px;
+    color: $black-500;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      font-size: 24px;
+      margin-left: 0;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  //form box styling
+  .Signupsponsor-Box {
+    display: flex;
+    border: 1px solid $green-500;
+    border-radius: 10px;
+    padding: 20px, 30px;
+    width: 446px;
+    height: 733px;
+    flex-direction: column;
+    margin-top: 20px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
+      height: auto;
+      border: 0px;
+      margin-top: 10px;
+    }
+  }
+
+  //form scss
+  .Signupsponsor-form {
+    align-content: center;
+    margin: 0px 30px;
+    width: 390px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    //mobile scss
+    @media (max-width: $breakpoint-mobile) {
+      height: auto;
+      margin: 0px 0px;
+    }
+  }
+
+  //form labels styling
+  .Signupsponsor-form label {
+    margin: 30px 0 10px 0px;
+    color: $black-500;
+    line-height: 20px;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    display: flex;
+
+    //mobile style
+    @media (max-width: $breakpoint-mobile) {
+    }
+  }
+
+  .Signupsponsorform-group {
+    align-self: center;
+    width: 390px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    border: 1.5px solid $green-500;
+    gap: 12px;
+    border-radius: 16px;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
+    }
+  }
+
+  // default inputs div styling
+  .Signupsponsorform-group {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      background-color: transparent;
+    }
+  }
+
+  //all inout icons styling
+  .Signupsponsorform-group img {
+    margin: 0px 10px;
+  }
+
+  //actual inputs and select styling
+  .Signupsponsorform-group input {
+    background: transparent;
+    height: 24px;
+    width: 322px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Poppins';
+
+    //mobile size styling
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 18px;
+    }
+  }
+
+  .Signupsponsorform2-group {
+    align-self: center;
+    width: 390px;
+    display: grid;
+    align-items: center;
+    height: 48px;
+    border: 1.5px solid $green-500;
+    gap: 12px;
+    border-radius: 16px;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
     }
 
-    .logolabel {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        //   background-color: red;
+    
+    option {
+      height: 30px;
+      width: 100px;
+    //  text-align: center;
+      border: 2px solid green;
+      border-radius: 20px;
+      font-size: 20px;
+      background-color: transparent; // Set the background color of each option
+   
     }
-
-    .logolabel img {
-        width: 224px; //  width
-        height: 51px; //  height
-        justify-content: center;
-        align-content: center;
-        margin-top: 10px;
-        margin-right: 10px;
-        overflow: hidden;
+  }
 
 
-        @media (max-width: $breakpoint-mobile) {
-            width: 224px; //  width
-            height: 51px; //  height
-        }
+  .Signupsponsorform2-group select {
+    margin: 0 0px 0 10px;
+    background: transparent;
+    height: 24px;
+    width: 360px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border-color: $green-400;
     }
-
-    .signup-container {
-        align-items: center;
-
-        justify-content: center;
-        align-self: center;
-        display: grid;
-        padding: 20px;
-
-        @media (max-width: $breakpoint-mobile) {
-
-            text-align: center;
-         
-        }
-    }
-
-   .signup-container h2 {
-        font-size: 32px;
-        width: 336px;
-        color: $black-500;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 5px;
-        margin-left: 60px;
-
-        @media (max-width: $breakpoint-mobile) {
-            width: 100%;
-            margin-left: 0;
-            margin-bottom: 10px;
-            text-align: center;
-
-        }
-    }
-
-    .signup-form {
-        display: flex;
-        border: 1px solid $blue-500;
-        border-radius: 10px;
-        padding: 20px, 30px;
-        align-content: center;
-        text-align: center;
-        width: 446px;
-        height: 733px;
-      //  background-color: $backcolor;
-        flex-direction: column;
-
-        @media (max-width: $breakpoint-mobile) {
-
-            padding: 20px;
-            border: 0px;
-            border-radius: 0px;
-            align-content: center;
-            text-align: center;
-            width: 430px;
-            height: 643px;
-          //  margin-bottom: 20px;
-            flex-direction: column;
-        }
-    }
-
-    .form-group {
-        margin-top: 30px;
-        align-self: center;
-        width: 390px;
-        height: 91px;
-
-        //position: relative;
-        @media (max-width: $breakpoint-mobile) {
-            width: 390px;
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-    }
-
-    label {
-        display: flex;
-        margin-bottom: 10px;
-        color: $black-300;
-        line-height: 27px;
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    .acclabel {
-        //  color: blue;
-        margin-top: 5px;
-    }
-
-    .form-group {
-        input {
-            background-size: 24px;
-            /* Adjust the size of the icon */
-            background-position: 15px center;
-            /* Adjust the position of the icon */
-            background-repeat: no-repeat;
-            // box-sizing: border-box;
-        }
-    }
-
-    input,
-    select {
-        box-sizing: border-box;
-        width: 390px;
-        height: 48px;
-        display: flex;
-        gap: 12px;
-        padding: 12px 16px 12px 16px;
-        border-radius: 16px;
-        border: 1.5px solid $green-500;
-        outline: none;
-        appearance: none; // Remove default arrow in some browsers
-        background-color: $black-50;
-        font-size: 16px;
-        font-weight: 500;
-        text-indent: 35px;
-        margin: 5px 10px 3px 0px;
-    }
-
-    select {
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-            border-color: $green-400;
-
-        }
-    }
-
-    .dropdown-div {
-        position: relative;
-        display: inline-block;
-
-        select {
-            text-indent: 0px;
-
-            //  &:focus + .dropdown-icon-container img {
-            //  background-color: aquamarine;
-            //   }
-
-        }
+    //mobile size styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 360px;
 
     }
+  }
 
-    .dropdown-icon-container {
-        position: absolute;
-        top: 50%;
-        margin-top: 5px;
-        right: 20px; // Adjust the distance from the right side
-        transform: translateY(-50%);
-        pointer-events: none; // Ensure the icon doesn't interfere with the select
-    }
+  //passowrd icon styling
+  .Signupsponsorform-group .password-toggle img {
+    margin: 5px 20px 0px 20px;
+    right: 20px;
+    cursor: pointer;
+  }
 
-    .password-input-container {
-        position: relative;
+  .forgot-password {
+    text-align: right;
 
-        input {
-            // ... existing styles ...
-            padding-right: 40px; // Adjust the padding to leave space for the icons
-        }
-
-        .password-toggle {
-            position: absolute;
-            top: 50%;
-            margin-top: 5px;
-            right: 20px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-    }
-
-    .form-group button {
-        outline: none;
-        appearance: none; // Remove default arrow in some browsers
-        width: 390px;
-        height: 48px;
-        color: $black-50;
-        gap: 8px;
-        font-size: 18px;
-        background-color: $blue-500;
-        padding: 15px 20px 15px 20px;
-        margin-top: 25px;
-        border-radius: 16px;
-        font-weight: 600px;
-        
-        &:hover {
-            background-color: $blue-300;
-        }
-    }
-
-    .terms-text {
-        margin: 0px 0 0 15px;
-        font-size: 12px;
-        font-weight: 400px;
-        text-align: center;
-
-        @media (max-width: $breakpoint-mobile) {
-            margin: 15px 0 0 15px; 
-        }
-    }
-
+    //password link styling
     a {
-        color: $green-500;
-        text-decoration: none;
-        //   font-weight: 400;
-        margin: 0 5px;
-        transition: color 0.3s;
+      color: $black-500;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 12px;
+      font-family: 'Poppins';
+      margin: 0px;
+      transition: color 0.3s;
 
-        &:hover {
-            color: $green-200;
-        }
+      &:hover {
+        color: $black-200;
+      }
+    }
+  }
+
+  //button styles
+  .Signupsponsorbutton-group button {
+    outline: none;
+    appearance: none; // Remove default arrow in some browsers
+    width: 390px;
+    height: 48px;
+    color: $black-50;
+    gap: 8px;
+    border: 1px solid $blue-500;
+    font-size: 18px;
+    background-color: $blue-500;
+    margin-top: 40px;
+    border-radius: 16px;
+    font-weight: 600px;
+
+    //mousehover styles
+    &:hover {
+      background-color: $blue-300;
+    }
+  }
+
+  //term and privacy styling
+  .terms-text {
+    margin: 5px 0 5px 15px;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: 400px;
+    text-align: center;
+
+    //hover and link
+    a {
+      color: $blue-500;
+      text-decoration: none;
+      //   font-weight: 400;
+      margin: 0 5px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $blue-200;
+      }
     }
 
-    .signin-text {
-        font-size: 18px;
-        font-weight: 400px;
-        text-align: center;
-        margin: 30px 0 0 0;
-
-        @media (max-width: $breakpoint-mobile) {
-            margin: 40px 0 0 0;
-
-        }
+    @media (max-width: $breakpoint-mobile) {
+      margin: 5px 0 0 15px;
     }
+  }
+
+  //signin text styling
+  .signin-text {
+    font-size: 18px;
+    font-weight: 600px;
+    text-align: center;
+    font-family: 'Poppins';
+    color: $black-500;
+    margin-top: 20px;
+
+    //hover and link styling
+    a {
+      color: $green-500;
+      text-decoration: none;
+      //   font-weight: 400;
+      margin: 0 5px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $green-200;
+      }
+    }
+
+    //mobile version
+    @media (max-width: $breakpoint-mobile) {
+      margin: 15px 0 0 0px;
+      font-size: 16px;
+      font-weight: 400px;
+    }
+  }
+
+  p {
+    font-size: 10px;
+    font-family: 'Poppins';
+    
+    margin-top: 0px;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 10px;
+      
+    }
+  }
+  
+  .error-message {
+    font-size: 10px;
+    font-family: 'Poppins';
+    color: red;
+    margin-top: 0px;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 10px;
+      
+    }
+  }
 
 }

@@ -8,10 +8,13 @@ import "/src/scss/pages/CreateAccount.scss";
 const CreateAccount = () => {
  return (
    <>
+
+
    <div className="container">
      <div className="heading">
      <img src={shelterstride} alt="shelterstridelogo" />
      </div>
+
      <div className="question">
        <h3>How will you like to join us at ShelterStride?</h3>
      </div>
@@ -19,6 +22,8 @@ const CreateAccount = () => {
      <div className="account-type">
        <div className="benefactor">
          <div className="title">
+
+
          <img src={usericon} alt="user-icon" />
            <h4>Join as a Benefactor</h4>
          </div>
@@ -28,8 +33,10 @@ const CreateAccount = () => {
            payment plan works.
          </p>
 
+
          <button className="button1">Continue as Benefactor</button>
        </div>
+       
        <hr />
        <div className="sponsor">
          <div className="title">

@@ -1,54 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+//font import
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
+
+//mobile size declaration
 $breakpoint-mobile: 430px;
 
 
-$black-50: rgb(233, 235, 235);
-$black-100: rgb(188, 191, 193);
-$black-200: rgb(155, 161, 163);
-$black-300: rgb(110, 118, 122);
-$black-400: rgb(81, 91, 96);
-$black-500: rgb(38, 50, 56);
-
-$blue-50: rgb(232, 240, 245);
-$blue-100: rgb(183, 209, 222);
-$blue-200: rgb(148, 186, 207);
-$blue-300: rgb(100, 155, 185);
-$blue-400: rgb(69, 136, 171);
-$blue-500: rgb(23, 106, 150);
-
-$green-50: rgb(240, 250, 245);
-$green-100: rgb(208, 239, 223);
-$green-200: rgb(185, 232, 208);
-$green-300: rgb(152, 221, 187);
-$green-400: rgb(133, 214, 173);
-$green-500: rgb(102, 204, 153);
-
-$backcolor: #F6F9F6;
+//external variable for colours
+@import "../base/variables";
 
 
+//page container 
 .container {
-    margin-top: 20px;
-     min-height: 100vh;
-   
-    display: grid;
+    margin-top: 5px;
+    min-height: 100vh;  
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    background-color: $backcolor;
+    background-color: $white;
     justify-content: center;
     align-items: center;
-  //  height: 100vh;
 
+
+    //mobile view
     @media (max-width: $breakpoint-mobile) {
-        margin-top: 30px;
-        background-color: white;
+        margin-left: 0px;
+        background-color: $white;
+        width: auto;
        
     }
 }
 
+
+//page header
 .heading {
     text-align: center;
+
+    @media (max-width: $breakpoint-mobile) {      
+       
+    }
 }
 
+//logo
 .heading img {
     width: 224px;
     height: 51px;
@@ -56,30 +49,33 @@ $backcolor: #F6F9F6;
     @media (max-width: $breakpoint-mobile) {
         width: 224px;
         height: 51px;
-        padding: 0 2rem 0 5rem;
+        padding: 0 3rem 0 4rem;
     }
 }
 
-.question {
+// h3 text
+.question h3 {
     font-size: 24px;
+    font-family: 'Poppins';
     font-weight: 600;
 
+
+    //mobile design
     @media (max-width: $breakpoint-mobile) {
         font-size: 22px;
-        //    text-align: center;
         margin-left: 44px;
         font-weight: 600;
-        // white-space: normal;
+
     }
 }
 
 .account-type {
     width: 608px;
-    height: 664px;
+    height: 550px;
     border: 1px solid $green-400;
     border-radius: 20px;
     padding: 3rem;
-    //   max-width: 555px;
+
 
     @media (max-width: $breakpoint-mobile) {
 
@@ -89,22 +85,29 @@ $backcolor: #F6F9F6;
     }
 }
 
+//benefactor and sponsor container
 .account-type .benefactor,
 .sponsor {
     width: 466px;
+    justify-content: center;
     height: 224px;
-    margin: 15px 0 0 44px;
+    margin: 0px 0 0 30px;
+
 
     @media (max-width: $breakpoint-mobile) {
         margin: 0px 0 0 44px;
+        width: 390px;
     }
 }
 
+//benefactor and sponsor paragraph
 .benefactor p,
 .sponsor p {
     color: $black-500;
     font-weight: 400;
-    font-size: 16px;
+    margin: auto;
+    font-size: 14px;
+    font-family: 'Poppins';
     text-align: justify;
 
     @media (max-width: $breakpoint-mobile) {
@@ -117,41 +120,53 @@ $backcolor: #F6F9F6;
 }
 
 .title {
-
+    margin-top: -5px;
     gap: 16px;
     display: flex;
-    gap: 1rem;
+   
+    @media (max-width: $breakpoint-mobile) {
+   
+    }
+
 }
 
 .title img {
-
     justify-items: center;
+
+    @media (max-width: $breakpoint-mobile) {
+   
+    }
+
 }
 
 .title h4 {
 
-    justify-content: center;
+    font-family: 'Poppins';
     font-size: 20px;
     font-weight: 500;
 
+    @media (max-width: $breakpoint-mobile) {
+ 
+    }
 }
 
+//separator line
 hr {
-    margin: 60px 0px 40px 44px;
+    margin: 50px 0px 40px 30px;
     width: 466px;
     place-items: center;
 
     @media (max-width: $breakpoint-mobile) {
-        margin: 70px 0px 40px 44px;
-        width: 430px;
+        margin: 70px 0px 30px 40px;
+        width: 390px;
         place-items: center;
     }
 }
 
+
+//buttons styling
 .button1, .button2 {
-    line-height: 1;
     height: 48px;
-    width: 281px;
     outline: none;
     border: 1.5px solid $blue-500;
     border-radius: 16px;
@@ -159,52 +174,66 @@ hr {
     padding: 15px, 20px, 15px, 20px;
     border-radius: 16px;
     font-weight: 600;
+    font-family: 'Poppins';
     font-size: 18px;
-    background-color: $backcolor;
-    margin-top: 10px;
+    background-color: $white;
+    margin-top: 30px;
    
 
     &:hover {
         background-color: $blue-100;
     }
 }
-
+//button 1 only
 .button1 {
 
+    width: 281px;
+    
+    //mobile view styling
     @media (max-width: $breakpoint-mobile) {
    
-        // Add background image (right arrow icon)
+        // background image (right arrow icon)
         background-image: url('../../src/assets/icon/right2.png');
         background-repeat: no-repeat;
         background-position: right 20px center;
-        padding-right: 30px; // Adjust padding to accommodate the icon
+        padding-right: 30px; //padding to accommodate the icon
 
     }
 
 }
+
+//button 2 only
 .button2 {
 
     width: 255px; 
+
+    @media (max-width: $breakpoint-mobile) {
+   
+    }
 
 }
 
 .signin-text {
     font-size: 18px;
+    font-family: 'Poppins';
     font-weight: 600px;
     text-align: center;
     color: $black-500;
 
-    
+    //mobile view
     @media (max-width: $breakpoint-mobile) {
         text-align: center;
-     //   justify-content: center;
-        margin-left: 50px;
+        margin-left: 15px;
         color: $black-500;
         font-size: 16px;
+        font-weight: 400px;
+        margin-top: 100px;
     }
 
 }
 
+
+//link and hover style
 a {
     color: $blue-300;
     text-decoration: none;
