@@ -1,0 +1,632 @@
+.home {
+  background-color: rgb(246, 249, 246);
+  color: rgb(38, 50, 56);
+}
+.home h4 {
+  font-size: 22px;
+}
+.home h3 {
+  font-size: 30px;
+  line-height: 48px;
+}
+.home .marginSides {
+  margin: 0 1.25rem;
+}
+
+.heroSect {
+  color: rgb(246, 249, 246);
+}
+.heroSect .heroContent {
+  padding: 5px 20px 20px 25px;
+  background-color: transparent;
+  width: auto;
+}
+.heroSect .heroContent span {
+  color: rgb(102, 204, 153);
+}
+.heroSect .heroContent .heroText {
+  width: 23.938rem;
+}
+.heroSect .heroContent .heroBtn {
+  display: flex;
+  flex-direction: column;
+  width: 11.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: auto;
+}
+.heroSect .heroContent .heroBtn .pryBtn {
+  background-color: rgb(23, 106, 150);
+  color: rgb(246, 249, 246);
+  border: 1px solid rgb(23, 106, 150);
+  border-radius: 16px;
+  padding: 14px 19px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%; /* 21.6px */
+  letter-spacing: 0.18px;
+  text-decoration: none;
+  width: 9.125rem;
+}
+.heroSect .heroContent .heroBtn .pryBtn:hover {
+  background-color: rgb(19, 144, 210);
+  border: 1px solid rgb(19, 144, 210);
+}
+.heroSect .heroContent .heroBtn .pryBtn:focus {
+  background-color: rgb(6, 78, 116);
+  border: 1px solid rgb(6, 78, 116);
+}
+.heroSect .heroContent .heroBtn .pryBtn:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+.heroSect .heroContent .heroBtn .secBtn {
+  background-color: transparent;
+  border: 1.5px solid rgb(23, 106, 150);
+  border-radius: 16px;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(23, 106, 150);
+  width: 100%;
+}
+.heroSect .heroContent .heroBtn .secBtn:hover {
+  background-color: rgb(183, 209, 222);
+}
+.heroSect .heroContent .heroBtn .secBtn:focus {
+  background-color: rgb(6, 78, 116);
+}
+.heroSect .heroContent .heroBtn .secBtn:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+
+.commitment h4 {
+  color: rgb(102, 204, 153);
+}
+.commitment img {
+  width: 100%;
+}
+.commitment .cardContent {
+  display: flex;
+  padding: 5rem 0 2.5rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.commitment button {
+  display: none;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.result .resultText h3 {
+  text-align: center;
+}
+.result .statsWrapper {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.result .statsWrapper h4 {
+  padding: 0;
+  margin: 0;
+}
+.result .statsWrapper hr {
+  border: 1px solid rgb(102, 204, 153);
+  width: 80%;
+}
+.result .statsWrapper .neutral400 {
+  color: rgb(81, 91, 96);
+  padding: 8px 0 24px 0;
+}
+
+.giftAHome {
+  margin-bottom: 2.5rem;
+}
+.giftAHome h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.giftAHome .giftCardSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 30px;
+}
+.giftAHome .giftCard {
+  background-color: rgb(208, 239, 223);
+  border: rgb(208, 239, 223) 1px solid;
+  border-radius: 16px;
+}
+.giftAHome .giftCard .giftCardImg {
+  border-radius: 16px 16px 0 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.giftAHome .giftCard .giftCardImg img {
+  width: 100%;
+  border-radius: 13px 13px 0 0;
+}
+.giftAHome .giftCard .btnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.giftAHome .giftCard .btnWrapper button {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: rgb(23, 106, 150);
+  display: flex;
+  gap: 8px;
+}
+.giftAHome .giftCard .btnWrapper button:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+.giftAHome .giftCard .cardText {
+  padding: 0 20px;
+}
+
+.whatWeDoSect .weStoryWrapping {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0;
+}
+.whatWeDoSect .weStoryWrapping .weStoryImg img {
+  width: 100%;
+}
+.whatWeDoSect .weStoryWrapping .weStoryText h6 {
+  font-weight: 200;
+}
+.whatWeDoSect .weStoryWrapping .weStoryText hr {
+  color: rgb(110, 118, 122);
+}
+.whatWeDoSect .weCardsContainer {
+  margin-top: 48px;
+}
+.whatWeDoSect .weCardsContainer .cardBox {
+  display: flex;
+  flex-direction: column;
+  color: rgb(246, 249, 246);
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent {
+  background: rgb(23, 106, 150);
+  border-radius: 16px;
+  border: 1px solid rgb(23, 106, 150);
+  padding: 0 3px 1.25rem;
+  margin-bottom: 30px;
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent h4 {
+  text-align: center;
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent p {
+  padding: 0 1.25rem;
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardImage {
+  display: none;
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper button {
+  display: flex;
+  background-color: transparent;
+  border: 1.5px solid rgb(23, 106, 150);
+  border-radius: 16px;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(152, 221, 187);
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper button:hover {
+  background-color: rgb(183, 209, 222);
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper button:focus {
+  background-color: rgb(6, 78, 116);
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper button:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+.whatWeDoSect .weCardsContainer .cardBox .cardContent .cardBtnWrapper button :first-child {
+  display: none;
+}
+
+.shelterStrideBlog-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 2rem 0;
+  margin-bottom: 3rem;
+}
+.shelterStrideBlog-wrapper .headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.shelterStrideBlog-wrapper .headerWrapper .blogHeaderBtn button {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0;
+  color: rgb(81, 91, 96);
+}
+.shelterStrideBlog-wrapper .headerWrapper .blogHeaderBtn button:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+.shelterStrideBlog-wrapper .blogPreviewWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+.shelterStrideBlog-wrapper .blogPreview {
+  border-radius: 20px;
+  background: rgb(246, 249, 246);
+  box-shadow: 0px 2px 14px 0px rgb(188, 191, 193);
+  padding-bottom: 30px;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogImg {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogImg h4 {
+  margin: 0 20px;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogImg img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogBtn button {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: rgb(102, 204, 153);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.shelterStrideBlog-wrapper .blogPreview .blogBtn button:disabled {
+  background-color: rgb(226, 228, 229);
+  color: rgb(226, 228, 229);
+}
+.shelterStrideBlog-wrapper .blogPreview .blogDate {
+  display: flex;
+  gap: 16px;
+  margin: 0 20px;
+}
+.shelterStrideBlog-wrapper .blogSectBtnWrapper button {
+  display: none;
+}
+
+.partnersWrapper .partnersText h3 {
+  text-align: center;
+}
+.partnersWrapper .partnersIcon {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.partnersWrapper .partnersIcon img {
+  width: 20%;
+}
+
+@media only screen and (min-width: 992px) {
+  .home h4 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .home h3 {
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 600;
+  }
+  .heroSect h3 {
+    font-size: 60px;
+    margin-bottom: 25px;
+  }
+  .heroSect h3 br {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  .heroSect p {
+    font-size: 18px;
+  }
+  .heroSect .heroContent {
+    padding: 0.3rem 1.8rem 3.2rem 7.5rem;
+  }
+  .heroSect .heroContent .heroText {
+    width: 32.5rem;
+  }
+  .heroSect .heroContent .heroBtn {
+    flex-direction: row;
+    width: 25%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    margin-top: 30px;
+  }
+  .heroSect .heroContent .heroBtn .pryBtn {
+    width: 20.2rem;
+  }
+  .commitment {
+    margin: 0 6rem;
+    margin-bottom: 4rem;
+  }
+  .commitment h4 {
+    size: 48px;
+  }
+  .commitment .cardText {
+    width: 50%;
+    margin-right: 50px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .commitment .cardText img {
+    width: 60%;
+  }
+  .commitment .cardContent {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .result {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 0.625rem 6rem;
+  }
+  .result .resultText {
+    width: 40%;
+    gap: 10px;
+  }
+  .result .resultText h3 {
+    text-align: start;
+  }
+  .result .statsSection {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .result .statsSection h4 {
+    font-size: 22px;
+  }
+  .result .statsWrapper {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .result .statsWrapper h4 {
+    padding: 0;
+    margin: 0;
+  }
+  .result .statsWrapper hr {
+    width: 80%;
+  }
+  .result .statsWrapper .neutral400 {
+    color: rgb(81, 91, 96);
+    padding: 8px 0 24px 0;
+  }
+  .giftAHome {
+    margin: 0 6rem;
+  }
+  .giftAHome h4 {
+    font-size: 24px;
+    margin: 0.5rem 0;
+  }
+  .giftAHome h3 {
+    text-align: start;
+    margin-bottom: 2rem;
+  }
+  .giftAHome .giftAHomeText {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+  .giftAHome .giftCardSection {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    gap: 7rem;
+  }
+  .giftAHome .giftCard {
+    width: 50%;
+    height: 41.5rem;
+  }
+  .giftAHome .giftCard .giftCardImg {
+    display: inline-flex;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .giftAHome .giftCard .giftCardImg img {
+    width: 100%;
+    border-radius: 13px 13px 0 0;
+  }
+  .giftAHome .giftCard .giftTextBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 17rem;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .giftAHome .giftCard .giftTextBtn p {
+    margin: 0;
+    height: 9rem;
+    margin-top: 10px;
+  }
+  .giftAHome .giftCard .giftTextBtn h4 {
+    margin: 0;
+  }
+  .giftAHome .giftCard .btnWrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5rem;
+  }
+  .giftAHome .giftCard .btnWrapper button {
+    gap: 8px;
+  }
+  .giftAHome .giftCard .cardText {
+    padding: 0 50px;
+  }
+  .whatWeDoSect {
+    margin: 0 6rem;
+  }
+  .whatWeDoSect .weStoryWrapping {
+    flex-direction: row;
+    align-items: center;
+    gap: 8rem;
+    margin: 8rem 0;
+  }
+  .whatWeDoSect .weStoryWrapping .weStoryImg img {
+    width: 100%;
+  }
+  .whatWeDoSect .weStoryWrapping .weStoryText {
+    width: 50%;
+  }
+  .whatWeDoSect .weStoryWrapping .weStoryText h6 {
+    font-weight: 200;
+  }
+  .whatWeDoSect .weStoryWrapping .weStoryText hr {
+    color: rgb(110, 118, 122);
+  }
+  .whatWeDoSect .weCardsContainer {
+    margin-top: 3.5rem;
+  }
+  .whatWeDoSect .weCardsContainer .cardBox {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 3.5rem 0;
+  }
+  .whatWeDoSect .weCardsContainer .cardBox .cardContent {
+    width: 25%;
+  }
+  .whatWeDoSect .weCardsContainer .cardBox .cardContent h4 {
+    font-size: 24px;
+  }
+  .shelterStrideBlog-wrapper {
+    margin: 3.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .shelterStrideBlog-wrapper h4 {
+    font-size: 24px;
+  }
+  .shelterStrideBlog-wrapper .headerWrapper {
+    justify-content: center;
+  }
+  .shelterStrideBlog-wrapper .headerWrapper .blogHeaderBtn button {
+    display: none;
+  }
+  .shelterStrideBlog-wrapper .blogPreviewWrapper {
+    flex-direction: row;
+    gap: 2.8rem;
+  }
+  .shelterStrideBlog-wrapper .blogPreview {
+    width: 33%;
+  }
+  .shelterStrideBlog-wrapper .blogPreview .blogImg h4 {
+    margin: 0 20px;
+    font-size: 22px;
+  }
+  .shelterStrideBlog-wrapper .blogSectBtnWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .shelterStrideBlog-wrapper .blogSectBtnWrapper button {
+    background-color: rgb(23, 106, 150);
+    color: rgb(246, 249, 246);
+    border: 1px solid rgb(23, 106, 150);
+    border-radius: 16px;
+    padding: 14px 19px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0.18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shelterStrideBlog-wrapper .blogSectBtnWrapper button:hover {
+    background-color: rgb(19, 144, 210);
+    border: 1px solid rgb(19, 144, 210);
+  }
+  .shelterStrideBlog-wrapper .blogSectBtnWrapper button:focus {
+    background-color: rgb(6, 78, 116);
+    border: 1px solid rgb(6, 78, 116);
+  }
+  .shelterStrideBlog-wrapper .blogSectBtnWrapper button:disabled {
+    background-color: rgb(226, 228, 229);
+    color: rgb(226, 228, 229);
+  }
+  .partnersWrapper {
+    margin: 3.5rem 6rem;
+  }
+  .partnersWrapper .partnersText {
+    width: 36rem;
+    margin-bottom: 3rem;
+  }
+  .partnersWrapper .partnersText h3 {
+    text-align: start;
+    margin-bottom: 0.5rem;
+  }
+  .partnersWrapper .partnersIcon {
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .partnersWrapper .partnersIcon img {
+    width: 10%;
+  }
+}/*# sourceMappingURL=home.css.map */
