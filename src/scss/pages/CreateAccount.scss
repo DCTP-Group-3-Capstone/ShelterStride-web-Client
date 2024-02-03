@@ -12,10 +12,16 @@ $breakpoint-mobile: 430px;
 
 //page container 
 .container {
+<<<<<<< HEAD
     margin-top: 35px;
     min-height: 100vh;  
     display: flex;
     font-family: 'Poppins';
+=======
+    margin-top: 5px;
+    min-height: 100vh;  
+    display: flex;
+>>>>>>> origin/Frontend
     flex-direction: column;
     place-items: center;
     background-color: $white;
@@ -57,6 +63,10 @@ $breakpoint-mobile: 430px;
 // h3 text
 .question h3 {
     font-size: 24px;
+<<<<<<< HEAD
+=======
+    font-family: 'Poppins';
+>>>>>>> origin/Frontend
     font-weight: 600;
 
 

@@ -188,6 +188,8 @@ const handleaccountype = (selectedAccountType) => {
 
     if (isValidEmail && isValidPassword && setSelectedAccountType) {
       if (email && password && selectedAccountType) {
+
+        navigate("/login");
     {/*}    try {
           axios
           .get("https://shelterstride.onrender.com/api/v1", {

@@ -10,7 +10,11 @@ $breakpoint-mobile: 430px;
 //signup scss body
 .Signupsponsor-page {
   background-color: $white;
+<<<<<<< HEAD
   margin: 40px 0 0 5px;
+=======
+  margin: 0px 0 0 5px;
+>>>>>>> origin/Frontend
   padding: auto;
   justify-content: center;
   align-items: center;
@@ -65,7 +69,11 @@ $breakpoint-mobile: 430px;
 
   //container header text styling
   .Signupsponsor-container h2 {
+<<<<<<< HEAD
     font-size: 30px;
+=======
+    font-size: 32px;
+>>>>>>> origin/Frontend
     font-family: 'Poppins';
     width: 336px;
     color: $black-500;
@@ -142,7 +150,10 @@ $breakpoint-mobile: 430px;
     display: flex;
     align-items: center;
     height: 48px;
+<<<<<<< HEAD
    // margin-left: 20px;
+=======
+>>>>>>> origin/Frontend
     border: 1.5px solid $green-500;
     gap: 12px;
     border-radius: 16px;
@@ -168,6 +179,7 @@ $breakpoint-mobile: 430px;
     margin: 0px 10px;
   }
 
+<<<<<<< HEAD
 
   //actual inputs and select styling
   .Signupsponsorform-group input {
@@ -177,6 +189,16 @@ $breakpoint-mobile: 430px;
     background-color: transparent;
     outline: none;
     font-size: 16px;
+=======
+  //actual inputs and select styling
+  .Signupsponsorform-group input {
+    background: transparent;
+    height: 24px;
+    width: 322px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+>>>>>>> origin/Frontend
     font-family: 'Poppins';
 
     //mobile size styling
@@ -204,7 +226,11 @@ $breakpoint-mobile: 430px;
       height: 30px;
       width: 100px;
     //  text-align: center;
+<<<<<<< HEAD
       border: 2px solid $green-400;
+=======
+      border: 2px solid green;
+>>>>>>> origin/Frontend
       border-radius: 20px;
       font-size: 20px;
       background-color: transparent; // Set the background color of each option
@@ -361,6 +387,7 @@ $breakpoint-mobile: 430px;
     }
   }
 
+<<<<<<< HEAD
   /* SignupSuccessModal.scss */
 .modal-overlay {
   position: fixed;
@@ -392,4 +419,6 @@ $breakpoint-mobile: 430px;
 /* Add any additional styles you need for your modal */
 
 
+=======
+>>>>>>> origin/Frontend
 }

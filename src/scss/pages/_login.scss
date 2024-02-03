@@ -11,7 +11,11 @@ $breakpoint-mobile: 430px;
 //container styling
 .Login-page {
     background-color: $white;
+<<<<<<< HEAD
     margin: 40px 0 0 5px;
+=======
+    margin: 0px 0 0 5px;
+>>>>>>> origin/Frontend
     padding: auto;
     justify-content: center;
     align-items: center;
@@ -63,7 +67,11 @@ $breakpoint-mobile: 430px;
 
     //header
     .Login-container h2 {
+<<<<<<< HEAD
         font-size: 30px;
+=======
+        font-size: 32px;
+>>>>>>> origin/Frontend
         font-family: 'Poppins';
         width: 336px;
         color: $black-500;
@@ -164,8 +172,13 @@ $breakpoint-mobile: 430px;
     .form-group input {
         background: transparent;
         height: 24px;
+<<<<<<< HEAD
         font-size: 16px;
         width: 322px;
+=======
+        width: 322px;
+        font-size: 20px;
+>>>>>>> origin/Frontend
         border: none;
         outline: none;
 
@@ -176,6 +189,7 @@ $breakpoint-mobile: 430px;
 
     }
 
+<<<<<<< HEAD
     .error-message {
         font-size: 10px;
         font-family: 'Poppins';
@@ -189,6 +203,8 @@ $breakpoint-mobile: 430px;
       }
     
 
+=======
+>>>>>>> origin/Frontend
     .form-group .password-toggle img {
         margin: 5px 20px 0px 20px;
         right: 20px;
@@ -203,7 +219,11 @@ $breakpoint-mobile: 430px;
             text-decoration: none;
             font-weight: 400;
             font-size: 12px;
+<<<<<<< HEAD
             margin-top: 0px;
+=======
+            margin: 0px;
+>>>>>>> origin/Frontend
             transition: color 0.3s;
 
             &:hover {
@@ -225,7 +245,11 @@ $breakpoint-mobile: 430px;
         background-color: $blue-500;
         margin-top: 45px;
         border-radius: 16px;
+<<<<<<< HEAD
         font-weight: 600;
+=======
+        font-weight: 600px;
+>>>>>>> origin/Frontend
 
 
         &:hover {
@@ -236,7 +260,11 @@ $breakpoint-mobile: 430px;
     .Login-text {
         font-size: 18px;
         font-family: 'Poppins';
+<<<<<<< HEAD
         font-weight: 400;
+=======
+        font-weight: 400px;
+>>>>>>> origin/Frontend
         text-align: center;
         color: $black-500;
         margin-top: 40px;
@@ -254,7 +282,11 @@ $breakpoint-mobile: 430px;
 
         @media (max-width: $breakpoint-mobile) {
            font-size: 18px;
+<<<<<<< HEAD
            font-weight: 400;
+=======
+           font-weight: 400px;
+>>>>>>> origin/Frontend
             
         }
     }
