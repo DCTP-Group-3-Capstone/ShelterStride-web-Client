@@ -1,0 +1,57 @@
+//primary button//
+@mixin blueBtn {
+  background-color: $blue-500;
+  color: $white;
+  border: 1px solid $blue-500;
+  border-radius: 16px;
+  padding: 15px, 20px;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(19, 144, 210, 1);
+  }
+  &:focus {
+    background-color: rgba(6, 78, 116, 1);
+  }
+  &:disabled {
+    background-color: rgba(226, 228, 229, 1);
+    color: rgba(226, 228, 229, 1);
+  }
+}
+
+//secondary button//
+@mixin outlineBtn {
+  background-color: $white;
+  color: $blue-500;
+  border: 1.5px solid $blue-500;
+  border-radius: 16px;
+  padding: 15px, 20px;
+  text-decoration: none;
+  &:hover {
+    background-color: $blue-100;
+  }
+  &:focus {
+    background-color: rgba(6, 78, 116, 1);
+  }
+  &:disabled {
+    background-color: rgba(226, 228, 229, 1);
+    color: rgba(226, 228, 229, 1);
+  }
+}
+
+//tertiary button//
+@mixin greenBtn {
+  background-color: $white;
+  color: $green-500;
+  padding: 15px, 20px;
+  text-decoration: none;
+  &:hover {
+    background-color: $green-500;
+  }
+  &:focus {
+    background-color: rgba(47, 208, 127, 1);
+  }
+  &:disabled {
+    background-color: rgba(226, 228, 229, 1);
+    color: rgba(226, 228, 229, 1);
+  }
+}

@@ -1,0 +1,63 @@
+
+
+.ert {
+  .divv {
+    position: relative;
+
+    .sell {
+      width: 200px;
+      height: 30px;
+      background-color: red;
+      padding: 5px;
+      border: 1px solid black;
+      border-radius: 4px;
+      position: relative; // Ensure proper positioning of the wrapper
+    
+      &::after {
+        content: '▼'; // Unicode character for a down arrow
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        //transform: translateY(-50%), 
+//rotate(#{$isDropdownOpen ? '180deg' : '0deg'});
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .custom-options {
+        position: absolute;
+        width: 100%;
+        max-height: 150px; // Set the maximum height for the options
+        overflow-y: auto;
+        border: 1px solid red;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: yellow;
+        z-index: 1;
+
+        option {
+          padding: 8px;
+          width: 100px;
+          background-color: gold;
+          color: #333;
+        }
+      }
+    }
+
+    &.open {
+      .sell {
+        // Add styles for the open dropdown state
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+
+        .custom-options {
+          display: block; // Show options when the dropdown is open
+        }
+      }
+    }
+  }
+}
