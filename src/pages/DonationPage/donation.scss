@@ -1,0 +1,58 @@
+@use "../../sass/components/button" as *;
+// @use "../../sass/components/input" as *;
+@import "../../sass/base/variables";
+.donatePage {
+  background-color: $white;
+  padding: 40px 1.25rem;
+}
+
+.donateText {
+  .headerText {
+    h1 {
+      font-size: 38px;
+      font-weight: 500;
+      margin: 0;
+      line-height: 48px;
+    }
+    span {
+      color: $green-500;
+    }
+    p {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+  .bulletList {
+    // border: 3px solid yellow;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      padding: 0;
+      margin: 10px;
+    }
+    .bulletListTitle {
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+    .bulletin {
+      display: flex;
+      // align-items: center;
+      // border: 3px solid red;
+
+      img {
+        width: 16px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+//payment card styling
+.payment {
+  background-color: rgba(249, 248, 247, 1);
+  box-shadow: 5px 10px 45px 0px rgba(0, 0, 0, 0.15);
+}

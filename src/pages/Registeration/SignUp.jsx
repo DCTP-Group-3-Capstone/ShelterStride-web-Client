@@ -5,12 +5,22 @@ import Email from "../../assets/icon/Email.svg";
 import lock from "../../assets/icon/lock.svg";
 import UnSee from "../../assets/icon/UnSee.svg";
 import See from "../../assets/icon/See.svg";
+<<<<<<< HEAD
 import "/src/scss/pages/SignUp.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'; 
 //import Modal from '../../Modal';
 import Popup from "../../Popup";
+=======
+import "../../scss/pages/SignUp.scss";
+import DropdownSelect from "../../components/DropdownSelect";
+
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom'; 
+//import Modal from '../../Modal';
+//import Popup from "../../Popup";
+>>>>>>> 1eb6b7fc18094613276645c05f0e93ef5d784841
 import axios from "axios";
 
 function SignUp() {
