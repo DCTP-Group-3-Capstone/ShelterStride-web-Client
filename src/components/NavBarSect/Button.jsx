@@ -1,11 +1,16 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Button.scss";
 
 const Button = () => {
   return (
     <>
-      <button className="btn_log_in">Log in</button>
-      <button className="btn_sign_up">Sign up</button>
+      <NavLink to="/login">
+        <button className="btn_log_in">Log in</button>
+      </NavLink>
+      <NavLink to="/signup">
+        <button className="btn_sign_up">Sign up</button>
+      </NavLink>
     </>
   );
 };

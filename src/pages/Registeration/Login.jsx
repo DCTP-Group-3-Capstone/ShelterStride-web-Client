@@ -5,10 +5,8 @@ import See from "../../assets/icon/See.svg";
 import UnSee from "../../assets/icon/UnSee.svg";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom'; 
-import axios from 'axios';
-
-
+import { NavLink } from "react-router-dom";
+// import axios from 'axios';
 
 //functions
 function Login() {
@@ -19,9 +17,6 @@ function Login() {
   const [error, setError] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
-
-
-
 
   //email handling
   const handleEmail = (event) => {
@@ -46,8 +41,6 @@ function Login() {
   const handlePassword = (event) => {
     const newPassword = event.target.value;
     setPassword(newPassword);
-
-
   };
 
   //login handling
@@ -75,7 +68,6 @@ function Login() {
     }
 
     if (isValidEmail) {
-
       if (email && password) {
         try {
           axios
@@ -86,17 +78,16 @@ function Login() {
             .then((result) => {
               console.log(result);
               alert("Signin successful!");
-             
-           //  return <Navigate to="/" />;
 
-                   if (result.data) {
-              // Success logic
-              navigate("/createaccount");
-        
-                  } else {
-                     setError('Incorrect email or password');
-                     alert("unsuccessful!");
-                   }
+              //  return <Navigate to="/" />;
+
+              if (result.data) {
+                // Success logic
+                navigate("/createaccount");
+              } else {
+                setError("Incorrect email or password");
+                alert("unsuccessful!");
+              }
             })
             .catch((error) => {
               console.log(error);
@@ -124,9 +115,8 @@ function Login() {
         }
       }
     }
-  }
+  };
 
-  
   return (
     <>
       <div className="Login-page">
@@ -142,20 +132,19 @@ function Login() {
             <div className="Login-form">
               <label htmlFor="email">Email Address</label>
               <div className="form-group">
-                <img src={Email} 
-                alt="Email Icon" />
-                <input type="email" 
-                id="email" 
-                value={email}
-                onChange={handleEmail}
-                onFocus={handleEmailFocus} 
-                placeholder="Enter your email" />
+                <img src={Email} alt="Email Icon" />
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={handleEmail}
+                  onFocus={handleEmailFocus}
+                  placeholder="Enter your email"
+                />
               </div>
               {!isValidEmail && (
                 <p className="error-message">Invalid email address</p>
               )}
-
-
 
               <label htmlFor="password">Password</label>
               <div className="form-group">
@@ -169,8 +158,12 @@ function Login() {
                 />
                 <div
                   className="password-toggle"
-                  onClick={togglePasswordVisibility}>
-                   <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+                  onClick={togglePasswordVisibility}
+                >
+                  <img
+                    src={passwordVisible ? See : UnSee}
+                    alt="Toggle Password Visibility"
+                  />
                 </div>
               </div>
 
@@ -185,17 +178,15 @@ function Login() {
               </p>
 
               <div className="button-group">
-                <button type="submit"
-                onClick={handleLoginApi}
-                >Sign in</button>
+                <button type="submit" onClick={handleLoginApi}>
+                  Sign in
+                </button>
               </div>
             </div>
           </div>
           <p className="Login-text">
             New to ShelterStride ?{""}
-          
-            <Link to="/createaccount">Sign up</Link>
-
+            <NavLink to="/signup">Sign up</NavLink>
           </p>
         </div>
       </div>

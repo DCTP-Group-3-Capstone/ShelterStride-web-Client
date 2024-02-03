@@ -9,10 +9,10 @@ import "../../scss/pages/SignUp.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom'; 
+import { NavLink } from "react-router-dom";
 //import Modal from '../../Modal';
 //import Popup from "../../Popup";
-import axios from "axios";
+// import axios from "axios";
 
 function SignUp() {
   const [labelText, setLabelText] = useState("Name");
@@ -28,31 +28,25 @@ function SignUp() {
   const [error, setError] = useState("");
   const [value, setValue] = React.useState("Individual");
   const [showModall, setShowModall] = useState(false); // New state for modal
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
   const [showUnsuccessfulModal, setShowUnsuccessfulModal] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [buttonPopup, setButtonPopup] = useState(false); 
+  const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
-
-const handleaccountype = (selectedAccountType) => {
-  setSelectedAccountType(selectedAccountType);
+  const handleaccountype = (selectedAccountType) => {
+    setSelectedAccountType(selectedAccountType);
 
     console.log(selectedAccountType);
 
-
-       // Update label and placeholder based on selected account type
-       if (selectedAccountType === "Individual") {
-        setLabelText("Name");
-      } else if (selectedAccountType === "Company") {
-        setLabelText("Company Name");
-      }
-
-
+    // Update label and placeholder based on selected account type
+    if (selectedAccountType === "Individual") {
+      setLabelText("Name");
+    } else if (selectedAccountType === "Company") {
+      setLabelText("Company Name");
+    }
   };
 
-
-      
   //change text in response to select choices
 
   const getPlaceholderText = () => {
@@ -82,7 +76,7 @@ const handleaccountype = (selectedAccountType) => {
 
   // Add onFocus event handler to reset error message
   const handleEmailFocus = () => {
-    setIsValidEmail('true');
+    setIsValidEmail("true");
   };
 
   //handle password visibility and validations
@@ -109,30 +103,30 @@ const handleaccountype = (selectedAccountType) => {
   const handleConfirmPasswordChange = (event) => {
     const newConfirmPassword = event.target.value;
     setConfirmPassword(newConfirmPassword);
-  
+
     // Reset the error message when the user starts typing a new password
     setIsValidConfirmPassword(true);
-  
+
     // Check if confirm password matches the password
     setIsValidConfirmPassword(newConfirmPassword === password);
   };
-
 
   //popup
   const SignupSuccessModal = ({ onClose }) => (
     <div className="modal">
       <div className="modal-content">
         <p>Signup Successful</p>
-        <button onClick={() => {
-          onClose();
-          navigate("/login"); // Optionally navigate to login page after successful signup
-        }}>
+        <button
+          onClick={() => {
+            onClose();
+            navigate("/login"); // Optionally navigate to login page after successful signup
+          }}
+        >
           Close
         </button>
       </div>
     </div>
   );
-
 
   const SignupUnSuccessModal = ({ onClose }) => (
     <div className="modal">
@@ -142,17 +136,15 @@ const handleaccountype = (selectedAccountType) => {
       </div>
     </div>
   );
-  
 
-  const closeModal = () =>{
-    setShowModal(false)
-  }
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
- // Event handler for "terms and privacy policy" link
- const handleTermsClick = () => {
-  setShowModall(true);
-};
-
+  // Event handler for "terms and privacy policy" link
+  const handleTermsClick = () => {
+    setShowModall(true);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -189,7 +181,8 @@ const handleaccountype = (selectedAccountType) => {
 
     if (isValidEmail && isValidPassword && setSelectedAccountType) {
       if (email && password && selectedAccountType) {
-    {/*}    try {
+        {
+          /*}    try {
           axios
           .get("https://shelterstride.onrender.com/api/v1", {
             
@@ -239,11 +232,11 @@ const handleaccountype = (selectedAccountType) => {
         } catch (error) {
           console.error("An unexpected error occurred:", error);
           setError("An unexpected error occurred");
-        }*/}
+        }*/
+        }
       }
     }
   };
-
 
   return (
     <>
@@ -255,19 +248,25 @@ const handleaccountype = (selectedAccountType) => {
         <div className="Signupsponsor-container">
           <h2> Create your account</h2>
 
- {/* Render the modal if showModal is true */}
- {showModal && <SignupSuccessModal onClose={closeModal} />}
+          {/* Render the modal if showModal is true */}
+          {showModal && <SignupSuccessModal onClose={closeModal} />}
 
- {/* Render the unsuccessful modal if showUnsuccessfulModal is true */}
-{showUnsuccessfulModal && (
-  <SignupUnSuccessModal onClose={() => setShowUnsuccessfulModal(false)} />
-)}
+          {/* Render the unsuccessful modal if showUnsuccessfulModal is true */}
+          {showUnsuccessfulModal && (
+            <SignupUnSuccessModal
+              onClose={() => setShowUnsuccessfulModal(false)}
+            />
+          )}
 
-{showPopup && (
-  <Popup trigger={showPopup} setTrigger={setShowPopup} onClose={() => navigate("/login")}>
-    <h3>Signup Successful</h3>
-  </Popup>
-)}
+          {showPopup && (
+            <Popup
+              trigger={showPopup}
+              setTrigger={setShowPopup}
+              onClose={() => navigate("/login")}
+            >
+              <h3>Signup Successful</h3>
+            </Popup>
+          )}
 
           <div className="Signupsponsor-Box">
             <div className="Signupsponsor-form">
@@ -278,13 +277,13 @@ const handleaccountype = (selectedAccountType) => {
               </label>
 
               <div className="Signupsponsorform-group">
-
-                      <DropdownSelect className="accounttype"
-                       onSelect={handleaccountype}
-                        options={['Individual', 'Company']}
-                        defaultSelected={"Select"}
-                      />
-                      </div>
+                <DropdownSelect
+                  className="accounttype"
+                  onSelect={handleaccountype}
+                  options={["Individual", "Company"]}
+                  defaultSelected={"Select"}
+                />
+              </div>
 
               {/*second input*/}
 
@@ -308,7 +307,7 @@ const handleaccountype = (selectedAccountType) => {
                   type="email"
                   id="email"
                   value={email}
-                  onFocus={handleEmailFocus} 
+                  onFocus={handleEmailFocus}
                   onChange={handleEmailChange}
                   className={!isValidEmail ? "invalid" : ""}
                   placeholder="Enter your email"
@@ -335,7 +334,10 @@ const handleaccountype = (selectedAccountType) => {
                   className="password-toggle"
                   onClick={togglePasswordVisibility}
                 >
-                   <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+                  <img
+                    src={passwordVisible ? See : UnSee}
+                    alt="Toggle Password Visibility"
+                  />
                 </div>
               </div>
               {!isValidPassword && (
@@ -361,7 +363,10 @@ const handleaccountype = (selectedAccountType) => {
                   className="password-toggle"
                   onClick={togglePasswordVisibility}
                 >
-                   <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+                  <img
+                    src={passwordVisible ? See : UnSee}
+                    alt="Toggle Password Visibility"
+                  />
                 </div>
               </div>
               {!isValidConfirmPassword && (
@@ -378,37 +383,26 @@ const handleaccountype = (selectedAccountType) => {
               <p className="terms-text">
                 By signing up, you agree to our{""}
                 <span onClick={handleTermsClick} className="terms-link">
-              <Link to="#" className="terms-link">
-                terms and privacy policy
-              </Link>
-            </span>
+                  <NavLink to="#" className="terms-link">
+                    terms and privacy policy
+                  </NavLink>
+                </span>
               </p>
             </div>
-
-        
           </div>
 
           <p className="signin-text">
-            Have an account already?{" "}
-           
-            <Link to="/login">Sign in</Link>
-           
+            Have an account already? <NavLink to="/login">Sign in</NavLink>
           </p>
-
-
         </div>
 
-{/* Render the modal if showModal is true 
+        {/* Render the modal if showModal is true 
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <h3>Login Successful Popup</h3>
               </Popup>*/}
-            
       </div>
     </>
   );
-
-
-
 }
 
 export default SignUp;

@@ -9,11 +9,9 @@ import UnSee from "../../assets/icon/UnSee.svg";
 import lock from "../../assets/icon/lock.svg";
 import "/src/scss/pages/SignUpBenefactor.scss";
 import DropdownSelect from "../../components/DropdownSelect";
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 import See from "../../assets/icon/See.svg";
-import axios from 'axios';
-
-
+// import axios from 'axios';
 
 function SignUpBenefactor() {
   const [lastName, setlastName] = useState("");
@@ -36,27 +34,27 @@ function SignUpBenefactor() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [selectedInterestType, setselectedInterestType] = useState("");
-  const interesttype = [{ label: "Renting a home" }, { label: "Buying a home" }];
-  const genderOptions = ['Male', 'Female', 'Others']
+  const interesttype = [
+    { label: "Renting a home" },
+    { label: "Buying a home" },
+  ];
+  const genderOptions = ["Male", "Female", "Others"];
   //pages indication
   const [currentPage, setCurrentPage] = useState(1);
   const [accountCreated, setAccountCreated] = useState(false);
   const totalPages = 3;
 
+  //dropdown gender
+  const handleGenderChange = (selected_gender) => {
+    setSelectedGender(selected_gender);
+    console.log(selected_gender);
+  };
 
+  const handleInterest = (selected_intrest) => {
+    setselectedInterestType(selected_intrest);
 
- //dropdown gender
- const handleGenderChange = (selected_gender) => {
-  setSelectedGender(selected_gender)
-  console.log(selected_gender)
-};
-
-const handleInterest = (selected_intrest) => {
-  setselectedInterestType(selected_intrest);
-
-  console.log(selected_intrest);
-}
-
+    console.log(selected_intrest);
+  };
 
   // Create a state object to store form data
   const [formData, setFormData] = useState({
@@ -80,7 +78,6 @@ const handleInterest = (selected_intrest) => {
       [key]: value,
     }));
   };
- 
 
   //progress bar assignment
   const ProgressBar = () => {
@@ -97,148 +94,139 @@ const handleInterest = (selected_intrest) => {
     );
   };
 
+  //handle firstname
+  const handlefirstNameChange = (event) => {
+    const newfirstName = event.target.value;
+    setfirstName(newfirstName);
+  };
 
-
- //handle firstname
- const handlefirstNameChange = (event) => {
-  const newfirstName = event.target.value;
-  setfirstName(newfirstName);
-};
-
-//handle lastname
+  //handle lastname
   const handlelastNameChange = (event) => {
     const newlastName = event.target.value;
     setlastName(newlastName);
   };
 
-//email validations
-const handleEmailChange = (event) => {
-  const newEmail = event.target.value;
-  setEmail(newEmail);
+  //email validations
+  const handleEmailChange = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  setIsValidEmail(emailRegex.test(newEmail) || newEmail === "");
-};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(newEmail) || newEmail === "");
+  };
 
-// Add onFocus event handler to reset error message
-const handleEmailFocus = () => {
-  setIsValidEmail('');
-};
+  // Add onFocus event handler to reset error message
+  const handleEmailFocus = () => {
+    setIsValidEmail("");
+  };
 
- //contact number validation
- const handlePhoneNumberChange = (event) => {
-  const newPhoneNumber = event.target.value;
-  setPhoneNumber(newPhoneNumber);
+  //contact number validation
+  const handlePhoneNumberChange = (event) => {
+    const newPhoneNumber = event.target.value;
+    setPhoneNumber(newPhoneNumber);
 
-  // Phone number logic
-  const phoneRegex = /^\d{11}$/; // for 11 digits
-  setIsValidPhoneNumber(
-    phoneRegex.test(newPhoneNumber) || newPhoneNumber === ""
-  );
-};
+    // Phone number logic
+    const phoneRegex = /^\d{11}$/; // for 11 digits
+    setIsValidPhoneNumber(
+      phoneRegex.test(newPhoneNumber) || newPhoneNumber === ""
+    );
+  };
 
+  //selected value
+  const [value, setValue] = React.useState("Select");
 
-//selected value
-const [value, setValue] = React.useState("Select");
+  //selection handling
+  const handleinteresttypeChange = (event) => {
+    const selectedValue = event.target.value;
+    setValue(selectedValue);
+  };
 
-//selection handling
-const handleinteresttypeChange = (event) => {
-  const selectedValue = event.target.value;
-  setValue(selectedValue);
-  
-};
+  //handle password visibility and validations
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prev) => !prev);
+  };
 
+  //password handling
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
 
-//handle password visibility and validations
-const togglePasswordVisibility = () => {
-  setPasswordVisible((prev) => !prev);
-};
+    // Reset the error message when the user starts typing a new password
+    setIsValidPassword(true);
 
-//password handling
-const handlePasswordChange = (event) => {
-  const newPassword = event.target.value;
-  setPassword(newPassword);
+    // Password validation criteria
+    const passwordvalidate = /^(?=.*[0-9])(?=.*[!.?@#$%^&*])(.{6,})$/;
+    setIsValidPassword(
+      passwordvalidate.test(newPassword) || newPassword === ""
+    );
+  };
 
-  // Reset the error message when the user starts typing a new password
-  setIsValidPassword(true);
+  //confirm password handling
+  const handleConfirmPasswordChange = (event) => {
+    const newConfirmPassword = event.target.value;
+    setConfirmPassword(newConfirmPassword);
 
-  // Password validation criteria
-  const passwordvalidate = /^(?=.*[0-9])(?=.*[!.?@#$%^&*])(.{6,})$/;
-  setIsValidPassword(
-    passwordvalidate.test(newPassword) || newPassword === ""
-  );
-};
+    // Reset the error message when the user starts typing a new password
+    setIsValidConfirmPassword(true);
 
-//confirm password handling
-const handleConfirmPasswordChange = (event) => {
-  const newConfirmPassword = event.target.value;
-  setConfirmPassword(newConfirmPassword);
+    // Check if confirm password matches the password
+    setIsValidConfirmPassword(newConfirmPassword === password);
+  };
 
-  // Reset the error message when the user starts typing a new password
-  setIsValidConfirmPassword(true);
+  const handleBenefactorSignup = async (event) => {
+    event.preventDefault();
 
-  // Check if confirm password matches the password
-  setIsValidConfirmPassword(newConfirmPassword === password);
-};
+    // Extract data from the formData state
+    const {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      age,
+      selectedGender,
+      familySize,
+      monthlyIncome,
+      password,
+      confirmPassword,
+      selectedInterestType,
+    } = formData;
 
+    // Update other fields in the formData state
+    updateFormData("age", age);
+    updateFormData("selectedGender", selectedGender);
+    updateFormData("familySize", familySize);
+    updateFormData("monthlyIncome", monthlyIncome);
 
-const handleBenefactorSignup = async (event) => {
-  event.preventDefault();
+    // Check if all required fields are filled
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !selectedInterestType
+    ) {
+      console.log("Fill all fields");
+      setError("Fill all fields");
+      return;
+    }
 
+    if (!confirmPassword) {
+      console.log("Confirm Password");
+      setError("Confirm Password");
+      return;
+    }
 
-// Extract data from the formData state
-const {
-  firstName,
-  lastName,
-  email,
-  phoneNumber,
-  age,
-  selectedGender,
-  familySize,
-  monthlyIncome,
-  password,
-  confirmPassword,
-  selectedInterestType,
-} = formData;
+    if (!isValidEmail || !isValidPassword) {
+      console.log("Provide a valid email");
+      setError("Please enter a valid email");
+      return;
+    }
 
- // Update other fields in the formData state
- updateFormData("age", age);
- updateFormData("selectedGender", selectedGender);
- updateFormData("familySize", familySize);
- updateFormData("monthlyIncome", monthlyIncome);
-
-
-
-
-   // Check if all required fields are filled
-   if (!firstName || !lastName || !email || !password || !confirmPassword || !selectedInterestType) {
-    console.log("Fill all fields");
-    setError("Fill all fields");
-    return;
-  }
-
-
-  if (!confirmPassword) {
-    console.log("Confirm Password");
-    setError("Confirm Password");
-    return;
-  }
-
-  if (!isValidEmail || !isValidPassword) {
-    console.log("Provide a valid email");
-    setError("Please enter a valid email");
-    return;
-  }
-
- 
-
-  if (isValidEmail && isValidPassword) {
-    if (email && password && selectedAccountType) {
-
-
-
-
-  {/*}    try {
+    if (isValidEmail && isValidPassword) {
+      if (email && password && selectedAccountType) {
+        {
+          /*}    try {
         const result = await axios.post("https://shelterstride.onrender.com/api/v1", {
           usertype: "Benefactor",
           firstName,
@@ -272,21 +260,19 @@ const {
         } else {
           setError("An unexpected error occurred");
         }
-      }*/}
+      }*/
+        }
+      }
     }
-  }
-};
+  };
 
-// Add this function to handle next button click
-const handleNextClick = () => {
-  if (currentPage < totalPages) {
-    setCurrentPage(currentPage + 1);
-  }
-};
+  // Add this function to handle next button click
+  const handleNextClick = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
-
-
-  
   //interface
   return (
     <>
@@ -321,7 +307,9 @@ const handleNextClick = () => {
                         type="text"
                         id="name"
                         value={formData.firstName}
-                         onChange={(e) => updateFormData("firstName", e.target.value)}
+                        onChange={(e) =>
+                          updateFormData("firstName", e.target.value)
+                        }
                         placeholder="Enter first name"
                       />
                     </div>
@@ -333,7 +321,9 @@ const handleNextClick = () => {
                         type="text"
                         id="name"
                         value={formData.lastName}
-                        onChange={(e) => updateFormData("lastName", e.target.value)}
+                        onChange={(e) =>
+                          updateFormData("lastName", e.target.value)
+                        }
                         placeholder="Enter first name"
                       />
                     </div>
@@ -392,12 +382,12 @@ const handleNextClick = () => {
                     <label htmlFor="gender">Gender</label>
                     <div className="signupben-group">
                       <img src={People} alt="" />
-                      <DropdownSelect options={genderOptions}
+                      <DropdownSelect
+                        options={genderOptions}
                         defaultSelected={"Gender"}
                         onSelect={handleGenderChange}
                       />
                     </div>
-              
 
                     <label htmlFor="family">Family Size</label>
                     <div className="signupben-group">
@@ -463,7 +453,7 @@ const handleNextClick = () => {
                         value={confirmPassword}
                         onChange={handleConfirmPasswordChange}
                         className={!isValidConfirmPassword ? "invalid" : ""}
-                      //  style={{ backgroundImage: `url(${lock})` }}
+                        //  style={{ backgroundImage: `url(${lock})` }}
                       />
                       <div
                         className="password-toggle"
@@ -480,12 +470,13 @@ const handleNextClick = () => {
                       What are you interested in?
                     </label>
                     <div className="signupben-group intrest">
-
-<DropdownSelect className="interest" onSelect={handleInterest}
-  options={['Renting a home', 'Buying a home']}
-  defaultSelected={"Select"}
-/>
-</div>
+                      <DropdownSelect
+                        className="interest"
+                        onSelect={handleInterest}
+                        options={["Renting a home", "Buying a home"]}
+                        defaultSelected={"Select"}
+                      />
+                    </div>
                   </div>
                 </div>
               </>
@@ -493,18 +484,21 @@ const handleNextClick = () => {
 
             {/*next and signup button*/}
 
-<div className="signupben-but">
-  {currentPage < totalPages ? (
-    <button type="button" onClick={handleNextClick}>
-      Next
-    </button>
-  ) : (
-    <button className="sub" type="submit"
-     onClick={handleBenefactorSignup}>
-   Sign Up
-    </button>
-  )}
-</div>
+            <div className="signupben-but">
+              {currentPage < totalPages ? (
+                <button type="button" onClick={handleNextClick}>
+                  Next
+                </button>
+              ) : (
+                <button
+                  className="sub"
+                  type="submit"
+                  onClick={handleBenefactorSignup}
+                >
+                  Sign Up
+                </button>
+              )}
+            </div>
 
             <p className="terms-text">
               By signing up, you agree to our{""}
@@ -512,17 +506,12 @@ const handleNextClick = () => {
             </p>
           </form>
           <p className="signin-text">
-            Have an account already?{" "}
-            <Link to="/login">Sign In</Link>
+            Have an account already? <Link to="/login">Sign In</Link>
           </p>
         </div>
       </div>
     </>
   );
 }
-
-
-
-
 
 export default SignUpBenefactor;

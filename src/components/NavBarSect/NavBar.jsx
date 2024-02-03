@@ -43,61 +43,61 @@ const NavBar = () => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link
-              to="/"
+            <NavLink
+              to="/donate"
               // style={{ color: "#6c9" }}
               className="nav-links"
               onClick={closeMobileMenu}
             >
               Donate
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
               Blog <FiChevronDown />
-            </Link>
+            </NavLink>
           </li>
           <li
             className="nav-item"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link
-              to="/services"
+            <NavLink
+              to="/service"
               className="nav-links"
               onClick={closeMobileMenu}
             >
               Gift a home <FiChevronDown />
-            </Link>
+            </NavLink>
             {dropdown && <Dropdown />}
           </li>
 
           <li className="nav-item">
-            <Link
+            <NavLink
               to="/contact-us"
               className="nav-links"
               onClick={closeMobileMenu}
             >
               Contact Us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/sign-up"
+            <NavLink
+              to="/signup"
               className="nav-links-mobile"
               onClick={closeMobileMenu}
             >
               Sign Up
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/log-in"
+            <NavLink
+              to="/login"
               className="nav-links-mobile-log-in"
               onClick={closeMobileMenu}
             >
               Log in
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <Button />
