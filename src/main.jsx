@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 //import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -66,7 +66,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-=======
+
+
+{/*
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -91,10 +93,11 @@ createRoot(document.getElementById("root")).render(
   
         <Route path="/Signupbenefactor" element={<SignUpBenefactor />} />
         <Route path="/schedule" element={<Schedule />} />
-        <Route path="/subscribe" element={<Subscribe />} />*/}
+        <Route path="/subscribe" element={<Subscribe />} />*
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
->>>>>>> 1eb6b7fc18094613276645c05f0e93ef5d784841
+  </React.StrictMode>*/}
+
   </React.StrictMode>
 );
