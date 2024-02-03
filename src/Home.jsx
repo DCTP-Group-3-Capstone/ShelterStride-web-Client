@@ -11,6 +11,8 @@ function Home() {
         <Route path="/" element={<donate />} />
         <Route path="/" element={<pr />} />
         <Route path="/" element={<buy />} />
+        <Route path="/" element={<pr />} />
+        <Route path="/" element={<buy />} />
       </Routes>
     </div>
   );
