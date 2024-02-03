@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 # React + Vite
 
+=======
+# ShelterStride-web-Client
+
+
+A platform that addresses the needs o internally displaced people by providing a humanitarian response through  the donation of homes as well as providing easy and efficient means of purchase.
+>>>>>>> 81813b3cc968b17e3150cde23cd57e4dcee49022
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
