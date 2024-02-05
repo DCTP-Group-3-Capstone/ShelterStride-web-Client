@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Home";
+import Home from "./pages/Landing/Home";
 import "./Global.scss";
 import ErrorPage from "./Error-page";
 // import { Outlet } from "react-router-dom";

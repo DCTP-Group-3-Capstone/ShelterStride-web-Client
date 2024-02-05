@@ -206,6 +206,7 @@
           display: none;
         }
         .cardBtnWrapper {
+          border: 3px solid orange;
           button {
             display: flex;
             @include outlineBtn;

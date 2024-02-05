@@ -14,11 +14,7 @@ function Hero() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      // style={{
-      //   backgroundImage: `url(${heroImg})`,
-      // }}
     >
-      {/* <img src={heroImg} alt="A man displaying his house keys" /> */}
       <div className="heroContent">
         <div className="heroHeader">
           <h3>
