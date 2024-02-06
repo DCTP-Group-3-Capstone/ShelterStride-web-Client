@@ -1,12 +1,28 @@
 @use "../../sass/components/button" as *;
 // @use "../../sass/components/input" as *;
 @import "../../sass/base/variables";
-.donatePage {
+.donationPageWrapper {
   background-color: $white;
-  padding: 40px 1.25rem;
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // border: 3px solid hotpink;
 }
 
+//styling the page that wraps the man payment card and "lets help make a difference" text
+.paymentSect {
+  margin: 2.5rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  // border: 3px solid;
+}
 .donateText {
+  width: 100%;
   .headerText {
     h1 {
       font-size: 38px;
@@ -52,7 +68,362 @@
 }
 
 //payment card styling
-.payment {
+.paymentCardContainer {
   background-color: rgba(249, 248, 247, 1);
-  box-shadow: 5px 10px 45px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 10px 45px 0px rgba(0, 0, 0, 0.11);
+  border: 1px solid rgba(249, 248, 247, 1);
+  // border: 4px solid indigo;
+  // margin: 0;
+  // padding: 0;
+  border-radius: 16px;
+  width: 100%;
+
+  .paymentCardIndicator {
+    // border: 3px solid gold;
+    display: flex;
+    padding-left: 1.5rem;
+    gap: 5rem;
+    font-size: 12px;
+    color: $black-400;
+  }
+
+  .donationCard {
+    // border: 3px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 2.2rem;
+    gap: 1rem;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: $blue-500;
+    }
+
+    .giveButtons {
+      width: 100%;
+      :nth-child(2) {
+        border-radius: 0px 15px 15px 0;
+        background-color: $blue-400;
+        border: 1px solid $blue-400;
+        font-size: 14px;
+        font-weight: 400;
+        width: 50%;
+      }
+      button {
+        @include blueBtn;
+        border-radius: 15px 0px 0px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        width: 50%;
+      }
+    }
+
+    .paymentAmount {
+      // border: 3px solid hotpink;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      .buttonSect {
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+      }
+      button {
+        @include outlineBtn;
+        color: $blue-500;
+        font-size: 14px;
+        font-weight: 400;
+        width: 100%;
+        // padding: 12px 60px;
+      }
+      :nth-child(3) {
+        // border: 4px solid firebrick;
+        width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+    .continueBtn {
+      display: flex;
+      // border: 3px solid darkblue;
+      width: 100%;
+      margin: 2rem 0;
+
+      // width: 100%;
+      button {
+        @include blueBtn;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        // padding: 10px 0;
+      }
+    }
+  }
+}
+
+//Your donation/middle section styling
+
+.yourDonation {
+  // border: 5px solid orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h4 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+  }
+  .cardBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    // border: 3px solid red;
+
+    .cardContent {
+      // border: 3px solid teal;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding-bottom: 1.5rem;
+      border: 1px solid $white;
+      border-radius: 16px 16px 0px 0px;
+      box-shadow: 0px 4px 16px 0px rgba(110, 118, 122, 0.12);
+    }
+    .cardText {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0px 12px;
+      padding-bottom: 1.5rem;
+    }
+  }
+  .cardBtnWrapper {
+    display: none;
+  }
+
+  .cardImage {
+    // border: 3px solid maroon;
+    border-radius: 18px 18px 0 0;
+    width: fit-content;
+
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+    border: 1.5px solid $blue-500;
+    border-radius: 16px 16px 0 0;
+    margin: 0;
+    padding: 0;
+  }
+  .cardBox .cardContent:nth-child(2) {
+    background-color: $green-100;
+    border: 1px solid $green-100;
+  }
+}
+
+//Join Us styling
+
+.joinUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 6rem 0;
+  h2 {
+    // font-size: 24px;
+    line-height: 36px;
+    font-weight: 600s;
+    text-align: center;
+  }
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  // border: 3px solid saddlebrown;
+  span {
+    color: $green-500;
+  }
+  button {
+    @include outlineBtn;
+    color: $blue-500;
+  }
+}
+
+//media query styling
+@media only screen and (min-width: 992px) {
+  .donationPageWrapper {
+    padding: 2.5rem 6.25rem;
+    // border: 3px solid pink;
+    gap: 9.2rem;
+  }
+
+  //styling the page that wraps the man payment card and "lets help make a difference" text
+  .paymentSect {
+    flex-direction: row;
+  }
+  .donateText {
+    width: 60%;
+    .headerText {
+      h1 {
+        font-size: 64px;
+        font-weight: 500;
+        margin: 0;
+        line-height: 90px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    .bulletList {
+      // border: 3px solid yellow;
+      margin-top: 1.2rem;
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        padding: 2px 0;
+        margin: 10px;
+      }
+      .bulletListTitle {
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  //payment card styling
+  .paymentCardContainer {
+    width: 40%;
+
+    .paymentCardIndicator {
+      // border: 3px solid gold;
+      padding-left: 2.5rem;
+      gap: 6.5rem;
+      font-size: 14px;
+    }
+
+    .donationCard {
+      p {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .giveButtons {
+        :nth-child(2) {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        button {
+          font-size: 16px;
+        }
+      }
+
+      .paymentAmount {
+        .buttonSect {
+          gap: 0.9rem;
+        }
+        button {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  //Your donation/middle section styling
+
+  .yourDonation {
+    // border: 5px solid orange;
+    flex-direction: row;
+
+    h4 {
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 600;
+      margin: 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin-top: 1rem;
+    }
+    .cardBox {
+      flex-direction: column;
+      gap: 5.5rem;
+      // border: 3px solid red;
+
+      .cardContent {
+        // border: 3px solid teal;
+        border-radius: 0px 16px 16px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5.25rem;
+      }
+      .cardText {
+        // border: 3px solid fuchsia;
+        width: 50%;
+        padding: 0px 2.5rem;
+        padding-bottom: 0rem;
+      }
+    }
+
+    .cardImage {
+      width: 50%;
+
+      border-radius: 0px 16px 16px 0px;
+    }
+    img {
+      width: 100%;
+      border-radius: 0px 16px 16px 0px;
+    }
+  }
+
+  //Join Us styling
+
+  .joinUs {
+    width: 60%;
+    gap: 1.5rem;
+    margin: 6rem 0;
+    h2 {
+      line-height: 64px;
+      font-weight: 600;
+      font-size: 42px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      color: rgba(38, 50, 56, 0.62);
+      text-align: center;
+    }
+    // border: 3px solid saddlebrown;
+  }
 }

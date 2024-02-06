@@ -1,14 +1,14 @@
 const CardList = ({ cards }) => {
   return (
-    <div className="cardList">
+    <div className="cardBox">
       {cards.map((card) => (
-        <div key={card.id}>
-          <div>
-            <h4>{card.title}</h4>
-            <p>{card.body}</p>
-          </div>
+        <div key={card.id} className="cardContent">
           <div className="cardImage">
             <img src={card.image} alt={card.alt} />
+          </div>
+          <div className="cardText">
+            <h4>{card.title}</h4>
+            <p>{card.body}</p>
           </div>
           <div className="cardBtnWrapper">
             <button>
