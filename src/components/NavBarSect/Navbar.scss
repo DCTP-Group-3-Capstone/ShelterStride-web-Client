@@ -1,13 +1,29 @@
+//font import
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+//mobile size declaration
+$breakpoint-mobile: 960px;
+
+//external variable for colours
 @import "../../scss/base/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
   background: $white;
   height: 80px;
+  // max-width: 1440px;
+  // height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 26px 100px;
+  font-family: "poppins";
 }
 
 .navbar-logo {
@@ -69,7 +85,7 @@
   display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media (max-width: $breakpoint-mobile) {
   .Navbar {
     font-size: 1.2rem;
   }

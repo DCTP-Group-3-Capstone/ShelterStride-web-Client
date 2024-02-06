@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MenuItems } from "./MenuItems";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Dropdown.scss";
 
 const Dropdown = () => {
@@ -16,13 +16,13 @@ const Dropdown = () => {
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
-              <Link
+              <NavLink
                 className={item.cName}
                 to={item.path}
                 onClick={() => setClick(false)}
               >
                 {item.title}
-              </Link>
+              </NavLink>
             </li>
           );
         })}

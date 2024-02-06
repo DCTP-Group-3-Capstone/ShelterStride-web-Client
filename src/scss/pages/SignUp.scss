@@ -1,0 +1,387 @@
+//new
+//font family
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+// mobile size variable declaration
+$breakpoint-mobile: 430px;
+
+//imported variable
+@import "../base/variables";
+
+//signup scss body
+.Signupsponsor-page {
+  background-color: $white;
+  margin: 40px 0 0 5px;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // 100% of the viewport height
+
+  //mobile responsiveness styling
+  @media (max-width: $breakpoint-mobile) {
+    width: 430px;
+    padding: 0px;
+    margin: 20px 0 0 0px;
+  }
+
+  //logo&label styling
+  .logolabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: $breakpoint-mobile) {
+    }
+  }
+
+  .logolabel img {
+    width: 224px; // width
+    height: 51px; // height
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 224px; // width
+      height: 51px; // height
+    }
+  }
+
+  //container header and body styling
+  .Signupsponsor-container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    display: grid;
+    padding: 20px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+      padding: 10px 0 0 0px;
+    }
+  }
+
+  //container header text styling
+  .Signupsponsor-container h2 {
+    font-size: 30px;
+    font-family: "Poppins";
+    width: 336px;
+    color: $black-500;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      font-size: 24px;
+      margin-left: 0;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  //form box styling
+  .Signupsponsor-Box {
+    display: flex;
+    border: 1px solid $green-500;
+    border-radius: 10px;
+    padding: 20px, 30px;
+    width: 446px;
+    height: 733px;
+    flex-direction: column;
+    margin-top: 20px;
+
+    //mobile styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
+      height: auto;
+      border: 0px;
+      margin-top: 10px;
+    }
+  }
+
+  //form scss
+  .Signupsponsor-form {
+    align-content: center;
+    margin: 0px 30px;
+    width: 390px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    //mobile scss
+    @media (max-width: $breakpoint-mobile) {
+      height: auto;
+      margin: 0px 0px;
+    }
+  }
+
+  //form labels styling
+  .Signupsponsor-form label {
+    margin: 30px 0 10px 0px;
+    color: $black-500;
+    line-height: 20px;
+    font-size: 18px;
+    font-family: "Poppins";
+    font-weight: 500;
+    display: flex;
+
+    //mobile style
+    @media (max-width: $breakpoint-mobile) {
+    }
+  }
+
+  .Signupsponsorform-group {
+    align-self: center;
+    width: 390px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    // margin-left: 20px;
+    border: 1.5px solid $green-500;
+    gap: 12px;
+    border-radius: 16px;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
+    }
+  }
+
+  // default inputs div styling
+  .Signupsponsorform-group {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      background-color: transparent;
+    }
+  }
+
+  //all inout icons styling
+  .Signupsponsorform-group img {
+    margin: 0px 10px;
+  }
+
+  //actual inputs and select styling
+  .Signupsponsorform-group input {
+    height: 24px;
+    width: 322px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    font-family: "Poppins";
+
+    //mobile size styling
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 18px;
+    }
+  }
+
+  .Signupsponsorform2-group {
+    align-self: center;
+    width: 390px;
+    display: grid;
+    align-items: center;
+    height: 48px;
+    border: 1.5px solid $green-500;
+    gap: 12px;
+    border-radius: 16px;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 390px;
+    }
+
+    option {
+      height: 30px;
+      width: 100px;
+      // text-align: center;
+      border: 2px solid $green-400;
+      border-radius: 20px;
+      font-size: 20px;
+      background-color: transparent; // Set the background color of each option
+    }
+  }
+
+  .Signupsponsorform2-group select {
+    margin: 0 0px 0 10px;
+    background: transparent;
+    height: 24px;
+    width: 360px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border-color: $green-400;
+    }
+    //mobile size styling
+    @media (max-width: $breakpoint-mobile) {
+      width: 360px;
+    }
+  }
+
+  //passowrd icon styling
+  .Signupsponsorform-group .password-toggle img {
+    margin: 5px 20px 0px 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .forgot-password {
+    text-align: right;
+
+    //password link styling
+    a {
+      color: $black-500;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 12px;
+      font-family: "Poppins";
+      margin: 0px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $black-200;
+      }
+    }
+  }
+
+  //button styles
+  .Signupsponsorbutton-group button {
+    outline: none;
+    appearance: none; // Remove default arrow in some browsers
+    width: 390px;
+    height: 48px;
+    color: $black-50;
+    gap: 8px;
+    border: 1px solid $blue-500;
+    font-size: 18px;
+    background-color: $blue-500;
+    margin-top: 40px;
+    border-radius: 16px;
+    font-weight: 600px;
+
+    //mousehover styles
+    &:hover {
+      background-color: $blue-300;
+    }
+  }
+
+  //term and privacy styling
+  .terms-text {
+    margin: 5px 0 5px 15px;
+    font-size: 12px;
+    font-family: "Poppins";
+    font-weight: 400px;
+    text-align: center;
+
+    //hover and link
+    a {
+      color: $blue-500;
+      text-decoration: none;
+      // font-weight: 400;
+      margin: 0 5px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $blue-200;
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin: 5px 0 0 15px;
+    }
+  }
+
+  //signin text styling
+  .signin-text {
+    font-size: 18px;
+    font-weight: 600px;
+    text-align: center;
+    font-family: "Poppins";
+    color: $black-500;
+    margin-top: 20px;
+
+    //hover and link styling
+    a {
+      color: $green-500;
+      text-decoration: none;
+      // font-weight: 400;
+      margin: 0 5px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $green-200;
+      }
+    }
+
+    //mobile version
+    @media (max-width: $breakpoint-mobile) {
+      margin: 15px 0 0 0px;
+      font-size: 16px;
+      font-weight: 400px;
+    }
+  }
+
+  p {
+    font-size: 10px;
+    font-family: "Poppins";
+
+    margin-top: 0px;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 10px;
+    }
+  }
+
+  .error-message {
+    font-size: 10px;
+    font-family: "Poppins";
+    color: red;
+    margin-top: 0px;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 10px;
+    }
+  }
+
+  /* SignupSuccessModal.scss */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    // margin-bottom: 39px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    background: $white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-content {
+    margin-bottom: 20px;
+  }
+
+  /* Add any additional styles you need for your modal */
+}

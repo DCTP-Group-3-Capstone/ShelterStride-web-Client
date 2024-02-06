@@ -2,7 +2,7 @@
   background: white;
   width: 200px;
   position: absolute;
-  top: 80px;
+  top: 50px;
   list-style: none;
   text-align: start;
 }
@@ -30,7 +30,11 @@
 }
 
 @media screen and (max-width: 960px) {
-  .fa-caret-down {
-    display: none;
+  .dropdown-menu {
+    width: 100%;
+    position: absolute;
+    top: 280px;
+    list-style: none;
+    text-align: center;
   }
 }

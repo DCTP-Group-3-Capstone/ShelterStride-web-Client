@@ -5,9 +5,8 @@ import Email from "../../assets/icon/Email.svg";
 import lock from "../../assets/icon/lock.svg";
 import UnSee from "../../assets/icon/UnSee.svg";
 import See from "../../assets/icon/See.svg";
-import "../../scss/pages/SignUp.scss";
+// import "/src/scss/pages/SignUp.scss";
 import DropdownSelect from "../../components/DropdownSelect";
-
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 //import Modal from '../../Modal';

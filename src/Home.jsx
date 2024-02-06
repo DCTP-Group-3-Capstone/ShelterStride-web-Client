@@ -8,11 +8,18 @@ import SignUpBenefactor from "./pages/Registeration/SignUpBenefactor";
 import CreateAccount from "./pages/Registeration/CreateAccount";
 // import Landing from "./pages/Landing/Home";
 import Blog from "./pages/Blog";
+import Rent from "./pages/RentPage/Rent";
+import Buy from "./pages/BuyPage/Buy";
+import ErrorPage from "./Error-page";
+import Hidenavbar from "./components/Hidenavbar";
+import Subscribepage from "./pages/Subscribepage";
 
 function Home() {
   return (
     <div>
-      <NavBar />
+      <Hidenavbar>
+        <NavBar />
+      </Hidenavbar>
       <Routes>
         <Route path="/" element={<Blog />} />
         {/* <Route path="/donate" element={<Donate />} /> */}
@@ -20,6 +27,10 @@ function Home() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signupbenefactor" element={<SignUpBenefactor />} />
         <Route path="/createaccount" element={<CreateAccount />} />
+        <Route path="/Rent" element={<Rent />} />
+        <Route path="/Buy" element={<Buy />} />
+        <Route path="/Subscribe" element={<Subscribepage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>
   );

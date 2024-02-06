@@ -15,7 +15,7 @@ const NavBar = () => {
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdown(true);
     } else {
       setDropdown(true);
     }
@@ -23,10 +23,14 @@ const NavBar = () => {
 
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdown(true);
     } else {
       setDropdown(false);
     }
+  };
+
+  const extendElement = () => {
+    dropdown ? setDropdown(false) : setDropdown(true);
   };
 
   return (
@@ -61,12 +65,9 @@ const NavBar = () => {
             className="nav-item"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            onClick={extendElement}
           >
-            <NavLink
-              to="/service"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <NavLink to="/gift" className="nav-links">
               Gift a home <FiChevronDown />
             </NavLink>
             {dropdown && <Dropdown />}

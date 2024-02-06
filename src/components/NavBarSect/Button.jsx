@@ -8,7 +8,7 @@ const Button = () => {
       <NavLink to="/login">
         <button className="btn_log_in">Log in</button>
       </NavLink>
-      <NavLink to="/signup">
+      <NavLink to="/createaccount">
         <button className="btn_sign_up">Sign up</button>
       </NavLink>
     </>
