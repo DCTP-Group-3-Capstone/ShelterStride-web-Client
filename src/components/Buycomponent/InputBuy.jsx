@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 
 const InputBuy = () => {
   const [buyers, setBuyers] = useState(Buydata.slice(0, 36));
+  const [wordentered, SetwordEntered] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [goToSubscribe, setGoTOSubscribe] = useState(false);
   const buyersPerPage = 9;
@@ -14,22 +15,31 @@ const InputBuy = () => {
     return <Navigate to="/Subscribe" />;
   }
 
+  const handFilter = (event) => {
+    const searchWord = event.target.value;
+    SetwordEntered(searchWord);
+    const filter = Buydata.filter((value) => {
+      return value.address.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    setBuyers(filter);
+  };
+
   const displayBuyers = buyers
     .slice(pagesVisited, pagesVisited + buyersPerPage)
-    .map((buyer) => {
+    .map((value) => {
       return (
         <div
-          key={buyer.id}
+          key={value.id}
           className="single-grid"
           onClick={() => setGoTOSubscribe(true)}
         >
-          <img src={buyer.image} />
+          <img src={value.image} />
           <div className="flex">
-            <h3>{buyer.pricing}</h3>
-            <p>{buyer.cancelled}</p>
+            <h3>{value.pricing}</h3>
+            <p>{value.cancelled}</p>
           </div>
-          <p>{buyer.address}</p>
-          <p>{buyer.description}</p>
+          <p>{value.address}</p>
+          <p>{value.description}</p>
         </div>
       );
     });
@@ -43,7 +53,12 @@ const InputBuy = () => {
     <div className="wrapper">
       <div className="input-container">
         <div className="search">
-          <input type="text" placeholder="Where would you prefer to live?" />
+          <input
+            type="text"
+            placeholder="Where would you prefer to live?"
+            value={wordentered}
+            onChange={handFilter}
+          />
         </div>
         <select defaultValue="">
           <option value="hidden">Select price range</option>
@@ -57,15 +72,12 @@ const InputBuy = () => {
           <option value="second option">2 plots</option>
           <option value="Third option">3 plots</option>
         </select>
-      </div>
-      <div className="input-container2">
         <select defaultValue="">
           <option value="hidden">Duration</option>
           <option value="first option">1 year</option>
           <option value="second option">2 years</option>
           <option value="Third option">3 years</option>
         </select>
-
         <button className="filter">Find Property</button>
       </div>
       <div className="grid-container">

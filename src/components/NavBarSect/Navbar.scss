@@ -2,7 +2,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 //mobile size declaration
-$breakpoint-mobile: 960px;
+$breakpoint-mobile: 460px;
+// $breakpoints: (
+//   "xs": 0,
+//   "sm": 480px,
+//   "md": 720px,
+//   "lg": 960px,
+//   "xl": 1200px,
+// );
+
+// @mixin xs {
+//   @media (min-width: map-get($breakpoints, "xs")) {
+//     @content;
+//   }
+// }
+
+// @mixin sm {
+//   @media (min-width: map-get($breakpoints, "sm")) {
+//     @content;
+//   }
+// }
+
+// @mixin md {
+//   @media (min-width: map-get($breakpoints, "md")) {
+//     @content;
+//   }
+// }
+
+// @mixin lg {
+//   @media (min-width: map-get($breakpoints, "lg")) {
+//     @content;
+//   }
+// }
+
+// @mixin xl {
+//   @media (min-width: map-get($breakpoints, "xl")) {
+//     @content;
+//   }
+// }
+
+// @mixin breakpoint($bp: 0) {
+//   @media (min-width: $bp) {
+//     @content;
+//   }
+// }
+
+//end
 
 //external variable for colours
 @import "../../scss/base/variables";
@@ -24,6 +69,12 @@ $breakpoint-mobile: 960px;
   font-size: 0.9rem;
   padding: 26px 100px;
   font-family: "poppins";
+  position: sticky;
+  top: 0;
+  // overflow: hidden;
+  // width: 100%;
+  // position: fixed;
+  // top: 0;
 }
 
 .navbar-logo {
@@ -36,10 +87,10 @@ $breakpoint-mobile: 960px;
   // font-size: 2rem;
 }
 
-.fa-firstdraft {
-  margin-left: 0.5rem;
-  font-size: 1.6rem;
-}
+// .fa-firstdraft {
+//   margin-left: 0.5rem;
+//   font-size: 1.6rem;
+// }
 
 .nav-menu {
   display: grid;
@@ -70,9 +121,9 @@ $breakpoint-mobile: 960px;
   transition: all 0.2s ease-out;
 }
 
-.fa-bars {
-  color: #fff;
-}
+// .fa-bars {
+//   color: #fff;
+// }
 
 .nav-links-mobile {
   display: none;
@@ -141,14 +192,14 @@ $breakpoint-mobile: 960px;
     font-size: 1.8rem;
     cursor: pointer;
   }
-  .fa-bars {
-    color: black;
-  }
+  //.fa-bars {
+  //   color: black;
+  // }
 
-  .fa-times {
-    color: black;
-    font-size: 2rem;
-  }
+  // .fa-times {
+  //   color: black;
+  //   font-size: 2rem;
+  // }
 
   .nav-links-mobile {
     display: block;
@@ -185,7 +236,120 @@ $breakpoint-mobile: 960px;
     transition: 250ms;
   }
 
-  button {
-    display: none;
+  // button {
+  //   display: none;
+  // }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    background: $white;
+    height: 50px;
+    width: auto;
+    // max-width: 1440px;
+    // height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 16px 5px;
+    font-family: "poppins";
+    // overflow: hidden;
+    // width: 100%;
+    // position: fixed;
+    // top: 0;
+  }
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 2px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-right: 1rem;
+    font-size: 0.5rem;
+  }
+  .navbar-logo {
+    width: 31.853px;
+    height: 19.802px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 3px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-right: 2rem;
+    font-size: 0.7rem;
+  }
+  .navbar-logo {
+    width: 91.853px;
+    height: 21.802px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 5px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-right: 3rem;
+    font-size: 0.9rem;
+  }
+  .navbar-logo {
+    width: 101.853px;
+    height: 21.802px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    background: $white;
+    height: 80px;
+    // max-width: 1440px;
+    // height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 26px 100px;
+    font-family: "poppins";
+    // overflow: hidden;
+    // width: 100%;
+    // position: fixed;
+    // top: 0;
+  }
+
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 2rem;
+  }
+
+  .navbar-logo {
+    width: 181.853px;
+    height: 41.802px;
+    // justify-self: start;
+    // margin-left: 20px;
+    // cursor: pointer;
+    // text-decoration: none;
+    // font-size: 2rem;
   }
 }

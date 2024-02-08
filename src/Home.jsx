@@ -12,7 +12,6 @@ import Rent from "./pages/RentPage/Rent";
 import Buy from "./pages/BuyPage/Buy";
 import ErrorPage from "./Error-page";
 import Hidenavbar from "./components/Hidenavbar";
-import Subscribepage from "./pages/Subscribepage";
 
 function Home() {
   return (
@@ -29,7 +28,6 @@ function Home() {
         <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/Rent" element={<Rent />} />
         <Route path="/Buy" element={<Buy />} />
-        <Route path="/Subscribe" element={<Subscribepage />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>

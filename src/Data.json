@@ -12,7 +12,7 @@
     "image": "/src/assets/images/RentContainer2.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Lagos",
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
@@ -20,7 +20,7 @@
     "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Abuja",
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
@@ -33,14 +33,6 @@
   },
   {
     "id": 5,
-    "image": "/src/assets/images/RentContainer2.svg",
-    "pricing": "30,000/month",
-    "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
-    "description": "1 Bed 1 Bath Iyana-Ipaja "
-  },
-  {
-    "id": 6,
     "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
@@ -48,8 +40,16 @@
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
+    "id": 6,
+    "image": "/src/assets/images/RentContainer2.svg",
+    "pricing": "30,000/month",
+    "cancelled": "#50,000/month",
+    "address": "Lagos",
+    "description": "1 Bed 1 Bath Iyana-Ipaja "
+  },
+  {
     "id": 7,
-    "image": "/src/assets/images/RentContainer1.svg",
+    "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
     "address": "Akinwumi str off Babola close",
@@ -68,7 +68,7 @@
     "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Abuja",
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
@@ -76,7 +76,7 @@
     "image": "/src/assets/images/RentContainer1.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Anambra state",
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
@@ -92,7 +92,7 @@
     "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Port Harcourt",
     "description": "1 Bed 1 Bath Iyana-Ipaja "
   },
   {
@@ -105,7 +105,7 @@
   },
   {
     "id": 14,
-    "image": "/src/assets/images/RentContainer2.svg",
+    "image": "/src/assets/images/RentContainer3.svg",
     "pricing": "30,000/month",
     "cancelled": "#50,000/month",
     "address": "Akinwumi str off Babola close",

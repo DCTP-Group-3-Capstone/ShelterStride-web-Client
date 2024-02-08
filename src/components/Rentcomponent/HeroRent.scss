@@ -2,15 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 //mobile size declaration
-$breakpoint-mobile: 768px;
+$breakpoint-mobile: 460px;
 
 //external variable for colours
 @import "../../scss/base/variables";
 
 .Herorent_section {
-  max-width: 1440px;
+  // max-width: 1440px;
   height: 352px;
   background-image: url("/src/assets/images/Hero.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   justify-content: center;
   margin-top: 0px;
@@ -31,7 +34,7 @@ p {
 // responsiveness
 @media (max-width: $breakpoint-mobile) {
   .Herorent_section {
-    max-width: 768px;
+    // max-width: 768px;
     height: 220px;
     margin-top: 0px;
   }

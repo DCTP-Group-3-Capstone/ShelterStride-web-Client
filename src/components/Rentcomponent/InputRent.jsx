@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 
 const InputRent = () => {
   const [users, setUsers] = useState(Data.slice(0, 36));
+  const [searchedWord, setSearchedWord] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [goToSubscribe, setGoTOSubscribe] = useState(false);
   const usersPerPage = 9;
@@ -14,23 +15,31 @@ const InputRent = () => {
   if (goToSubscribe) {
     return <Navigate to="/Subscribe" />;
   }
+  const handleFilter = (event) => {
+    const word = event.target.value;
+    setSearchedWord(word);
+    const filter = Data.filter((value) => {
+      return value.address.toLowerCase().includes(word.toLowerCase());
+    });
+    setUsers(filter);
+  };
 
   const displayUsers = users
     .slice(pagesVisited, pagesVisited + usersPerPage)
-    .map((user) => {
+    .map((value) => {
       return (
         <div
-          key={user.id}
+          key={value.id}
           className="single-grid"
           onClick={() => setGoTOSubscribe(true)}
         >
-          <img src={user.image} />
+          <img src={value.image} />
           <div className="flex">
-            <h3>{user.pricing}</h3>
-            <p>{user.cancelled}</p>
+            <h3>{value.pricing}</h3>
+            <p>{value.cancelled}</p>
           </div>
-          <p>{user.address}</p>
-          <p>{user.description}</p>
+          <p>{value.address}</p>
+          <p>{value.description}</p>
         </div>
       );
     });
@@ -44,7 +53,12 @@ const InputRent = () => {
     <div className="wrapper">
       <div className="input-container">
         <div className="search">
-          <input type="text" placeholder="Where would you prefer to live?" />
+          <input
+            type="text"
+            placeholder="Where would you prefer to live?"
+            value={searchedWord}
+            onChange={handleFilter}
+          />
         </div>
         <select defaultValue="">
           <option value="hidden">Select price range</option>
@@ -58,8 +72,7 @@ const InputRent = () => {
           <option value="second option">Two bedroom flat</option>
           <option value="Third option">Three bedroom flat</option>
         </select>
-      </div>
-      <div className="input-container2">
+
         <select defaultValue="">
           <option value="hidden">Duration</option>
           <option value="first option">1 year</option>
@@ -74,6 +87,7 @@ const InputRent = () => {
         </select>
         <button className="filter"> Apply Filter</button>
       </div>
+
       <div className="grid-container">
         {" "}
         {displayUsers}

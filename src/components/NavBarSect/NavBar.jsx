@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { Link, NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../../assets/images/shelterLogo.svg";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
@@ -9,6 +11,17 @@ import Dropdown from "./Dropdown";
 const NavBar = () => {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+
+  // const [sticky, setSticky] = useState(false);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setSticky(window.scrollY > 200);
+  //     console.log(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -36,14 +49,16 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar">
-        <img
-          className="navbar-logo"
-          onClick={closeMobileMenu}
-          src={Logo}
-          alt="Logo"
-        />
+        <NavLink to="/">
+          <img
+            className="navbar-logo"
+            onClick={closeMobileMenu}
+            src={Logo}
+            alt="Logo"
+          />
+        </NavLink>
         <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          {click ? <AiOutlineClose /> : <BiMenuAltRight />}
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">

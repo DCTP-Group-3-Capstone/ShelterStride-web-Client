@@ -4,7 +4,7 @@
     "image": "/src/assets/images/ImageBuy1.svg",
     "pricing": "135,000/month",
     "cancelled": "#500,000/month",
-    "address": "Babola close, ota",
+    "address": "Abuja",
     "description": "1 plot of land ota "
   },
   {
@@ -12,7 +12,7 @@
     "image": "/src/assets/images/ImageBuy2.svg",
     "pricing": "300,000/month",
     "cancelled": "#800,000/month",
-    "address": "Akinwumi str off Babola close",
+    "address": "Lagos",
     "description": "2 plots of land ota "
   },
   {
@@ -20,7 +20,7 @@
     "image": "/src/assets/images/ImageBuy3.svg",
     "pricing": "500,000/month",
     "cancelled": "#1,500,000/month",
-    "address": "Akin str off Babola close",
+    "address": "Lagos",
     "description": "3 plots of land ota "
   },
   {
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "image": "/src/assets/images/ImageBuy2.svg",
+    "image": "/src/assets/images/ImageBuy3.svg",
     "pricing": "300,000/month",
     "cancelled": "#800,000/month",
     "address": "Akinwumi str off Babola close",
@@ -41,10 +41,10 @@
   },
   {
     "id": 6,
-    "image": "/src/assets/images/ImageBuy3.svg",
+    "image": "/src/assets/images/ImageBuy2.svg",
     "pricing": "500,000/month",
     "cancelled": "#1,500,000/month",
-    "address": "Akin str off Babola close",
+    "address": "Abeokuta",
     "description": "3 plots of land ota "
   },
   {
@@ -89,7 +89,7 @@
   },
   {
     "id": 12,
-    "image": "/src/assets/images/ImageBuy3.svg",
+    "image": "/src/assets/images/ImageBuy2.svg",
     "pricing": "500,000/month",
     "cancelled": "#1,500,000/month",
     "address": "Akin str off Babola close",
