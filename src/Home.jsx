@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-
-//import shelterstride from "../../assets/images/ShelterStrideSideLogo.svg";
-//import dropdown from "/src/assets/icon/dropdown.svg";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import "./Home.scss";
 
+function Homes() {
+  return (        
 
-function home() {
-    
-    return (
     <div>
-    Yee!
-    </div>
-    );
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<donate />} />
+      <Route path="/" element={<pr />} />
+      <Route path="/" element={<buy />} />
+    </Routes>
+  </div>
+
+);
 }
 
-export default home;
+export default Homes;

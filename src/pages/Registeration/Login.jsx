@@ -5,8 +5,9 @@ import See from "../../assets/icon/See.svg";
 import UnSee from "../../assets/icon/UnSee.svg";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 
@@ -52,81 +53,80 @@ function Login() {
 
   //login handling
 
-  const handleLoginApi = (event) => {
+  const handleLoginApi = async (event) => {
     event.preventDefault();
 
     //handle page naviagtion
     //const history = useHistory();
 
-    if (!email || !password) {
-      console.log("provide both email and password");
-      alert("provide both email and password");
+    // TOAST CONFIG
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+
+    if (!email || !password || password === " ") {
+      Toast.fire({
+        icon: "error",
+        title: "Fields can't be empty"
+      })
       setError("Please enter both email and password");
 
       return;
     }
 
-    if (!isValidEmail) {
-      console.log("provide a valid email");
-      alert("provide a valid email");
-      setError("Please enter a valid email");
+    try {
+      const result = await axios.post("https://shelterstride.onrender.com/api/v1/login", {
+        email,
+        password
+      });
+      // console.log(result);
 
-      return;
-    }
+      const { status, data } = result;
 
-    if (isValidEmail) {
+      if (status == 200) {
+        console.log("signed in");
 
-      if (email && password) {
-        try {
-          axios
-            .get("https://shelterstride.onrender.com/api/v1", {
-              email: email,
-              password: password,
-            })
-            .then((result) => {
-              console.log(result);
-              alert("Signin successful!");
-             
-           //  return <Navigate to="/" />;
+        Swal.fire({
+          title: "Success",
+          text: "Signed up successfully",
+          icon: "success",
+          timer: 2000
+        });
 
-                   if (result.data) {
-              // Success logic
-              navigate("/createaccount");
-        
-                  } else {
-                     setError('Incorrect email or password');
-                     alert("unsuccessful!");
-                   }
-            })
-            .catch((error) => {
-              console.log(error);
-
-              if (error.response) {
-                // The request was made and the server responded with a status code
-                if (error.response.status === 401) {
-                  // Invalid credentials
-                  setError("Invalid email or password");
-                } else {
-                  // Other server-side errors
-                  setError("Server error. Please try again later.");
-                }
-              } else if (error.request) {
-                // The request was made but no response was received
-                setError("No response from the server");
-              } else {
-                // Something happened in setting up the request that triggered an Error
-                setError("An unexpected error occurred");
-              }
-            });
-        } catch (error) {
-          console.error("An unexpected error occurred:", error);
-          setError("An unexpected error occurred");
-        }
+        // Set token in local storage
+        localStorage.setItem("token", data.token);
+        // Redirect to profile page
+        navigate("/profile")
       }
+
+    } catch (error) {
+      console.log(error);
+
+      let errorMessage = "An unexpected error occurred, please try again";
+
+      if (error.response && error.response.data) {
+        errorMessage = error.response.data.error || errorMessage;
+      }
+
+      Swal.fire({
+        title: "Error",
+        text: errorMessage,
+        icon: "error",
+        timer: 2000
+      });
+
     }
   }
 
-  
+
   return (
     <>
       <div className="Login-page">
@@ -138,62 +138,63 @@ function Login() {
         </div>
         <div className="Login-container">
           <h2> Welcome Back</h2>
-          <div className="Login-Box">
-            <div className="Login-form">
-              <label htmlFor="email">Email Address</label>
-              <div className="form-group">
-                <img src={Email} 
-                alt="Email Icon" />
-                <input type="email" 
-                id="email" 
-                value={email}
-                onChange={handleEmail}
-                onFocus={handleEmailFocus} 
-                placeholder="Enter your email" />
-              </div>
-              {!isValidEmail && (
-                <p className="error-message">Invalid email address</p>
-              )}
+          <form onSubmit={handleLoginApi}>
+            <div className="Login-Box">
+              <div className="Login-form">
+                <label htmlFor="email">Email Address</label>
+                <div className="form-group">
+                  <img src={Email}
+                    alt="Email Icon" />
+                  <input type="email"
+                    id="email"
+                    value={email}
+                    onChange={handleEmail}
+                    onFocus={handleEmailFocus}
+                    placeholder="Enter your email" />
+                </div>
+                {!isValidEmail && (
+                  <p className="error-message">Invalid email address</p>
+                )}
 
 
 
-              <label htmlFor="password">Password</label>
-              <div className="form-group">
-                <img src={lock} alt="Password Icon" />
-                <input
-                  type={passwordVisible ? "text" : "password"}
-                  id="password"
-                  value={password}
-                  onChange={handlePassword}
-                  placeholder="Enter your password"
-                />
-                <div
-                  className="password-toggle"
-                  onClick={togglePasswordVisibility}>
-                   <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+                <label htmlFor="password">Password</label>
+                <div className="form-group">
+                  <img src={lock} alt="Password Icon" />
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    id="password"
+                    value={password}
+                    onChange={handlePassword}
+                    placeholder="Enter your password"
+                  />
+                  <div
+                    className="password-toggle"
+                    onClick={togglePasswordVisibility}>
+                    <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+                  </div>
+                </div>
+
+                <p className="forgot-password">
+                  <a
+                    href="/forgot-password"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Forgot Password?
+                  </a>
+                </p>
+
+                <div className="button-group">
+                  <button type="submit"
+                  >Sign in</button>
                 </div>
               </div>
-
-              <p className="forgot-password">
-                <a
-                  href="/forgot-password"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Forgot Password?
-                </a>
-              </p>
-
-              <div className="button-group">
-                <button type="submit"
-                onClick={handleLoginApi}
-                >Sign in</button>
-              </div>
             </div>
-          </div>
+          </form>
           <p className="Login-text">
             New to ShelterStride ?{""}
-          
+
             <Link to="/createaccount">Sign up</Link>
 
           </p>
