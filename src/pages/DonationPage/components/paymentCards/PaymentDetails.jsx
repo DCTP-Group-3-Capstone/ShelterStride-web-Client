@@ -19,10 +19,14 @@ function PaymentDetails() {
   const [paymentOption, setPaymentOption] = useState("wallet");
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState(null);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(false);
   // const history = useHistory();
-  const donationApiUrl = process.env.DONATION_API_URL;
-
+  const donationApiUrl =
+    // process.env.DONATION_API_URL ||
+    "https://shelterstride.onrender.com/api/v1/users/id/donation";
+  // const authenticationApiUrl =
+  //   // process.env.LOGIN_API_URL ||
+  //   // "https://shelterstride.onrender.com/api/v1/login";
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -87,7 +91,7 @@ function PaymentDetails() {
     }
     // payment processing logic here
 
-    // const isAuthenticated = /* Logic to check if the user is authenticated */;
+    const isAuthenticated = await axios.post(authenticationApiUrl, { userId });
 
     if (isAuthenticated) {
       // User is authenticated, proceed with donation
@@ -105,7 +109,7 @@ function PaymentDetails() {
       };
 
       try {
-        const response = await axios.post("/api/donate", donationData);
+        const response = await axios.post(donationApiUrl, donationData);
         if (response.status === 200) {
           console.log("Donation successful!");
           setIsSuccess(true);
