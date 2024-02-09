@@ -12,13 +12,16 @@ import Rent from "./pages/RentPage/Rent";
 import Buy from "./pages/BuyPage/Buy";
 import ErrorPage from "./Error-page";
 import Hidenavbar from "./components/Hidenavbar";
+import Headroom from "react-headroom";
 
 function Home() {
   return (
     <div>
-      <Hidenavbar>
-        <NavBar />
-      </Hidenavbar>
+      <Headroom>
+        <Hidenavbar>
+          <NavBar />
+        </Hidenavbar>
+      </Headroom>
       <Routes>
         <Route path="/" element={<Blog />} />
         {/* <Route path="/donate" element={<Donate />} /> */}
