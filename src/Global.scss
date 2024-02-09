@@ -40,3 +40,16 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+/* Hide the scrollbar while still allowing scrolling */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
