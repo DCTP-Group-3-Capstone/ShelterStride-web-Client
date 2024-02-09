@@ -34,8 +34,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  min-width: 280px;
   overflow-y: scroll;
-  background: #F6F9F6;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* Hide the scrollbar while still allowing scrolling */
