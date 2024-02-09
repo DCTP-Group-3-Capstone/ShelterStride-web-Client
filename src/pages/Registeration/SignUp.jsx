@@ -8,8 +8,8 @@ import See from "../../assets/icon/See.svg";
 import "/src/scss/pages/SignUp.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import { Link } from 'react-router-dom'; 
+import Swal from 'sweetalert2';
 
 import axios from "axios";
 
@@ -28,8 +28,12 @@ function SignUp() {
   const [value, setValue] = React.useState("Individual");
   const navigate = useNavigate();
 
-  const handleaccountype = (selectedAccountType) => {
-    setSelectedAccountType(selectedAccountType);
+
+const handleaccountype = (selectedAccountType) => {
+  setSelectedAccountType(selectedAccountType);
+
+  
+
 
     // Update label and placeholder based on selected account type
     if (selectedAccountType === "Individual") {
@@ -103,247 +107,270 @@ function SignUp() {
     setIsValidConfirmPassword(newConfirmPassword === password);
   };
 
-  // Event handler for "terms and privacy policy" link
-  const handleTermsClick = () => {
-    setShowModal(true);
-  };
 
-  const handlesubmission = async (event) => {
-    event.preventDefault();
+ // Event handler for "terms and privacy policy" link
+ const handleTermsClick = () => {
+  setShowModal(true);
+};
 
-    const nameParts = name.split(" ");
-    const firstname = nameParts[0];
-    const lastname = nameParts[nameParts.length - 1];
 
-    // TOAST CONFIG
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top",
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-      },
+
+const handlesubmission = async (event) => {
+  event.preventDefault();
+
+  const nameParts = name.split(" ");
+  const firstname = nameParts[0];
+  const lastname = nameParts[nameParts.length - 1];
+  
+
+ // TOAST CONFIG
+ const Toast = Swal.mixin({
+  toast: true,
+  position: "top",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+
+
+if (!name || !email || !password || !selectedAccountType) {
+
+  Toast.fire({
+    icon: "error",
+    title: "Fields can't be empty"
+  })
+  setError("Fill all fields");
+  return;
+}
+  
+if (!isValidConfirmPassword) {
+ 
+  Toast.fire({
+    icon: "error",
+    title: "Password does not match"
+  })
+  setError("Confirm Password");
+  return;
+}
+
+if (!isValidPassword) {
+  
+  Toast.fire({
+    icon: "error",
+    title: "Password not valid"
+  })
+  setError("Please enter a valid email");
+  return;
+}
+try {
+  const result = await axios.post("https://shelterstride.onrender.com/api/v1/signup", {
+    usertype: "Donor",
+    firstname: firstname,
+    lastname: lastname,
+    email: email,
+    password: password,
+    companyname: name !== "" ? name : null,
+    accounttype: selectedAccountType !== "" ? selectedAccountType : null,
+  });
+
+ 
+
+  const { data, status } = result;
+
+  if (status === 201) {
+ 
+
+    Swal.fire({
+      title: "Success",
+      text: "Signed up successfully",
+      icon: "success",
+      timer: 2000
     });
 
-    if (!name || !email || !password || !selectedAccountType) {
-      Toast.fire({
-        icon: "error",
-        title: "Fields can't be empty",
-      });
-      setError("Fill all fields");
-      return;
-    }
+    // ROUTE to SIGNIN
+    navigate("/Login")
+  } else {
+   
+    Swal.fire({
+      title: "Error",
+      text: data.message,
+      icon: "error",
+      timer: 2000
+    })
+  }
+} catch (error) {
+  // Handle unexpected errors
+  console.log("An unexpected error occurred:", error);
 
-    if (!isValidConfirmPassword) {
-      Toast.fire({
-        icon: "error",
-        title: "Password does not match",
-      });
-      setError("Confirm Password");
-      return;
-    }
+  Swal.fire({
+    title: "Error",
+    text: "An unexpected error occurred, please try again",
+    icon: "error",
+    timer: 2000
+  })
+}
 
-    if (!isValidPassword) {
-      Toast.fire({
-        icon: "error",
-        title: "Password not valid",
-      });
-      setError("Please enter a valid email");
-      return;
-    }
-    try {
-      const result = await axios.post(
-        "https://shelterstride.onrender.com/api/v1/signup",
-        {
-          usertype: "Donor",
-          firstname: firstname,
-          lastname: lastname,
-          email: email,
-          password: password,
-          companyname: name !== "" ? name : null,
-          accounttype: selectedAccountType !== "" ? selectedAccountType : null,
-        }
-      );
+}
 
-      const { data, status } = result;
+return (
+  <>
 
-      if (status === 201) {
-        Swal.fire({
-          title: "Success",
-          text: "Signed up successfully",
-          icon: "success",
-          timer: 2000,
-        });
+    <div className="Signupsponsor-page">
+      <div className="logolabel">
+        <img src={shelterstride} alt="Shelters Stride" />
+      </div>
 
-        // ROUTE to SIGNIN
-        navigate("/Login");
-      } else {
-        Swal.fire({
-          title: "Error",
-          text: data.message,
-          icon: "error",
-          timer: 2000,
-        });
-      }
-    } catch (error) {
-      // Handle unexpected errors
-      console.log("An unexpected error occurred:", error);
+      <div className="Signupsponsor-container">
+        <h2> Create your account</h2>
 
-      Swal.fire({
-        title: "Error",
-        text: "An unexpected error occurred, please try again",
-        icon: "error",
-        timer: 2000,
-      });
-    }
-  };
 
-  return (
-    <>
-      <div className="Signupsponsor-page">
-        <div className="logolabel">
-          <img src={shelterstride} alt="Shelters Stride" />
-        </div>
 
-        <div className="Signupsponsor-container">
-          <h2> Create your account</h2>
 
-          <div className="Signupsponsor-Box">
-            <div className="Signupsponsor-form">
-              {/*first input*/}
-              <form onSubmit={handlesubmission}>
-                <label className="acclabel" htmlFor="Account-Interest">
-                  Account Type
-                </label>
+        <div className="Signupsponsor-Box">
+          <div className="Signupsponsor-form">
+            {/*first input*/}
+<form onSubmit={handlesubmission}>
+            <label className="acclabel" htmlFor="Account-Interest">
+              Account Type
+            </label>
 
-                <div className="Signupsponsorform-group">
-                  <DropdownSelect
-                    className="accounttype"
-                    onSelect={handleaccountype}
-                    options={["Individual", "Company"]}
-                    defaultSelected={"Select"}
-                  />
-                </div>
+            <div className="Signupsponsorform-group">
 
-                {/*second input*/}
-
-                <label htmlFor="firstandlastname">{labelText}</label>
-                <div className="Signupsponsorform-group">
-                  <img src={People} alt="People Icon" />
-                  <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={handleNameChange}
-                    placeholder={getPlaceholderText()}
-                  />
-                </div>
-
-                {/*third input*/}
-                <label htmlFor="email">Email Address</label>
-                <div className="Signupsponsorform-group">
-                  <img src={Email} alt="Email Icon" />
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onFocus={handleEmailFocus}
-                    onChange={handleEmailChange}
-                    className={!isValidEmail ? "invalid" : ""}
-                    placeholder="Enter your email"
-                  />
-                </div>
-                {!isValidEmail && (
-                  <p className="error-message">Invalid email address</p>
-                )}
-
-                {/*fourth input*/}
-                <label htmlFor="password">Password</label>
-                <div className="Signupsponsorform-group">
-                  <img src={lock} alt="Password Icon" />
-
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    id="password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                    className={!isValidPassword ? "invalid" : ""}
-                    placeholder="Enter your password"
-                  />
-                  <div
-                    className="password-toggle"
-                    onClick={togglePasswordVisibility}
-                  >
-                    <img
-                      src={passwordVisible ? See : UnSee}
-                      alt="Toggle Password Visibility"
+                    <DropdownSelect className="accounttype"
+                     onSelect={handleaccountype}
+                      options={['Individual', 'Company']}
+                      defaultSelected={"Select"}
                     />
-                  </div>
-                </div>
-                {!isValidPassword && (
-                  <p className="error-message">
-                    Password must be at least 6 characters and include numbers
-                    and special characters.
-                  </p>
-                )}
+                    </div>
 
-                {/*sixth input*/}
-                <label htmlFor="confirm-password">Confirm Password:</label>
-                <div className="Signupsponsorform-group">
-                  <img src={lock} alt="People Icon" />
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    id="confirm-password"
-                    placeholder="Confirm password"
-                    value={confirmPassword}
-                    onChange={handleConfirmPasswordChange}
-                    className={!isValidConfirmPassword ? "invalid" : ""}
-                  />
-                  <div
-                    className="password-toggle"
-                    onClick={togglePasswordVisibility}
-                  >
-                    <img
-                      src={passwordVisible ? See : UnSee}
-                      alt="Toggle Password Visibility"
-                    />
-                  </div>
-                </div>
-                {!isValidConfirmPassword && (
-                  <p className="error-message">Passwords do not match</p>
-                )}
+            {/*second input*/}
 
-                {/*signup button*/}
-                <div className="Signupsponsorbutton-group">
-                  <button type="submit">Sign Up</button>
-                </div>
-              </form>
-              <p className="terms-text">
-                By signing up, you agree to our{""}
-                <span onClick={handleTermsClick} className="terms-link">
-                  <Link to="#" className="terms-link">
-                    terms and privacy policy
-                  </Link>
-                </span>
-              </p>
+            <label htmlFor="firstandlastname">{labelText}</label>
+            <div className="Signupsponsorform-group">
+              <img src={People} alt="People Icon" />
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={handleNameChange}
+                placeholder={getPlaceholderText()}
+              />
             </div>
+
+            {/*third input*/}
+            <label htmlFor="email">Email Address</label>
+            <div className="Signupsponsorform-group">
+              <img src={Email} alt="Email Icon" />
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onFocus={handleEmailFocus} 
+                onChange={handleEmailChange}
+                className={!isValidEmail ? "invalid" : ""}
+                placeholder="Enter your email"
+              />
+            </div>
+            {!isValidEmail && (
+              <p className="error-message">Invalid email address</p>
+            )}
+
+            {/*fourth input*/}
+            <label htmlFor="password">Password</label>
+            <div className="Signupsponsorform-group">
+              <img src={lock} alt="Password Icon" />
+
+              <input
+                type={passwordVisible ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={handlePasswordChange}
+                className={!isValidPassword ? "invalid" : ""}
+                placeholder="Enter your password"
+              />
+              <div
+                className="password-toggle"
+                onClick={togglePasswordVisibility}
+              >
+                 <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+              </div>
+            </div>
+            {!isValidPassword && (
+              <p className="error-message">
+                Password must be at least 6 characters and include numbers and
+                special characters.
+              </p>
+            )}
+
+            {/*sixth input*/}
+            <label htmlFor="confirm-password">Confirm Password:</label>
+            <div className="Signupsponsorform-group">
+              <img src={lock} alt="People Icon" />
+              <input
+                type={passwordVisible ? "text" : "password"}
+                id="confirm-password"
+                placeholder="Confirm password"
+                value={confirmPassword}
+                onChange={handleConfirmPasswordChange}
+                className={!isValidConfirmPassword ? "invalid" : ""}
+              />
+              <div
+                className="password-toggle"
+                onClick={togglePasswordVisibility}
+              >
+                 <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
+              </div>
+            </div>
+            {!isValidConfirmPassword && (
+              <p className="error-message">Passwords do not match</p>
+            )}
+
+            {/*signup button*/}
+            <div className="Signupsponsorbutton-group">
+              <button type="submit">
+                Sign Up
+              </button>
+            </div>
+</form>
+            <p className="terms-text">
+              By signing up, you agree to our{""}
+              <span onClick={handleTermsClick} className="terms-link">
+            <Link to="#" className="terms-link">
+              terms and privacy policy
+            </Link>
+          </span>
+            </p>
           </div>
 
-          <p className="signin-text">
-            Have an account already? <Link to="/login">Sign in</Link>
-          </p>
+      
         </div>
 
-        {/* Render the modal if showModal is true 
+        <p className="signin-text">
+          Have an account already?{" "}
+         
+          <Link to="/login">Sign in</Link>
+         
+        </p>
+
+
+      </div>
+
+{/* Render the modal if showModal is true 
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
       <h3>Login Successful Popup</h3>
             </Popup>*/}
-      </div>
-    </>
-  );
+          
+    </div>
+  </>
+);
+
+
+
+
 }
 
 export default SignUp;

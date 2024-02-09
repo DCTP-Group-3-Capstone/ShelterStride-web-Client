@@ -5,9 +5,11 @@ import See from "../../assets/icon/See.svg";
 import UnSee from "../../assets/icon/UnSee.svg";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import Swal from "sweetalert2";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2'
+
+
 
 //functions
 function Login() {
@@ -47,6 +49,7 @@ function Login() {
   //login handling
 
   const handleLoginApi = async (event) => {
+  const handleLoginApi = async (event) => {
     event.preventDefault();
 
     //handle page naviagtion
@@ -62,27 +65,24 @@ function Login() {
       didOpen: (toast) => {
         toast.onmouseenter = Swal.stopTimer;
         toast.onmouseleave = Swal.resumeTimer;
-      },
+      }
     });
 
     if (!email || !password || password === " ") {
       Toast.fire({
         icon: "error",
-        title: "Fields can't be empty",
-      });
+        title: "Fields can't be empty"
+      })
       setError("Please enter both email and password");
 
       return;
     }
 
     try {
-      const result = await axios.post(
-        "https://shelterstride.onrender.com/api/v1/login",
-        {
-          email,
-          password,
-        }
-      );
+      const result = await axios.post("https://shelterstride.onrender.com/api/v1/login", {
+        email,
+        password
+      });
       // console.log(result);
 
       const { status, data } = result;
@@ -94,14 +94,15 @@ function Login() {
           title: "Success",
           text: "Signed up successfully",
           icon: "success",
-          timer: 2000,
+          timer: 2000
         });
 
         // Set token in local storage
         localStorage.setItem("token", data.token);
         // Redirect to profile page
-        navigate("/profile");
+        navigate("/profile")
       }
+
     } catch (error) {
       console.log(error);
 
@@ -115,10 +116,12 @@ function Login() {
         title: "Error",
         text: errorMessage,
         icon: "error",
-        timer: 2000,
+        timer: 2000
       });
+
     }
-  };
+  }
+
 
   return (
     <>
@@ -136,19 +139,20 @@ function Login() {
               <div className="Login-form">
                 <label htmlFor="email">Email Address</label>
                 <div className="form-group">
-                  <img src={Email} alt="Email Icon" />
-                  <input
-                    type="email"
+                  <img src={Email}
+                    alt="Email Icon" />
+                  <input type="email"
                     id="email"
                     value={email}
                     onChange={handleEmail}
                     onFocus={handleEmailFocus}
-                    placeholder="Enter your email"
-                  />
+                    placeholder="Enter your email" />
                 </div>
                 {!isValidEmail && (
                   <p className="error-message">Invalid email address</p>
                 )}
+
+
 
                 <label htmlFor="password">Password</label>
                 <div className="form-group">
@@ -162,12 +166,8 @@ function Login() {
                   />
                   <div
                     className="password-toggle"
-                    onClick={togglePasswordVisibility}
-                  >
-                    <img
-                      src={passwordVisible ? See : UnSee}
-                      alt="Toggle Password Visibility"
-                    />
+                    onClick={togglePasswordVisibility}>
+                    <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
                   </div>
                 </div>
 
@@ -180,15 +180,27 @@ function Login() {
                     Forgot Password?
                   </a>
                 </p>
+                <p className="forgot-password">
+                  <a
+                    href="/forgot-password"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Forgot Password?
+                  </a>
+                </p>
 
                 <div className="button-group">
-                  <button type="submit">Sign in</button>
+                  <button type="submit"
+                  >Sign in</button>
                 </div>
               </div>
             </div>
           </form>
+          </form>
           <p className="Login-text">
             New to ShelterStride ?{""}
+
             <Link to="/createaccount">Sign up</Link>
           </p>
         </div>
