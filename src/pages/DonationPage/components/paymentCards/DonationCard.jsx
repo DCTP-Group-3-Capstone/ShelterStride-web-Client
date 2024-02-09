@@ -1,5 +1,10 @@
+import { useDonateContext } from "../payment/DonateContext";
 import btnIcon from "../../../../assets/icon/whiteRight arrow.svg";
-function DonationCard() {
+function DonationCard({ toggleCard }) {
+  const { setSelectedAmount } = useDonateContext();
+  const handleButtonClick = (amount) => {
+    setSelectedAmount(amount);
+  };
   return (
     <div className="donationCard">
       <div className="giveButtons">
@@ -11,19 +16,19 @@ function DonationCard() {
       </div>
       <div className="paymentAmount">
         <div className="buttonSect">
-          <button>25,000</button>
-          <button>40,000</button>
+          <button onClick={() => handleButtonClick(25000)}>25,000</button>
+          <button onClick={() => handleButtonClick(40000)}>40,000</button>
         </div>
         <div className="buttonSect">
-          <button>75,000</button>
-          <button>75,000</button>
+          <button onClick={() => handleButtonClick(75000)}>75,000</button>
+          <button onClick={() => handleButtonClick(125000)}>125,000</button>
         </div>
         <div className="buttonSect">
-          <button>Other</button>
+          <button onClick={() => handleButtonClick("other")}>Other</button>
         </div>
       </div>
       <div className="continueBtn">
-        <button>
+        <button onClick={toggleCard}>
           Continue <img src={btnIcon} alt="button icon" />
         </button>
       </div>

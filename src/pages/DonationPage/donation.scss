@@ -1,5 +1,5 @@
 @use "../../sass/components/button" as *;
-// @use "../../sass/components/input" as *;
+@use "../../sass/components/input" as *;
 @import "../../sass/base/variables";
 .donationPageWrapper {
   background-color: $white;
@@ -16,7 +16,7 @@
   margin: 2.5rem 0 6rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 6rem;
   // border: 3px solid;
@@ -169,6 +169,145 @@
       }
     }
   }
+  //payment and personal information input card styling
+  .paymentDetails {
+    color: $black-500;
+    .donationAmountSelected {
+      background-color: $blue-100;
+      display: flex;
+      gap: 3px;
+      padding: 0.82rem 1.625rem;
+      margin-bottom: 0;
+      border: 1px solid $blue-100;
+      img {
+        // border: 3px solid yellow;
+        width: 24px;
+      }
+      p,
+      h6 {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0;
+        // color: $black-500;
+      }
+      h6 {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    h6 {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 3px;
+    }
+    h5 {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 600;
+    }
+
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      // border: 3px solid hotpink;
+      input {
+        @include inputField;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        border: 1.5px solid $blue-500;
+        width: 100%;
+        margin: 0.75rem 0;
+      }
+    }
+    .inputCheckbox {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      font-size: 10px;
+      line-height: 15px;
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        background-color: $black-500;
+        border: 1px solid $black-500;
+        cursor: pointer;
+      }
+
+      /* Styles for checked state */
+      input[type="checkbox"]:checked {
+        background-color: $blue-500;
+        border-color: $blue-500;
+      }
+    }
+    .paymentText {
+      h5 {
+        margin: 0;
+        margin-top: 32px;
+        margin-bottom: 3px;
+      }
+    }
+    .inputRadio {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          margin-top: 0.5rem;
+        }
+        input[type="radio"] {
+          width: 16px;
+          height: 16px;
+          background-color: $black-200;
+          border: 2px solid $black-200;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        /* Styles for checked state */
+        input[type="checkbox"]:checked {
+          background-color: teal;
+          border-color: teal;
+        }
+        input {
+          padding: 0;
+          margin-right: 1rem;
+        }
+      }
+    }
+    p {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+    .confirmButton {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+      // border: 3px solid blue;
+      gap: 1.5rem;
+      button {
+        @include blueBtn;
+        width: 100%;
+      }
+      :nth-child(2) {
+        @include outlineBtn;
+        color: $blue-500;
+      }
+    }
+  }
 }
 
 //Your donation/middle section styling
@@ -258,11 +397,17 @@
     line-height: 36px;
     font-weight: 600s;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
   p {
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    // margin-top: 2px;
   }
   // border: 3px solid saddlebrown;
   span {
@@ -275,9 +420,28 @@
 }
 
 //media query styling
+
+//small devices (large phones
+@media only screen and (min-width: 600px) {
+  .donationPageWrapper {
+    padding: 2.5rem 4rem;
+
+    // border: 3px solid hotpink;
+  }
+}
+
+//medium devices(tablets)
+@media only screen and (min-width: 768px) {
+  .donationPageWrapper {
+    padding: 2.5rem 7rem;
+    // border: 3px solid tomato;
+  }
+}
+
+//large devices(desktop)
 @media only screen and (min-width: 992px) {
   .donationPageWrapper {
-    padding: 2.5rem 6.25rem;
+    padding: 2.5rem 5rem;
     // border: 3px solid pink;
     gap: 9.2rem;
   }
@@ -330,7 +494,7 @@
       gap: 6.5rem;
       font-size: 14px;
     }
-
+    //amount donation card styling
     .donationCard {
       p {
         font-size: 16px;
@@ -353,6 +517,75 @@
         }
         button {
           font-size: 16px;
+        }
+      }
+    }
+
+    //payment and personal information input card styling
+    .paymentDetails {
+      .donationAmountSelected {
+        gap: 3px;
+        padding: 0.82rem 1.625rem;
+
+        p,
+        h6 {
+          font-size: 14px;
+          line-height: 21px;
+          margin: 0;
+          // color: $black-500;
+        }
+        h6 {
+          font-weight: 600;
+          margin-bottom: 4px;
+        }
+      }
+    }
+    .form {
+      margin: 2.2rem;
+      h6 {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 600;
+      }
+
+      .inputWrapper {
+        // border: 3px solid hotpink;
+        input {
+          @include inputField;
+          font-size: 14px;
+          line-height: 21px;
+          font-weight: 400;
+          border: 1.5px solid $blue-500;
+        }
+      }
+
+      .paymentText {
+        h5 {
+          margin: 0;
+          margin-top: 32px;
+          margin-bottom: 16px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 21px;
+      }
+      .confirmButton {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin: 1rem 0;
+        // border: 3px solid blue;
+        gap: 1.5rem;
+        button {
+          @include blueBtn;
+          width: 60%;
+        }
+        :nth-child(2) {
+          @include outlineBtn;
+          color: $blue-500;
+          width: 40%;
         }
       }
     }
@@ -383,10 +616,11 @@
       .cardContent {
         // border: 3px solid teal;
         border-radius: 0px 16px 16px 0px;
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-direction: row-reverse;
         gap: 5.25rem;
+        padding-bottom: 0;
       }
       .cardText {
         // border: 3px solid fuchsia;
@@ -413,8 +647,18 @@
     width: 60%;
     gap: 1.5rem;
     margin: 6rem 0;
+    // flex-direction: row;
+
+    .textWrapper {
+      // border: 3px solid tan;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      width: 100%;
+    }
     h2 {
-      line-height: 64px;
+      line-height: 52px;
       font-weight: 600;
       font-size: 42px;
     }
@@ -422,7 +666,7 @@
       font-size: 16px;
       line-height: 30px;
       color: rgba(38, 50, 56, 0.62);
-      text-align: center;
+      // text-align: center;
     }
     // border: 3px solid saddlebrown;
   }

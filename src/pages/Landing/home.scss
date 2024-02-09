@@ -31,25 +31,26 @@
     }
 
     .heroText {
-      width: 23.938rem;
+      width: 95%;
     }
     //hero button section styling
     .heroBtn {
       .pryBtn {
         @include blueBtn;
-        width: 9.125rem;
+        width: 40%;
       }
       .secBtn {
         @include outlineBtn;
-        color: $blue-500;
-        width: 100%;
+        color: $white;
+        width: 60%;
+        border: $white solid 1px;
       }
 
       //button wrapper main styling
       // border: 3px solid orange;
       display: flex;
       flex-direction: column;
-      width: 11.2rem;
+      width: 60%;
       align-items: center;
       justify-content: center;
       gap: 24px;
@@ -352,9 +353,50 @@
 }
 
 //media query styling
+
+//small devices (large phones
+@media only screen and (min-width: 600px) {
+  .home {
+    // border: 3px solid slateblue;
+
+    .marginSides {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  .heroSect {
+    .heroContent {
+      margin: auto;
+      // border: 3px solid red;
+      width: 80%;
+    }
+  }
+}
+
+//medium devices(tablets)
+@media only screen and (min-width: 768px) {
+  .home {
+    // border: 3px solid red;
+
+    .marginSides {
+      width: 60%;
+      margin: auto;
+    }
+  }
+  .heroSect {
+    .heroContent {
+      margin: auto;
+      // border: 3px solid red;
+      width: 60%;
+    }
+  }
+}
+
+//media query styling
 @media only screen and (min-width: 992px) {
   //general styling
   .home {
+    // border: 3px solid blue;
     h4 {
       font-size: 32px;
       font-weight: 500;
@@ -364,9 +406,14 @@
       line-height: 72px;
       font-weight: 600;
     }
+    .marginSides {
+      width: auto;
+      // margin: 0 4rem;
+    }
   }
   //hero section styling
   .heroSect {
+    // padding: 0 6rem;
     h3 {
       font-size: 60px;
       margin-bottom: 25px;
@@ -381,6 +428,7 @@
 
     .heroContent {
       padding: 0.3rem 1.8rem 3.2rem 7.5rem;
+      width: auto;
       // border: 2px solid maroon;
 
       .heroText {
@@ -394,10 +442,7 @@
         align-items: center;
         margin: 0;
         margin-top: 30px;
-        .pryBtn {
-          //button wrapper main styling
-          width: 20.2rem;
-        }
+        // border: 3px solid fuchsia;
       }
     }
   }

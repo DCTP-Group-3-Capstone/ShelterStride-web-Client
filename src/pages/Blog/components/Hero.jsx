@@ -1,15 +1,11 @@
-import heroImg from "../img/Hero.svg";
-function Hero() {
+import hero from "../img/blohHero.svg";
+function BlogHero() {
   return (
     <section
-      className="heroSect"
+      className="blogHero"
       style={{
-        backgroundImage: `linear-gradient(
-          0deg,
-          rgba(23, 23, 23, 0.2) 0%,
-          rgba(23, 23, 23, 0.2) 100%
-        ),
-        url(${heroImg})`,
+        backgroundImage: `
+          url(${hero})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -17,10 +13,7 @@ function Hero() {
     >
       <div className="heroContent">
         <div className="heroHeader">
-          <h3>
-            Unlocking <span>Dreams,</span> <br />
-            One <span>Home</span> at a Time
-          </h3>
+          <h3>Journey with us through stories of impact</h3>
         </div>
         <div className="heroText">
           <p>
@@ -29,7 +22,7 @@ function Hero() {
           </p>
         </div>
         <div className="heroBtn">
-          <button className="pryBtn">Donate</button>
+          <button className="pryBtn">Sign Up</button>
           <button className="secBtn">Learn more</button>
         </div>
       </div>
@@ -37,4 +30,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default BlogHero;

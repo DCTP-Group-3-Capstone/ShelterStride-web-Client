@@ -1,4 +1,31 @@
 function JoinUs() {
+  // handleDonateClick = async() => {
+
+  //     const donationData = {
+  //       amount: 25000,
+  //     };
+  //     try {
+  //       const response = await fetch('https://shelterstride.onrender.com/api/v1/users/id/donation', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify(donationData),
+  //       });
+
+  //       //check if request was successful
+  //       if (response.ok) {
+  //         console.log('Donation Successful!');
+  //       } else {
+  //         console.error ("failed to donate:", response.status)
+  //       }
+  //     }catch (error){
+  //       console.log("Error donating:", error.message)
+  //     }
+  //   } else {
+  //     console.log("user is not logged in.");
+  //   }
+  // };
   return (
     <section className="joinUs">
       <div className="textWrapper">
