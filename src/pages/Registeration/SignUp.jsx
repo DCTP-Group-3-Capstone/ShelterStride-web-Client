@@ -35,18 +35,14 @@ const handleaccountype = (selectedAccountType) => {
   
 
 
-       // Update label and placeholder based on selected account type
-       if (selectedAccountType === "Individual") {
-        setLabelText("Name");
-      } else if (selectedAccountType === "Company") {
-        setLabelText("Company Name");
-      }
-
-
+    // Update label and placeholder based on selected account type
+    if (selectedAccountType === "Individual") {
+      setLabelText("Name");
+    } else if (selectedAccountType === "Company") {
+      setLabelText("Company Name");
+    }
   };
 
-
-      
   //change text in response to select choices
 
   const getPlaceholderText = () => {
@@ -76,7 +72,7 @@ const handleaccountype = (selectedAccountType) => {
 
   // Add onFocus event handler to reset error message
   const handleEmailFocus = () => {
-    setIsValidEmail('true');
+    setIsValidEmail("true");
   };
 
   //handle password visibility and validations
@@ -103,10 +99,10 @@ const handleaccountype = (selectedAccountType) => {
   const handleConfirmPasswordChange = (event) => {
     const newConfirmPassword = event.target.value;
     setConfirmPassword(newConfirmPassword);
-  
+
     // Reset the error message when the user starts typing a new password
     setIsValidConfirmPassword(true);
-  
+
     // Check if confirm password matches the password
     setIsValidConfirmPassword(newConfirmPassword === password);
   };

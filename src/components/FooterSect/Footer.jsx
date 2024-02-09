@@ -8,20 +8,20 @@ import Subscribe from "./components/Subscribe";
 //style import
 import "./footer.scss";
 
-
 function Footer() {
   return (
     <div className="footerWrapper">
-      <Subscribe />
-     
-      <div className="middle-sect">
-        <FooterText />
-        <div className="secondHalf">
-          <FooterDonate />
-          <ContactUs />
+      <div className="footerContent">
+        <Subscribe />
+        <div className="middle-sect">
+          <FooterText />
+          <div className="secondHalf">
+            <FooterDonate />
+            <ContactUs />
+          </div>
         </div>
+        <FollowUs />
       </div>
-      <FollowUs />
     </div>
   );
 }

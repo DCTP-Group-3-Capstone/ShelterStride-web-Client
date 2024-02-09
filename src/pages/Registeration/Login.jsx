@@ -21,9 +21,6 @@ function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-
-
-
   //email handling
   const handleEmail = (event) => {
     const newEmail = event.target.value;
@@ -47,12 +44,11 @@ function Login() {
   const handlePassword = (event) => {
     const newPassword = event.target.value;
     setPassword(newPassword);
-
-
   };
 
   //login handling
 
+  const handleLoginApi = async (event) => {
   const handleLoginApi = async (event) => {
     event.preventDefault();
 
@@ -184,6 +180,15 @@ function Login() {
                     Forgot Password?
                   </a>
                 </p>
+                <p className="forgot-password">
+                  <a
+                    href="/forgot-password"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Forgot Password?
+                  </a>
+                </p>
 
                 <div className="button-group">
                   <button type="submit"
@@ -192,11 +197,11 @@ function Login() {
               </div>
             </div>
           </form>
+          </form>
           <p className="Login-text">
             New to ShelterStride ?{""}
 
             <Link to="/createaccount">Sign up</Link>
-
           </p>
         </div>
       </div>
