@@ -6,7 +6,7 @@ import Login from "./pages/Registeration/Login";
 import SignUp from "./pages/Registeration/SignUp";
 import SignUpBenefactor from "./pages/Registeration/SignUpBenefactor";
 import CreateAccount from "./pages/Registeration/CreateAccount";
-// import Landing from "./pages/Landing/Home";
+import Donate from "./pages/DonationPage/Donation";
 import Blog from "./pages/Blog";
 import Rent from "./pages/RentPage/Rent";
 import Buy from "./pages/BuyPage/Buy";
@@ -26,6 +26,7 @@ function Home() {
         <Route path="/" element={<Blog />} />
         {/* <Route path="/donate" element={<Donate />} /> */}
         <Route path="/login" element={<Login />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signupbenefactor" element={<SignUpBenefactor />} />
         <Route path="/createaccount" element={<CreateAccount />} />
