@@ -14,11 +14,7 @@ function Hero() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      // style={{
-      //   backgroundImage: `url(${heroImg})`,
-      // }}
     >
-      {/* <img src={heroImg} alt="A man displaying his house keys" /> */}
       <div className="heroContent">
         <div className="heroHeader">
           <h3>
@@ -33,7 +29,7 @@ function Hero() {
           </p>
         </div>
         <div className="heroBtn">
-          <button className="pryBtn">Sign Up</button>
+          <button className="pryBtn">Donate</button>
           <button className="secBtn">Learn more</button>
         </div>
       </div>

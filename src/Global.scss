@@ -20,8 +20,9 @@
 
 :root {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  // line-height: 1.5;
+  // font-weight: 400;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,24 +33,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  min-width: 430px;
+  min-width: 240px;
   overflow-y: scroll;
   align-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
-
-/* Hide the scrollbar while still allowing scrolling */
-body::-webkit-scrollbar {
-  width: 0;
-}
-
-//Scrollbar colour
-body::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent;
 }

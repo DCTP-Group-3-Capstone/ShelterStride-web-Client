@@ -11,50 +11,35 @@ import "/src/scss/pages/SignUpBenefactor.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 import { Link } from "react-router-dom";
 import See from "../../assets/icon/See.svg";
-// import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from 'sweetalert2'
 
 function SignUpBenefactor() {
-  const [lastName, setlastName] = useState("");
-  const [firstName, setfirstName] = useState("");
-  const [email, setEmail] = useState("");
+
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [phoneNumber, setPhoneNumber] = useState("");
+
   const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(true);
-  const [age, setAge] = useState("");
-  const [isValidAge, setisValidAge] = useState(true);
-  const [selectedGender, setSelectedGender] = useState("");
-  const [familySize, setfamilySize] = useState("");
-  const [isValidfailySize, setisValidfailySize] = useState(true);
-  const [monthlyIncome, setmonthlyIncome] = useState("");
-  const [isValidmonthlyIncome, setisValidmonthlyIncome] = useState(true);
-  const [password, setPassword] = useState("");
+
   const [isValidPassword, setIsValidPassword] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isValidConfirmPassword, setIsValidConfirmPassword] = useState(true);
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [selectedInterestType, setselectedInterestType] = useState("");
-  const interesttype = [
-    { label: "Renting a home" },
-    { label: "Buying a home" },
-  ];
-  const genderOptions = ["Male", "Female", "Others"];
-  //pages indication
-  const [currentPage, setCurrentPage] = useState(1);
-  const [accountCreated, setAccountCreated] = useState(false);
-  const totalPages = 3;
 
-  //dropdown gender
-  const handleGenderChange = (selected_gender) => {
-    setSelectedGender(selected_gender);
-    console.log(selected_gender);
-  };
+  const navigate = useNavigate();
 
-  const handleInterest = (selected_intrest) => {
-    setselectedInterestType(selected_intrest);
 
-    console.log(selected_intrest);
-  };
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
 
   // Create a state object to store form data
   const [formData, setFormData] = useState({
@@ -63,7 +48,7 @@ function SignUpBenefactor() {
     email: "",
     phoneNumber: "",
     age: "",
-    selectedGender: "",
+    gender: "",
     familySize: "",
     monthlyIncome: "",
     password: "",
@@ -71,13 +56,52 @@ function SignUpBenefactor() {
     selectedInterestType: "",
   });
 
-  // Function to update the form data state
-  const updateFormData = (key, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [key]: value,
-    }));
+
+ // Function to update the form data state
+ const updateFormData = (key, value) => {
+  setFormData((prevData) => ({
+    ...prevData,
+    [key]: value,
+  }));
+};
+
+  const genderOptions = ["Male", "Female", "Others"];
+  //pages indication
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 3;
+
+  //dropdown gender
+  const handleGenderChange = (selected_gender) => {
+    updateFormData("gender", selected_gender);
+  
   };
+
+  const handleInterest = (selected_intrest) => {
+    updateFormData("selectedInterestType", selected_intrest);
+    
+  };
+
+
+
+  const handleagechange = (event) => {
+    const age_number = event.target.value;
+    updateFormData("age", age_number);
+ 
+  };
+
+  const handlefamilysize = (event) => {
+    const family_size = event.target.value;
+    updateFormData("familySize", family_size);
+  
+  };
+ 
+
+  const handlemonthlyIncome = (event) => {
+    const monthly_income = event.target.value;
+    updateFormData("monthlyIncome", monthly_income);
+ 
+  };
+ 
 
   //progress bar assignment
   const ProgressBar = () => {
@@ -94,36 +118,20 @@ function SignUpBenefactor() {
     );
   };
 
-  //handle firstname
-  const handlefirstNameChange = (event) => {
-    const newfirstName = event.target.value;
-    setfirstName(newfirstName);
-  };
-
-  //handle lastname
-  const handlelastNameChange = (event) => {
-    const newlastName = event.target.value;
-    setlastName(newlastName);
-  };
-
   //email validations
   const handleEmailChange = (event) => {
     const newEmail = event.target.value;
-    setEmail(newEmail);
+    updateFormData("email", newEmail);
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsValidEmail(emailRegex.test(newEmail) || newEmail === "");
   };
 
-  // Add onFocus event handler to reset error message
-  const handleEmailFocus = () => {
-    setIsValidEmail("");
-  };
 
   //contact number validation
   const handlePhoneNumberChange = (event) => {
     const newPhoneNumber = event.target.value;
-    setPhoneNumber(newPhoneNumber);
+    updateFormData("phoneNumber", newPhoneNumber);
 
     // Phone number logic
     const phoneRegex = /^\d{11}$/; // for 11 digits
@@ -135,11 +143,6 @@ function SignUpBenefactor() {
   //selected value
   const [value, setValue] = React.useState("Select");
 
-  //selection handling
-  const handleinteresttypeChange = (event) => {
-    const selectedValue = event.target.value;
-    setValue(selectedValue);
-  };
 
   //handle password visibility and validations
   const togglePasswordVisibility = () => {
@@ -149,7 +152,7 @@ function SignUpBenefactor() {
   //password handling
   const handlePasswordChange = (event) => {
     const newPassword = event.target.value;
-    setPassword(newPassword);
+    updateFormData("password", newPassword);
 
     // Reset the error message when the user starts typing a new password
     setIsValidPassword(true);
@@ -164,112 +167,126 @@ function SignUpBenefactor() {
   //confirm password handling
   const handleConfirmPasswordChange = (event) => {
     const newConfirmPassword = event.target.value;
-    setConfirmPassword(newConfirmPassword);
+    updateFormData("confirmPassword", newConfirmPassword);
 
     // Reset the error message when the user starts typing a new password
     setIsValidConfirmPassword(true);
 
     // Check if confirm password matches the password
-    setIsValidConfirmPassword(newConfirmPassword === password);
+    setIsValidConfirmPassword(newConfirmPassword === formData.password);
   };
 
-  const handleBenefactorSignup = async (event) => {
+  const handleNextClick = () => {
+    let isValid = true;
+
+    // Perform validation for each page's fields
+    switch (currentPage) {
+      case 1:
+        if (!formData.firstName || !formData.lastName || !formData.email || !isValidEmail || !isValidPhoneNumber) {
+          isValid = false;
+        }
+        break;
+      case 2:
+        if (!formData.age || !formData.gender || !formData.familySize || !formData.monthlyIncome) {
+          isValid = false;
+        }
+        break;
+      case 3:
+        if (!isValidPassword || !isValidConfirmPassword || !formData.interest || formData.interest == " ") {
+          isValid = false;
+        }
+        break;
+      default:
+        break;
+    }
+
+    if (isValid && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    } else {
+      Toast.fire({
+        icon: "error",
+        title: "Please validate all fields to proceed."
+      })
+    }
+
+  };
+
+
+  const handleSignUp = async (event) => {
     event.preventDefault();
 
-    // Extract data from the formData state
     const {
       firstName,
       lastName,
       email,
-      phoneNumber,
+      password,
       age,
-      selectedGender,
+      gender,
+      phoneNumber,
       familySize,
       monthlyIncome,
-      password,
       confirmPassword,
       selectedInterestType,
+
     } = formData;
 
-    // Update other fields in the formData state
-    updateFormData("age", age);
-    updateFormData("selectedGender", selectedGender);
-    updateFormData("familySize", familySize);
-    updateFormData("monthlyIncome", monthlyIncome);
-
-    // Check if all required fields are filled
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !password ||
-      !confirmPassword ||
-      !selectedInterestType
-    ) {
-      console.log("Fill all fields");
-      setError("Fill all fields");
+    if (!isValidPassword || !isValidConfirmPassword || selectedInterestType == " ") {
+      setError("Please provide valid information");
+      Toast.fire({
+        icon: "error",
+        title: "Please validate all fields to proceed."
+      })
       return;
     }
 
-    if (!confirmPassword) {
-      console.log("Confirm Password");
-      setError("Confirm Password");
-      return;
-    }
 
-    if (!isValidEmail || !isValidPassword) {
-      console.log("Provide a valid email");
-      setError("Please enter a valid email");
-      return;
-    }
+    try {
+      const result = await axios.post("https://shelterstride.onrender.com/api/v1/signup", {
+        usertype: "Benefactor",
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+        password: password,
+        age: age !== "" ? age : null,
+        gender: gender !== "" ? gender : null,
+        phone: phoneNumber !== "" ? phoneNumber : null,
+        familysize: familySize !== "" ? familySize : null,
+        monthlyincome: monthlyIncome !== "" ? monthlyIncome : null,
+        interest: selectedInterestType,
 
-    if (isValidEmail && isValidPassword) {
-      if (email && password && selectedAccountType) {
-        {
-          /*}    try {
-        const result = await axios.post("https://shelterstride.onrender.com/api/v1", {
-          usertype: "Benefactor",
-          firstName,
-          lastName,
-          email,
-          password,
+      });
+
+      const { data, status } = result;
+
+      if (status === 201) {
+
+        Swal.fire({
+          title: "Success",
+          text: "Signed up successfully",
+          icon: "success",
+          timer: 2000
         });
 
-        console.log(result);
-        alert("Signup successful!");
-
-        if (result.data) {
-          setAccountCreated(true);
-          // Success logic
-          navigate("/login");
-        } else {
-          setError("Check your information");
-          alert("Unsuccessful!");
-        }
-      } catch (error) {
-        console.log(error);
-
-        if (error.response) {
-          if (error.response.status === 401) {
-            setError("Invalid email or password");
-          } else {
-            setError("Server error. Please try again later.");
-          }
-        } else if (error.request) {
-          setError("No response from the server");
-        } else {
-          setError("An unexpected error occurred");
-        }
-      }*/
-        }
+        // ROUTE to SIGNIN
+        navigate("/Login")
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: data.message,
+          icon: "error",
+          timer: 2000
+        })
       }
-    }
-  };
 
-  // Add this function to handle next button click
-  const handleNextClick = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+    } catch (error) {
+      console.error(error);
+
+      Swal.fire({
+        title: "Error",
+        text: "An unexpected error occurred, please try again",
+        icon: "error",
+        timer: 2000
+      })
     }
   };
 
@@ -287,13 +304,13 @@ function SignUpBenefactor() {
           <h2> Create your account</h2>
 
           {/*progress bar usage*/}
-          <div>
-            <ProgressBar />
+          <div className="pro-bar">
+            <ProgressBar className="progress-barr"/>
           </div>
 
           {/*//three pages form*/}
 
-          <form className="signupform-ben" onSubmit={handleBenefactorSignup}>
+          <form className="signupform-ben"  onSubmit={handleSignUp}>
             {/* Render form fields based on the current page */}
             {/*page 1*/}
             {currentPage === 1 && (
@@ -314,7 +331,7 @@ function SignUpBenefactor() {
                       />
                     </div>
 
-                    <label htmlFor="firstname">Last Name</label>
+                    <label htmlFor="lastname">Last Name</label>
                     <div className="signupben-group">
                       <img src={People} alt="People Icon" />
                       <input
@@ -336,7 +353,7 @@ function SignUpBenefactor() {
                         id="email"
                         placeholder="Enter your email"
                         //  style={{ backgroundImage: `url(${Email})` }}
-                        value={email}
+                        value={formData.email}
                         onChange={handleEmailChange}
                         className={!isValidEmail ? "invalid" : ""}
                       />
@@ -352,7 +369,7 @@ function SignUpBenefactor() {
                         type="tel"
                         id="phone"
                         placeholder="Enter your phone number"
-                        value={phoneNumber}
+                        value={formData.phoneNumber}
                         onChange={handlePhoneNumberChange}
                         className={!isValidPhoneNumber ? "invalid" : ""}
                       />
@@ -371,17 +388,19 @@ function SignUpBenefactor() {
                   <div className="signupben-form">
                     <label htmlFor="age">Age</label>
                     <div className="signupben-group">
-                      <img src={People} alt="" />
-                      <input
+                      <input className="other-input"
                         type="number"
                         id="age"
+                        value={formData.age}
+                        onChange={handleagechange}
                         placeholder="Enter your age"
+                        min="0"
                       />
                     </div>
 
                     <label htmlFor="gender">Gender</label>
                     <div className="signupben-group">
-                      <img src={People} alt="" />
+                      <img className="gen"  src={People} alt="" />
                       <DropdownSelect
                         options={genderOptions}
                         defaultSelected={"Gender"}
@@ -391,17 +410,28 @@ function SignUpBenefactor() {
 
                     <label htmlFor="family">Family Size</label>
                     <div className="signupben-group">
-                      <img src={People} alt="People Icon" />
-                      <input type="number" id="age" placeholder="Family Size" />
+                      <img src={Persons} alt="People Icon" />
+                      <input
+                        type="number"
+                        id="familysize"
+                        value={formData.familySize}
+                        onChange={handlefamilysize}
+                        min="0"
+                        placeholder="Family Size"
+                      />
                     </div>
 
                     <label htmlFor="monthlyIncome">Monthly Income</label>
                     <div className="signupben-group">
                       <img src={Money} alt="People Icon" />
+
                       <input
                         type="number"
-                        id="monthlyIncome"
-                        placeholder="Enter your monthly income"
+                        id="monthlyincome"
+                        value={formData.monthlyIncome}
+                       onChange={handlemonthlyIncome}
+                        placeholder="Monthly Income"
+                        min="0"
                       />
                     </div>
                   </div>
@@ -424,7 +454,7 @@ function SignUpBenefactor() {
                       <input
                         type={passwordVisible ? "text" : "password"}
                         id="password"
-                        value={password}
+                        value={formData.password}
                         onChange={handlePasswordChange}
                         className={!isValidPassword ? "invalid" : ""}
                         placeholder="Enter your password"
@@ -433,7 +463,7 @@ function SignUpBenefactor() {
                         className="password-toggle"
                         onClick={togglePasswordVisibility}
                       >
-                        <img src={See} alt="Toggle Password Visibility" />
+                        <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
                       </div>
                     </div>
                     {!isValidPassword && (
@@ -450,7 +480,7 @@ function SignUpBenefactor() {
                         type={passwordVisible ? "text" : "password"}
                         id="confirm-password"
                         placeholder="Confirm password"
-                        value={confirmPassword}
+                        value={formData.confirmPassword}
                         onChange={handleConfirmPasswordChange}
                         className={!isValidConfirmPassword ? "invalid" : ""}
                         //  style={{ backgroundImage: `url(${lock})` }}
@@ -459,7 +489,7 @@ function SignUpBenefactor() {
                         className="password-toggle"
                         onClick={togglePasswordVisibility}
                       >
-                        <img src={See} alt="Toggle Password Visibility" />
+                        <img src={passwordVisible ? See : UnSee} alt="Toggle Password Visibility" />
                       </div>
                     </div>
                     {!isValidConfirmPassword && (
@@ -469,8 +499,8 @@ function SignUpBenefactor() {
                     <label className="acclabel" htmlFor="Account-Interest">
                       What are you interested in?
                     </label>
-                    <div className="signupben-group intrest">
-                      <DropdownSelect
+                    <div className="signupben-group">
+                      <DropdownSelect 
                         className="interest"
                         onSelect={handleInterest}
                         options={["Renting a home", "Buying a home"]}
@@ -492,9 +522,7 @@ function SignUpBenefactor() {
               ) : (
                 <button
                   className="sub"
-                  type="submit"
-                  onClick={handleBenefactorSignup}
-                >
+                  type="submit">
                   Sign Up
                 </button>
               )}
@@ -504,7 +532,11 @@ function SignUpBenefactor() {
               By signing up, you agree to our{""}
               <Link to="/termandpp">terms and privacy policy</Link>
             </p>
-          </form>
+          
+
+
+</form>
+         
           <p className="signin-text">
             Have an account already? <Link to="/login">Sign In</Link>
           </p>

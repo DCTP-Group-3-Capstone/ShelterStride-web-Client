@@ -5,7 +5,7 @@
 .footerWrapper {
   h4 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0;
     // margin-bottom: 15px;
     padding: 0;
@@ -127,7 +127,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 40px 0;
+  margin: 2.5rem 0;
 
   button {
     @include blueBtn;
@@ -167,7 +167,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 5px;
+  margin-top: 1.5rem;
+  margin-bottom: 10px;
   .linksWrapper {
     // border: dotted 4px aqua;
     display: flex;
@@ -204,6 +205,34 @@
 // }
 
 //media queries
+
+//media query styling
+
+//small devices (large phones
+@media only screen and (min-width: 600px) {
+  .footerWrapper {
+    gap: 40px;
+    .footerContent {
+      // border: 4px solid hotpink;
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+//medium devices(tablets)
+@media only screen and (min-width: 768px) {
+  .footerWrapper {
+    // border: 3px solid gold;
+    .footerContent {
+      // border: 4px solid hotpink;
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+//large screen devices
 @media only screen and (min-width: 992px) {
   .footerWrapper {
     padding: 2rem 6.25rem;
@@ -217,6 +246,10 @@
     }
     li {
       font-size: 14px;
+    }
+    .footerContent {
+      width: 100%;
+      margin: auto;
     }
   }
 
@@ -298,6 +331,7 @@
     border-top: $green-100 solid 1px;
     border-bottom: $green-100 solid 1px;
     padding: 1.5rem 0;
+    margin: 2rem 0;
     display: flex;
     justify-content: space-between;
     .secondHalf {
