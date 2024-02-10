@@ -72,7 +72,7 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink to="/blog" className="nav-links" onClick={closeMobileMenu}>
               Blog <FiChevronDown />
             </NavLink>
           </li>
@@ -90,7 +90,7 @@ const NavBar = () => {
 
           <li className="nav-item">
             <NavLink
-              to="/contact-us"
+              to="/contactus"
               className="nav-links"
               onClick={closeMobileMenu}
             >

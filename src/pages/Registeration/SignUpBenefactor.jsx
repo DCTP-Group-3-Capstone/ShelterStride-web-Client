@@ -1,19 +1,21 @@
 import React, { useState } from "react";
+//import { useHistory } from 'react-router-dom';
 import shelterstride from "../../assets/images/ShelterStrideSideLogo.svg";
 import People from "../../assets/icon/Profle2.svg";
 import Persons from "../../assets/icon/People.svg";
 import Money from "../../assets/icon/Money.svg";
 import Email from "../../assets/icon/Email.svg";
 import Call from "../../assets/icon/Call.svg";
-import UnSee from "../../assets/icon/UnSee.svg";
+import UnSee from "../../assets/icon/Unsee.svg";
 import lock from "../../assets/icon/lock.svg";
-import "/src/scss/pages/SignUpBenefactor.scss";
+import "../../scss/pages/SignUpBenefactor.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 import { Link } from "react-router-dom";
 import See from "../../assets/icon/See.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2'
+import Spinner from '../../assets/icon/Spinner.svg';
 
 function SignUpBenefactor() {
 
@@ -25,6 +27,7 @@ function SignUpBenefactor() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isValidConfirmPassword, setIsValidConfirmPassword] = useState(true);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -65,7 +68,7 @@ function SignUpBenefactor() {
   }));
 };
 
-  const genderOptions = ["Male", "Female", "Others"];
+  const genderOptions = ["Male", "Female"];
   //pages indication
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
@@ -241,6 +244,7 @@ function SignUpBenefactor() {
 
 
     try {
+      setIsLoading(true);
       const result = await axios.post("https://shelterstride.onrender.com/api/v1/signup", {
         usertype: "Benefactor",
         firstname: firstName,
@@ -255,9 +259,9 @@ function SignUpBenefactor() {
         interest: selectedInterestType,
 
       });
-
+ //set is loading to false after getting response
       const { data, status } = result;
-
+      setIsLoading(false);
       if (status === 201) {
 
         Swal.fire({
@@ -279,7 +283,7 @@ function SignUpBenefactor() {
       }
 
     } catch (error) {
-      console.error(error);
+      setIsLoading(false);
 
       Swal.fire({
         title: "Error",
@@ -290,6 +294,7 @@ function SignUpBenefactor() {
     }
   };
 
+  
   //interface
   return (
     <>
@@ -451,7 +456,7 @@ function SignUpBenefactor() {
                     <label htmlFor="password">Password</label>
                     <div className="signupben-group">
                       <img src={lock} alt="People Icon" />
-                      <input
+                      <input required
                         type={passwordVisible ? "text" : "password"}
                         id="password"
                         value={formData.password}
@@ -476,14 +481,14 @@ function SignUpBenefactor() {
                     <label htmlFor="confirm-password">Confirm Password:</label>
                     <div className="signupben-group">
                       <img src={lock} alt="People Icon" />
-                      <input
+                      <input required
                         type={passwordVisible ? "text" : "password"}
                         id="confirm-password"
                         placeholder="Confirm password"
                         value={formData.confirmPassword}
                         onChange={handleConfirmPasswordChange}
                         className={!isValidConfirmPassword ? "invalid" : ""}
-                        //  style={{ backgroundImage: `url(${lock})` }}
+        
                       />
                       <div
                         className="password-toggle"
@@ -520,22 +525,21 @@ function SignUpBenefactor() {
                   Next
                 </button>
               ) : (
-                <button
-                  className="sub"
-                  type="submit">
-                  Sign Up
+                <button className="sub" type="submit">
+                  {isLoading ? <img src={Spinner} alt="loader" /> : " Sign Up"}
                 </button>
               )}
             </div>
 
-            <p className="terms-text">
+           
+
+</form>
+ <p className="terms-text">
               By signing up, you agree to our{""}
               <Link to="/termandpp">terms and privacy policy</Link>
             </p>
           
 
-
-</form>
          
           <p className="signin-text">
             Have an account already? <Link to="/login">Sign In</Link>

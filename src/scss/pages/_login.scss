@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 //imported variable
-@import "../base/variables";
+@import "../../sass/base/variables";
 
 //mobile size edeclaration
 
@@ -66,7 +66,6 @@ $breakpoint-mobile-xxss: 280px;
     text-align: center;
     color: $black-500;
     font-weight: 600;
-    text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 24px;
@@ -572,14 +571,17 @@ $breakpoint-mobile-xxss: 280px;
       }
   
       .form-group .password-toggle img {
-        margin: 5px 10px 0px 0px;
-        right: 20px;
+        margin: 5px 0px 0px 0px;
+        right: 0px;
+     
         cursor: pointer;
       }
   
       .form-group input {
         height: 24px;
-        width: 200px;
+        font-size: 14px;
+        width: 160px;    
+        font-weight: 400;
       }
   
       .forgot-password {

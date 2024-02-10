@@ -1,7 +1,7 @@
 //font import
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-@import "../../scss/base/variables";
+@import "../../sass/base/variables";
 
 
 
@@ -43,7 +43,8 @@ $breakpoint-mobile-xxss: 280px;
 
 .buyproduct-section {
   //background-color: blue;
-  width: 1240px;
+  width: 1440px;
+  padding: 0 100px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -68,14 +69,14 @@ $breakpoint-mobile-xxss: 280px;
   }
 
   .details {
-
+width: 1160px;
     margin-top: 30px;
   }
 
 
 .self-conprice{
     display: flex;
-    justify-content: space-between;
+
 ;
 height: 852px;
 
@@ -83,7 +84,7 @@ height: 852px;
 
 .self-con{
 
-    width: 632px;
+    width: 612px;
 }
 
 .header1{
@@ -112,7 +113,7 @@ color: $blue-500;
 .icon-textpro{
     color: $green-300;
             margin-left: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
 
@@ -172,7 +173,8 @@ font-weight: 600;
 }
 
 .paratext{
-    font-size: 18px;
+  width: 400px;
+    font-size: 16px;
     font-weight: 400;
 
     ::before {
@@ -252,7 +254,7 @@ width: 70%;
 margin-top:  30px;
     background-color: #fff;
     border: 1.5px solid $green-100;
-width: 527px;
+width: 545px;
 height: 432px;
     border-radius: 16px;
 }
@@ -329,9 +331,7 @@ font-weight: 600;
   width: 1240px;
   
   //height: 400px;
-    h1{
-
-    }
+    
   }
 
   .buysub-pic{
@@ -625,13 +625,7 @@ font-weight: 600;
   font-size: 18px;
   font-weight: 600;
   }
-  
-  .schedulebut{
-    
-  }
-  .subscribebut{
-   
-  }
+
   
   .info{
       font-size: 10px;

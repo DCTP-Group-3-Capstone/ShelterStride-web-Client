@@ -1,4 +1,4 @@
-import julius from "../icon/juliusBerger.svg";
+import julius from "../icon/juliusberger.svg";
 import thrive from "../icon/thrive.svg";
 import zenith from "../icon/zenith.svg";
 import dangote from "../icon/Dangote.svg";

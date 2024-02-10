@@ -13,7 +13,7 @@ const InputRent = () => {
   const pagesVisited = pageNumber * usersPerPage;
 
   if (goToSubscribe) {
-    return <Navigate to="/Subscribe" />;
+    return <Navigate to="/rentProduct" />;
   }
   const handleFilter = (event) => {
     const word = event.target.value;

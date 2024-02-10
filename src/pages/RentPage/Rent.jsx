@@ -5,8 +5,11 @@ import InputRent from "../../components/Rentcomponent/InputRent";
 const Rent = () => {
   return (
     <div>
-      <Hero />
-      <InputRent />
+      <div>
+        <Hero />
+        <InputRent />
+      </div>
+    
     </div>
   );
 };

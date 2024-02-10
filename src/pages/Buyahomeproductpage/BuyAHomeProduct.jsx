@@ -1,4 +1,4 @@
-//import NavBar from "../../components/NavBarSect/NavBar";
+//import { useHistory } from 'react-router-dom';
 import React, { useState } from "react";
 import Footer from "../../components/FooterSect/Footer";
 import Land from "../Landing/img/land.svg";
@@ -11,7 +11,13 @@ import Buysub from "../../components/Subscribecomponent/Buysub";
 function BuyProduct() {
   const [showSubscribePopup, setShowSubscribePopup] = useState(false);
   const [showSchedulePopup, setShowSchedulePopup] = useState(false);
+ // const history = useHistory();
 
+ const handleBack = () => {
+  history.goBack(); // Navigate back to the previous page
+};
+
+  
   const handleOpenSubscribePopup = () => {
     setShowSubscribePopup(true);
   };
@@ -29,13 +35,16 @@ function BuyProduct() {
   };
 
   return (
+    <div>
+
+ 
     <section className="buyproduct-section">
-    {/*}  <div className="navBarsec">
-        <NavBar />
-      </div>*/}
+   
 
       <label>
-        <a href="#">Back</a>
+      <a onClick={handleBack} href="#">
+            Back
+          </a>
       </label>
 
       <img className="details" src={Land} alt="landpic" />
@@ -140,18 +149,11 @@ function BuyProduct() {
         </div>
       </div>
 
-      
-<div className="buy-sub">
-<h1>Similar Properties nearby</h1>
-  <Buysub className="buysub-pic"/>
-</div>
-
-
-        <div className="foot">
-        <Footer/>
-        </div>
-     
+<h2>Similar products nearby</h2>
     </section>
+    <Buysub/>
+    <Footer/>
+    </div>
   );
 }
 

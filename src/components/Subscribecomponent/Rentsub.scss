@@ -5,8 +5,52 @@ $breakpoint-mobile: 480px;
 
 //tablet size declaration
 $breakpoint-tablets: 768px;
+
+// $breakpoints: (
+//   "xs": 0,
+//   "sm": 480px,
+//   "md": 720px,
+//   "lg": 960px,
+//   "xl": 1200px,
+// );
+
+// @mixin xs {
+//   @media (min-width: map-get($breakpoints, "xs")) {
+//     @content;
+//   }
+// }
+
+// @mixin sm {
+//   @media (min-width: map-get($breakpoints, "sm")) {
+//     @content;
+//   }
+// }
+
+// @mixin md {
+//   @media (min-width: map-get($breakpoints, "md")) {
+//     @content;
+//   }
+// }
+
+// @mixin lg {
+//   @media (min-width: map-get($breakpoints, "lg")) {
+//     @content;
+//   }
+// }
+
+// @mixin xl {
+//   @media (min-width: map-get($breakpoints, "xl")) {
+//     @content;
+//   }
+// }
+
+// @mixin breakpoint($bp: 0) {
+//   @media (min-width: $bp) {
+//     @content;
+//   }
+// }
 //external variable for colours
-@import "../../scss/base/variables";
+@import "../../sass/base/variables";
 
 //import button
 @import "../../sass/Components/button";
@@ -23,13 +67,13 @@ $breakpoint-tablets: 768px;
 }
 
 .single-grid {
-  max-width: 330px;
+  max-width: 300px;
   height: 270px;
   border-radius: 16px;
   background-color: #f6f9f6;
 }
 .single-grid img {
-  max-width: 320px;
+  max-width: 300px;
   max-height: 187.5px;
   margin-bottom: 5px;
   border-radius: 16px;
@@ -40,7 +84,7 @@ $breakpoint-tablets: 768px;
 }
 .flex {
   display: flex;
-  gap: 5px;
+  gap: 3px;
   margin-bottom: 5px;
   margin-left: 8px;
 }
@@ -78,7 +122,7 @@ $breakpoint-tablets: 768px;
   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1240px;
+    max-width: 1200px;
     height: 375px;
     margin-left: 100px;
     margin-bottom: 20px;

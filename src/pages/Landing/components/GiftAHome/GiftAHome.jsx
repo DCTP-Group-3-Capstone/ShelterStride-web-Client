@@ -1,6 +1,6 @@
 
-//import NavBar from "../../../../components/NavBarSect/NavBar";
-import "./Giftahome.scss";
+//import { useHistory } from 'react-router-dom';
+import "../GiftAHome/GiftAhome.scss";
 import frame256 from "../../img/Frame286.svg";
 import phone from "../../img/phone.svg";
 import House from "../../img/House.svg";
@@ -12,12 +12,24 @@ import Footer from "../../../../components/FooterSect/Footer";
 
 
 function GiftAHome() {
+
+
+
+
+
   return (
+
+    <div>
+
+
     <section className="giftAHome">
- {/*   <div className="navBarsec">
-        <NavBar />
-      </div>
-*/}
+
+    <div>
+
+
+<div>
+
+
       <div className="giftAHomeTextandpicture">
         <div className="part1">
           <div className="text-Part">
@@ -80,7 +92,7 @@ function GiftAHome() {
             </h5>
           </div>
 
-          <button className="butgetStarted"> Get started</button>
+          <button  className="butgetStarted"> Get started</button>
         </div>
       </div>
 
@@ -126,16 +138,14 @@ function GiftAHome() {
           </div>
         </div>
       </div>
-
-<div className="footpage">
-
-
- 
-<Footer/>
 </div>
 
+    </div>
 
     </section>
+     
+<Footer/>
+    </div>
   );
 }
 

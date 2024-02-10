@@ -1,7 +1,7 @@
 //font import
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-@import "../../scss/base/variables";
+@import "../../sass/base/variables";
 
 
 
@@ -37,16 +37,17 @@ $breakpoint-mobile-xxss: 280px;
 
 
 .rentproduct-section {
+padding: 0 100px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
 
-width: 1240px;
+width: 1440px;
 
   label {
 
     display: block;
-    font-weight: 500;
+    font-weight: 500; 
     font-size: 16px;
     margin-top: 30px; // Adjust spacing between p and label as needed
   }
@@ -63,14 +64,15 @@ width: 1240px;
   }
 
   .details {
-    width: 1240px;
+    width: 1160px;
     margin-top: 30px;
   }
 
 
 .self-conprice{
     display: flex;
-    justify-content: space-between;
+    gap: 0px;
+
 height: 852px;
 
 //background-color: yellow;
@@ -266,7 +268,7 @@ width: 70%;
 margin-top:  30px;
     background-color: #fff;
     border: 1.5px solid $green-100;
-width: 527px;
+width: 525px;
 height: 432px;
     border-radius: 16px;
 }
@@ -287,6 +289,7 @@ font-weight: 500;
 .available{
 width: 150px;
 height: 40px;
+margin-top: 20px;
 color: black;
 background-color: #fff;
     border-radius: 16px;
@@ -306,7 +309,7 @@ background-color: #fff;
 }
 
 .fee{
-margin: 50px 0px 0 10px;
+margin: 20px 0px 0 0px;
     font-weight: 500;
     font-size: 16px;
 }
@@ -316,7 +319,7 @@ margin: 50px 0px 0 10px;
 border-radius: 16px;
 width: 479px;
 height: 48px;
-margin: 30px 0 0 20px;
+margin: 40px 0 0 20px;
 font-size: 18px;
 font-weight: 600;
 }
@@ -335,23 +338,6 @@ font-weight: 600;
     font-size: 14px;
     font-weight: 400;
  margin-left: 70px;}
-
-
-
-.rent-sub{
-margin-top: 5rem;
-width: 1240px;
-//height: 400px;
-  h1{
- 
-  }
-}
-
-.rentsub-pic{
-
-width: 1240px;
-
-}
 
 
 }
@@ -656,12 +642,6 @@ width: 1240px;
   font-weight: 600;
   }
   
-  .schedulebut{
-    
-  }
-  .subscribebut{
-   
-  }
   
   .info{
       font-size: 10px;

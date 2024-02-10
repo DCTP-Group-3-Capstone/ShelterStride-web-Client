@@ -12,7 +12,7 @@ const InputBuy = () => {
   const buyersPerPage = 9;
   const pagesVisited = pageNumber * buyersPerPage;
   if (goToSubscribe) {
-    return <Navigate to="/Subscribe" />;
+    return <Navigate to="/buyProduct" />;
   }
 
   const handFilter = (event) => {

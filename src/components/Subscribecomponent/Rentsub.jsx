@@ -43,7 +43,7 @@ const RentSub = () => {
       </div>
     );
   });
-  return <div className="grid-container2">{displayUsers}</div>;
+  return <div className="grid-container">{displayUsers}</div>;
 };
 
 export default RentSub;

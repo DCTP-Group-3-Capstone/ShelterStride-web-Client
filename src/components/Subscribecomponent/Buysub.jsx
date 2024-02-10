@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Buysub.scss";
+import "../Subscribecomponent/Buysub.scss";
 
 const Buysub = () => {
   const buyData = [

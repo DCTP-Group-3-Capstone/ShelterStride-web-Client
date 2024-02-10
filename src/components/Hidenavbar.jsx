@@ -6,7 +6,7 @@ const Hidenavbar = ({ children }) => {
   const [noNavbar, setnoNavbar] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === "/login" || location.pathname === "/signup") {
+    if (location.pathname === "/login" || location.pathname === "/createaccount") {
       setnoNavbar(false);
     } else {
       setnoNavbar(true);

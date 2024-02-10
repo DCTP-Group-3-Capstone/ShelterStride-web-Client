@@ -21,7 +21,7 @@ function Home() {
       <div className="marginSides">
         <Commitment />
         <Result />
-        <GiftAHome />
+       
         <WhatWeDo />
         <ShelterStrideBlog />
         <Partners />

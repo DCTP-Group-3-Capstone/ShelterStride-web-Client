@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
  import shelterstride from "../../assets/images/ShelterStrideSideLogo.svg";
- import usericon from "../../pages/registeration/icons/Benefactor.svg";
-import usericon2 from "../../pages/registeration/icons/Sponsor.svg";
+ import usericon from "../Registeration/icons/Benefactor.svg";
+import usericon2 from "../Registeration/icons/Sponsor.svg";
 import "/src/scss/pages/CreateAccount.scss";
 
 
@@ -11,6 +11,8 @@ import "/src/scss/pages/CreateAccount.scss";
 const CreateAccount = () => {
   return (
     <>
+
+
 
 
     <div className="container">
@@ -66,6 +68,7 @@ const CreateAccount = () => {
         </a>
       </p>
     </div>
+    
     </>
   );
 };

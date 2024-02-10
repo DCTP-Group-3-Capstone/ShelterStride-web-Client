@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import "../scss/components/DropdownSelect.scss"
-import dropdown from "../assets/icon/dropdown.svg"
-import dropup from "../assets/icon/drop Up.svg"
+import "../sass/Components/DropdownSelect.scss"
+import dropdown from "../assets/icon/Dropdown.svg"
+import dropup from "../assets/icon/Drop up.svg"
 
 const DropdownSelect = ({ options, defaultSelected, onSelect }) => {
     const [isActive, setIsActive] = useState(false);

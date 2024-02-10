@@ -3,13 +3,15 @@ import shelterstride from "../../assets/images/ShelterStrideSideLogo.svg";
 import People from "../../assets/icon/Profle2.svg";
 import Email from "../../assets/icon/Email.svg";
 import lock from "../../assets/icon/lock.svg";
-import UnSee from "../../assets/icon/UnSee.svg";
+import UnSee from "../../assets/icon/Unsee.svg";
 import See from "../../assets/icon/See.svg";
 import "/src/scss/pages/SignUp.scss";
 import DropdownSelect from "../../components/DropdownSelect";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'; 
 import Swal from 'sweetalert2';
+import Spinner from '../../assets/icon/Spinner.svg';
+
 
 import axios from "axios";
 
@@ -25,8 +27,10 @@ function SignUp() {
   const [isValidConfirmPassword, setIsValidConfirmPassword] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = React.useState("Individual");
   const navigate = useNavigate();
+
 
   const handleaccountype = (selectedAccountType) => {
     setSelectedAccountType(selectedAccountType);
@@ -109,7 +113,7 @@ function SignUp() {
 
  // Event handler for "terms and privacy policy" link
  const handleTermsClick = () => {
-  setShowModal(true);
+  //setShowModal(true);
 };
 
 
@@ -166,6 +170,7 @@ if (!isValidPassword) {
   return;
 }
 try {
+  setIsLoading(true);
   const result = await axios.post("https://shelterstride.onrender.com/api/v1/signup", {
     usertype: "Donor",
     firstname: firstname,
@@ -177,7 +182,7 @@ try {
   });
 
  
-
+  setIsLoading(false); 
   const { data, status } = result;
 
   if (status === 201) {
@@ -191,7 +196,7 @@ try {
     });
 
     // ROUTE to SIGNIN
-    navigate("/Login")
+    navigate("/login")
   } else {
    
     Swal.fire({
@@ -202,8 +207,9 @@ try {
     })
   }
 } catch (error) {
+  setIsLoading(false);
   // Handle unexpected errors
-  console.log("An unexpected error occurred:", error);
+
 
   Swal.fire({
     title: "Error",
@@ -328,10 +334,10 @@ return (
               <p className="error-message">Passwords do not match</p>
             )}
 
-            {/*signup button*/}
-            <div className="Signupsponsorbutton-group">
+           {/*signup button*/}
+           <div className="Signupsponsorbutton-group">
               <button type="submit">
-                Sign Up
+              {isLoading ? <div className="overlay"><img className="spin" src={Spinner} alt="loader" /></div> : "Sign Up"}
               </button>
             </div>
 </form>
@@ -358,11 +364,7 @@ return (
 
       </div>
 
-{/* Render the modal if showModal is true 
-      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-      <h3>Login Successful Popup</h3>
-            </Popup>*/}
-          
+
     </div>
   </>
 );
