@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import "./HeroBuy.scss";
-import Buydata from "../../BuyData.json";
+import "./InputRent.scss";
+import Data from "../../Data.json";
 import ReactPaginate from "react-paginate";
 import { Navigate } from "react-router-dom";
 
-const InputBuy = () => {
-  const [buyers, setBuyers] = useState(Buydata.slice(0, 36));
-  const [wordentered, SetwordEntered] = useState("");
+const InputRent = () => {
+  const [users, setUsers] = useState(Data.slice(0, 36));
+  const [searchedWord, setSearchedWord] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [goToSubscribe, setGoTOSubscribe] = useState(false);
-  const buyersPerPage = 9;
-  const pagesVisited = pageNumber * buyersPerPage;
+  const usersPerPage = 9;
+  const pagesVisited = pageNumber * usersPerPage;
+
   if (goToSubscribe) {
     return <Navigate to="/Subscribe" />;
   }
-
-  const handFilter = (event) => {
-    const searchWord = event.target.value;
-    SetwordEntered(searchWord);
-    const filter = Buydata.filter((value) => {
-      return value.address.toLowerCase().includes(searchWord.toLowerCase());
+  const handleFilter = (event) => {
+    const word = event.target.value;
+    setSearchedWord(word);
+    const filter = Data.filter((value) => {
+      return value.address.toLowerCase().includes(word.toLowerCase());
     });
-    setBuyers(filter);
+    setUsers(filter);
   };
 
-  const displayBuyers = buyers
-    .slice(pagesVisited, pagesVisited + buyersPerPage)
+  const displayUsers = users
+    .slice(pagesVisited, pagesVisited + usersPerPage)
     .map((value) => {
       return (
         <div
@@ -44,7 +44,7 @@ const InputBuy = () => {
       );
     });
 
-  const pageCount = Math.ceil(buyers.length / buyersPerPage);
+  const pageCount = Math.ceil(users.length / usersPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -56,33 +56,41 @@ const InputBuy = () => {
           <input
             type="text"
             placeholder="Where would you prefer to live?"
-            value={wordentered}
-            onChange={handFilter}
+            value={searchedWord}
+            onChange={handleFilter}
           />
         </div>
         <select defaultValue="">
           <option value="hidden">Select price range</option>
-          <option value="first option">#100,000</option>
-          <option value="second option">#200,000</option>
-          <option value="Third option">#300,000</option>
+          <option value="first option">#30,000</option>
+          <option value="second option">#40,000</option>
+          <option value="Third option">#50,00</option>
         </select>
         <select defaultValue="">
-          <option value="hidden">Select </option>
-          <option value="first option">1 plot</option>
-          <option value="second option">2 plots</option>
-          <option value="Third option">3 plots</option>
+          <option value="hidden">Type of space</option>
+          <option value="first option">One bedroom flat</option>
+          <option value="second option">Two bedroom flat</option>
+          <option value="Third option">Three bedroom flat</option>
         </select>
+
         <select defaultValue="">
           <option value="hidden">Duration</option>
           <option value="first option">1 year</option>
           <option value="second option">2 years</option>
           <option value="Third option">3 years</option>
         </select>
-        <button className="filter">Find Property</button>
+        <select defaultValue="">
+          <option value="hidden">Select Bedroom(s)</option>
+          <option value="first option">one bedroom</option>
+          <option value="second option">Two bedroom</option>
+          <option value="Third option">Three Bedroom</option>
+        </select>
+        <button className="filter"> Apply Filter</button>
       </div>
+
       <div className="grid-container">
         {" "}
-        {displayBuyers}
+        {displayUsers}
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
@@ -99,4 +107,4 @@ const InputBuy = () => {
   );
 };
 
-export default InputBuy;
+export default InputRent;

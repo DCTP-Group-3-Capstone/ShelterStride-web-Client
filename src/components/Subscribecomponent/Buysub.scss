@@ -5,6 +5,50 @@ $breakpoint-mobile: 480px;
 
 //tablet size declaration
 $breakpoint-tablets: 768px;
+
+// $breakpoints: (
+//   "xs": 0,
+//   "sm": 480px,
+//   "md": 720px,
+//   "lg": 960px,
+//   "xl": 1200px,
+// );
+
+// @mixin xs {
+//   @media (min-width: map-get($breakpoints, "xs")) {
+//     @content;
+//   }
+// }
+
+// @mixin sm {
+//   @media (min-width: map-get($breakpoints, "sm")) {
+//     @content;
+//   }
+// }
+
+// @mixin md {
+//   @media (min-width: map-get($breakpoints, "md")) {
+//     @content;
+//   }
+// }
+
+// @mixin lg {
+//   @media (min-width: map-get($breakpoints, "lg")) {
+//     @content;
+//   }
+// }
+
+// @mixin xl {
+//   @media (min-width: map-get($breakpoints, "xl")) {
+//     @content;
+//   }
+// }
+
+// @mixin breakpoint($bp: 0) {
+//   @media (min-width: $bp) {
+//     @content;
+//   }
+// }
 //external variable for colours
 @import "../../scss/base/variables";
 
@@ -12,31 +56,28 @@ $breakpoint-tablets: 768px;
 @import "../../sass/Components/button";
 
 .grid-container {
-  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1240px;
-  height: 335px;
-  margin-bottom: 0px;
-  gap: 50px;
+  height: 375px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  gap: 4px;
   font-family: "poppins";
 }
 
 .single-grid {
-  max-width: 400px;
-  height: 320px;
+  max-width: 330px;
+  height: 270px;
   border-radius: 16px;
   background-color: #f6f9f6;
-
-
 }
 .single-grid img {
-  max-width: 375px;
+  max-width: 320px;
   max-height: 187.5px;
   margin-bottom: 5px;
-  margin-left: 5px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-radius: 16px;
+  margin-left: 8px;
 }
 .single-grid p {
   margin-left: 8px;
@@ -59,6 +100,32 @@ $breakpoint-tablets: 768px;
     margin-left: 0px;
     margin-bottom: 10px;
     margin-left: 20px;
+    gap: 4px;
+    font-family: "poppins";
+  }
+}
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 468px;
+    height: 768px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    gap: 4px;
+    font-family: "poppins";
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1240px;
+    height: 375px;
+    margin-left: 100px;
+    margin-bottom: 20px;
     gap: 4px;
     font-family: "poppins";
   }

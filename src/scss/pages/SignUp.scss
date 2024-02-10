@@ -24,7 +24,6 @@ $breakpoint-mobile-xxs: 360px;
 
 $breakpoint-mobile-xxss: 280px;
 
-
 //imported variable
 @import "../base/variables";
 
@@ -34,15 +33,11 @@ $breakpoint-mobile-xxss: 280px;
   margin: 40px 0 0 0px;
   min-height: 100vh; // 100% of the viewport height
 
-
-
   //logo&label styling
   .logolabel {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
   }
 
   .logolabel img {
@@ -50,8 +45,6 @@ $breakpoint-mobile-xxss: 280px;
     justify-content: center;
     align-content: center;
     margin-top: 10px;
-
- 
   }
 
   //container header and body styling
@@ -60,20 +53,17 @@ $breakpoint-mobile-xxss: 280px;
     justify-content: center;
     align-self: center;
     display: grid;
-  margin-top: 20px;
+    margin-top: 20px;
   }
 
   //container header text styling
   .Signupsponsor-container h2 {
     font-size: 30px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     color: $black-500;
     font-weight: 600;
     text-align: center;
     margin-bottom: 10px;
-
-
-
   }
 
   //form box styling
@@ -85,8 +75,6 @@ $breakpoint-mobile-xxss: 280px;
     height: 733px;
     flex-direction: column;
     margin-top: 20px;
-
- 
   }
 
   //form scss
@@ -97,9 +85,6 @@ $breakpoint-mobile-xxss: 280px;
     text-align: center;
     display: flex;
     flex-direction: column;
-
-
-
   }
 
   //form labels styling
@@ -107,11 +92,9 @@ $breakpoint-mobile-xxss: 280px;
     margin: 30px 0 10px 0px;
     color: $black-500;
     font-size: 18px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-weight: 500;
     display: flex;
-
- 
   }
 
   .Signupsponsorform-group {
@@ -122,8 +105,6 @@ $breakpoint-mobile-xxss: 280px;
     height: 48px;
     border: 1.5px solid $green-500;
     border-radius: 16px;
-
-
   }
 
   // default inputs div styling
@@ -142,7 +123,6 @@ $breakpoint-mobile-xxss: 280px;
     margin: 0px 10px;
   }
 
-
   //actual inputs and select styling
   .Signupsponsorform-group input {
     height: 24px;
@@ -151,9 +131,7 @@ $breakpoint-mobile-xxss: 280px;
     background-color: transparent;
     outline: none;
     font-size: 16px;
-    font-family: 'Poppins';
-
-
+    font-family: "Poppins";
   }
 
   //passowrd icon styling
@@ -172,7 +150,7 @@ $breakpoint-mobile-xxss: 280px;
       text-decoration: none;
       font-weight: 400;
       font-size: 12px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       transition: color 0.3s;
 
       &:hover {
@@ -199,14 +177,13 @@ $breakpoint-mobile-xxss: 280px;
     &:hover {
       background-color: $blue-300;
     }
-
   }
 
   //term and privacy styling
   .terms-text {
     margin: 5px 0 5px 0px;
     font-size: 12px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-weight: 400px;
     text-align: center;
 
@@ -222,7 +199,6 @@ $breakpoint-mobile-xxss: 280px;
         color: $blue-200;
       }
     }
-
   }
 
   //signin text styling
@@ -230,7 +206,7 @@ $breakpoint-mobile-xxss: 280px;
     font-size: 18px;
     font-weight: 600px;
     text-align: center;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     color: $black-500;
     margin-top: 20px;
 
@@ -245,85 +221,62 @@ $breakpoint-mobile-xxss: 280px;
         color: $green-200;
       }
     }
-
-
   }
 
   p {
     font-size: 10px;
-    font-family: 'Poppins';
-
+    font-family: "Poppins";
   }
-  
+
   .error-message {
     font-size: 10px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     color: red;
     margin-top: 0px;
-
   }
-
 }
-
-
-
 
 @media (max-width: $breakpoint-mobile-xxss) {
-
   .Signupsponsor-page {
-    
-  
     .logolabel {
-   
-  margin-left: 0px;
-  
+      margin-left: 0px;
     }
-  
+
     .logolabel img {
       height: 41px; //  height
-  
-   
     }
-  
+
     //container header and body styling
     .Signupsponsor-container {
-  
     }
-  
+
     //container header text styling
     .Signupsponsor-container h2 {
       font-size: 20px;
-      font-weight: 600; 
-  
+      font-weight: 600;
     }
-  
+
     //form box styling
     .Signupsponsor-Box {
-    
       border: 0px;
       border-radius: 10px;
       width: 280px;
       height: 700px;
       margin-top: 10px;
-  
-   
     }
-  
+
     //form scss
     .Signupsponsor-form {
       margin: 0px 0px;
       width: 280px;
-
-  
     }
-  
+
     //form labels styling
     .Signupsponsor-form label {
-    margin-left: 5px;
+      margin-left: 5px;
       font-size: 14px;
-   
     }
-  
+
     .Signupsponsorform-group {
       width: 270px;
       margin-left: 5px;
@@ -332,10 +285,8 @@ $breakpoint-mobile-xxss: 280px;
       height: 42px;
       border: 1.5px solid $green-500;
       border-radius: 16px;
-  
-  
     }
-  
+
     // default inputs div styling
     .Signupsponsorform-group {
       input:-webkit-autofill,
@@ -346,45 +297,43 @@ $breakpoint-mobile-xxss: 280px;
         background-color: transparent;
       }
     }
-  
+
     //all inout icons styling
     .Signupsponsorform-group img {
       margin: 0px 5px;
     }
-  
-  
+
     //actual inputs and select styling
     .Signupsponsorform-group input {
       height: 24px;
       width: 200px;
       outline: none;
       font-size: 14px;
-  
     }
-  
+
     //passowrd icon styling
     .Signupsponsorform-group .password-toggle img {
       margin: 5px 10px 0px 0px;
     }
-  
+
     .forgot-password {
       text-align: right;
-  
+
       //password link styling
       a {
         color: $black-500;
         text-decoration: none;
         font-weight: 400;
         font-size: 12px;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         transition: color 0.3s;
-  
+
         &:hover {
           color: $black-200;
         }
       }
     }
-  
+
     //button styles
     .Signupsponsorbutton-group button {
       outline: none;
@@ -394,22 +343,21 @@ $breakpoint-mobile-xxss: 280px;
       color: $black-50;
       gap: 0px;
       font-size: 15px;
-  margin-left: 0px;
+      margin-left: 0px;
       //mousehover styles
       &:hover {
         background-color: $blue-300;
       }
-  
     }
-  
+
     //term and privacy styling
     .terms-text {
       margin: 5px 0 5px 0px;
       font-size: 8px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-weight: 400px;
       text-align: center;
-  
+
       //hover and link
       a {
         color: $blue-500;
@@ -417,19 +365,18 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 5px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $blue-200;
         }
       }
-  
     }
-  
+
     //signin text styling
     .signin-text {
       font-size: 14px;
       margin-top: 0px;
-  margin-right: 15px;
+      margin-right: 15px;
       //hover and link styling
       a {
         color: $green-500;
@@ -437,96 +384,72 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 0px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $green-200;
         }
       }
-  
-  
     }
-  
+
     p {
       font-size: 10px;
-      font-family: 'Poppins';
-  
+      font-family: "Poppins";
+
       @media (max-width: $breakpoint-mobile) {
         font-size: 10px;
-        
       }
     }
-    
+
     .error-message {
       font-size: 6px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       color: red;
       margin-top: 0px;
-  
     }
-  
   }
-
-
-
 }
 
-
 @media (max-width: $breakpoint-mobile-xxs) {
-
   .Signupsponsor-page {
-    
-  
     .logolabel {
-   
-  margin-left: 0px;
-  
+      margin-left: 0px;
     }
-  
+
     .logolabel img {
       height: 41px; //  height
-  
-   
     }
-  
+
     //container header and body styling
     .Signupsponsor-container {
-  
     }
-  
+
     //container header text styling
     .Signupsponsor-container h2 {
       font-size: 20px;
-      font-weight: 600; 
-  
+      font-weight: 600;
     }
-  
+
     //form box styling
     .Signupsponsor-Box {
-    
       border: 0px;
       border-radius: 10px;
       width: 280px;
       height: 700px;
       margin-top: 10px;
-  
-   
     }
-  
+
     //form scss
     .Signupsponsor-form {
       margin: 0px 0px;
       width: 280px;
-
-  
     }
-  
+
     //form labels styling
     .Signupsponsor-form label {
-    margin-left: 5px;
+      margin-left: 5px;
       font-size: 14px;
-   
     }
-  
+
     .Signupsponsorform-group {
       width: 270px;
       margin-left: 5px;
@@ -535,10 +458,8 @@ $breakpoint-mobile-xxss: 280px;
       height: 42px;
       border: 1.5px solid $green-500;
       border-radius: 16px;
-  
-  
     }
-  
+
     // default inputs div styling
     .Signupsponsorform-group {
       input:-webkit-autofill,
@@ -549,45 +470,43 @@ $breakpoint-mobile-xxss: 280px;
         background-color: transparent;
       }
     }
-  
+
     //all inout icons styling
     .Signupsponsorform-group img {
       margin: 0px 5px;
     }
-  
-  
+
     //actual inputs and select styling
     .Signupsponsorform-group input {
       height: 24px;
       width: 200px;
       outline: none;
       font-size: 14px;
-  
     }
-  
+
     //passowrd icon styling
     .Signupsponsorform-group .password-toggle img {
       margin: 5px 10px 0px 0px;
     }
-  
+
     .forgot-password {
       text-align: right;
-  
+
       //password link styling
       a {
         color: $black-500;
         text-decoration: none;
         font-weight: 400;
         font-size: 12px;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         transition: color 0.3s;
-  
+
         &:hover {
           color: $black-200;
         }
       }
     }
-  
+
     //button styles
     .Signupsponsorbutton-group button {
       outline: none;
@@ -597,22 +516,21 @@ $breakpoint-mobile-xxss: 280px;
       color: $black-50;
       gap: 0px;
       font-size: 15px;
-  margin-left: 0px;
+      margin-left: 0px;
       //mousehover styles
       &:hover {
         background-color: $blue-300;
       }
-  
     }
-  
+
     //term and privacy styling
     .terms-text {
       margin: 5px 0 5px 0px;
       font-size: 8px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-weight: 400px;
       text-align: center;
-  
+
       //hover and link
       a {
         color: $blue-500;
@@ -620,19 +538,18 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 5px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $blue-200;
         }
       }
-  
     }
-  
+
     //signin text styling
     .signin-text {
       font-size: 14px;
       margin-top: 0px;
-  margin-right: 15px;
+      margin-right: 15px;
       //hover and link styling
       a {
         color: $green-500;
@@ -640,95 +557,72 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 0px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $green-200;
         }
       }
-  
-  
     }
-  
+
     p {
       font-size: 10px;
-      font-family: 'Poppins';
-  
+      font-family: "Poppins";
+
       @media (max-width: $breakpoint-mobile) {
         font-size: 10px;
-        
       }
     }
-    
+
     .error-message {
       font-size: 6px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       color: red;
       margin-top: 0px;
-  
     }
-  
   }
-
-
-
 }
 
 @media (max-width: $breakpoint-mobile) {
-
   .Signupsponsor-page {
-    
-  
     .logolabel {
-   
-  margin-left: 0px;
-  
+      margin-left: 0px;
     }
-  
+
     .logolabel img {
       height: 41px; //  height
-  
-   
     }
-  
+
     //container header and body styling
     .Signupsponsor-container {
-  
     }
-  
+
     //container header text styling
     .Signupsponsor-container h2 {
       font-size: 20px;
-      font-weight: 600; 
-  
+      font-weight: 600;
     }
-  
+
     //form box styling
     .Signupsponsor-Box {
-    
       border: 0px;
       border-radius: 10px;
       width: 280px;
       height: 700px;
       margin-top: 10px;
-  
-   
     }
-  
+
     //form scss
     .Signupsponsor-form {
       margin: 0px 0px;
       width: 280px;
-
-  
     }
-  
+
     //form labels styling
     .Signupsponsor-form label {
-    margin-left: 5px;
+      margin-left: 5px;
       font-size: 14px;
-   
     }
-  
+
     .Signupsponsorform-group {
       width: 270px;
       margin-left: 5px;
@@ -737,10 +631,8 @@ $breakpoint-mobile-xxss: 280px;
       height: 42px;
       border: 1.5px solid $green-500;
       border-radius: 16px;
-  
-  
     }
-  
+
     // default inputs div styling
     .Signupsponsorform-group {
       input:-webkit-autofill,
@@ -751,45 +643,43 @@ $breakpoint-mobile-xxss: 280px;
         background-color: transparent;
       }
     }
-  
+
     //all inout icons styling
     .Signupsponsorform-group img {
       margin: 0px 5px;
     }
-  
-  
+
     //actual inputs and select styling
     .Signupsponsorform-group input {
       height: 24px;
       width: 200px;
       outline: none;
       font-size: 14px;
-  
     }
-  
+
     //passowrd icon styling
     .Signupsponsorform-group .password-toggle img {
       margin: 5px 10px 0px 0px;
     }
-  
+
     .forgot-password {
       text-align: right;
-  
+
       //password link styling
       a {
         color: $black-500;
         text-decoration: none;
         font-weight: 400;
         font-size: 12px;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         transition: color 0.3s;
-  
+
         &:hover {
           color: $black-200;
         }
       }
     }
-  
+
     //button styles
     .Signupsponsorbutton-group button {
       outline: none;
@@ -799,22 +689,21 @@ $breakpoint-mobile-xxss: 280px;
       color: $black-50;
       gap: 0px;
       font-size: 15px;
-  margin-left: 0px;
+      margin-left: 0px;
       //mousehover styles
       &:hover {
         background-color: $blue-300;
       }
-  
     }
-  
+
     //term and privacy styling
     .terms-text {
       margin: 5px 0 5px 0px;
       font-size: 8px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-weight: 400px;
       text-align: center;
-  
+
       //hover and link
       a {
         color: $blue-500;
@@ -822,19 +711,18 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 5px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $blue-200;
         }
       }
-  
     }
-  
+
     //signin text styling
     .signin-text {
       font-size: 14px;
       margin-top: 0px;
-  margin-right: 15px;
+      margin-right: 15px;
       //hover and link styling
       a {
         color: $green-500;
@@ -842,35 +730,27 @@ $breakpoint-mobile-xxss: 280px;
         //   font-weight: 400;
         margin: 0 0px;
         transition: color 0.3s;
-  
+
         &:hover {
           color: $green-200;
         }
       }
-  
-  
     }
-  
+
     p {
       font-size: 10px;
-      font-family: 'Poppins';
-  
+      font-family: "Poppins";
+
       @media (max-width: $breakpoint-mobile) {
         font-size: 10px;
-        
       }
     }
-    
+
     .error-message {
       font-size: 6px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       color: red;
       margin-top: 0px;
-  
     }
-  
   }
-
-
-
 }

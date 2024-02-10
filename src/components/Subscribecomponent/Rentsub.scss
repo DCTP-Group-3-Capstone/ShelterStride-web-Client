@@ -11,32 +11,31 @@ $breakpoint-tablets: 768px;
 //import button
 @import "../../sass/Components/button";
 
-.grid-container2 {
-  overflow-x: hidden;
+.grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1240px;
-  height: 355px;
-  margin-left: 0px;
-  margin-bottom: 0px;
-  gap: 50px;
+  height: 375px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  gap: 4px;
   font-family: "poppins";
 }
 
-
-.single-grid2 {
-  max-width: 400px;
-  height: 340px;
+.single-grid {
+  max-width: 330px;
+  height: 270px;
   border-radius: 16px;
   background-color: #f6f9f6;
 }
-.single-grid2 img {
-  max-width: 378px;
+.single-grid img {
+  max-width: 320px;
   max-height: 187.5px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  margin-bottom: 5px;
+  border-radius: 16px;
+  margin-left: 8px;
 }
-.single-grid2 p {
+.single-grid p {
   margin-left: 8px;
 }
 .flex {
@@ -49,7 +48,7 @@ $breakpoint-tablets: 768px;
   text-decoration: line-through;
 }
 @media (max-width: $breakpoint-mobile) {
-  .grid-container2 {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     max-width: 468px;
@@ -57,6 +56,32 @@ $breakpoint-tablets: 768px;
     margin-left: 0px;
     margin-bottom: 10px;
     margin-left: 20px;
+    gap: 4px;
+    font-family: "poppins";
+  }
+}
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 468px;
+    height: 768px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    gap: 4px;
+    font-family: "poppins";
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1240px;
+    height: 375px;
+    margin-left: 100px;
+    margin-bottom: 20px;
     gap: 4px;
     font-family: "poppins";
   }

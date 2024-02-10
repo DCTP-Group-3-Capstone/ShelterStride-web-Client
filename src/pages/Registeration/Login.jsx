@@ -1,4 +1,4 @@
-import "/src/scss/pages/_login.scss";
+// import "/src/scss/pages/_login.scss";
 import Email from "../../assets/icon/Email.svg";
 import lock from "../../assets/icon/lock.svg";
 import See from "../../assets/icon/See.svg";

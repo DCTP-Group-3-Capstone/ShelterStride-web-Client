@@ -28,9 +28,8 @@ function SignUp() {
   const [value, setValue] = React.useState("Individual");
   const navigate = useNavigate();
 
-
-const handleaccountype = (selectedAccountType) => {
-  setSelectedAccountType(selectedAccountType);
+  const handleaccountype = (selectedAccountType) => {
+    setSelectedAccountType(selectedAccountType);
 
   
 
