@@ -31,25 +31,26 @@
     }
 
     .heroText {
-      width: 23.938rem;
+      width: 95%;
     }
     //hero button section styling
     .heroBtn {
       .pryBtn {
         @include blueBtn;
-        width: 9.125rem;
+        width: 40%;
       }
       .secBtn {
         @include outlineBtn;
-        color: $blue-500;
-        width: 100%;
+        color: $white;
+        width: 60%;
+        border: $white solid 1px;
       }
 
       //button wrapper main styling
       // border: 3px solid orange;
       display: flex;
       flex-direction: column;
-      width: 11.2rem;
+      width: 60%;
       align-items: center;
       justify-content: center;
       gap: 24px;
@@ -60,7 +61,8 @@
 
 //commitment section styling
 .commitment {
-  // border: 3px solid purple;
+  //   border: 3px solid purple;
+
   h4 {
     color: $green-500;
   }
@@ -86,6 +88,8 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  margin: 4rem 0;
+  //   border: 3px solid magenta;
   .resultText {
     h3 {
       text-align: center;
@@ -206,6 +210,7 @@
           display: none;
         }
         .cardBtnWrapper {
+          //   border: 3px solid orange;
           button {
             display: flex;
             @include outlineBtn;
@@ -322,8 +327,10 @@
 
 //partners section styling
 .partnersWrapper {
+  margin: 3.5rem 0;
   // border: 3px solid blue;
   .partnersText {
+    // border: 3px solid indianred;
     h3 {
       text-align: center;
     }
@@ -331,13 +338,13 @@
 
   .partnersIcon {
     // border: 3px solid salmon;
-    margin: 3rem 0;
+    margin: 4rem 0;
     width: 100%;
     display: flex;
     flex-direction: row;
     gap: 1rem;
     // align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     img {
       width: 20%;
       // border: 3px solid purple;
@@ -346,9 +353,50 @@
 }
 
 //media query styling
+
+//small devices (large phones
+@media only screen and (min-width: 600px) {
+  .home {
+    // border: 3px solid slateblue;
+
+    .marginSides {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  .heroSect {
+    .heroContent {
+      margin: auto;
+      // border: 3px solid red;
+      width: 80%;
+    }
+  }
+}
+
+//medium devices(tablets)
+@media only screen and (min-width: 768px) {
+  .home {
+    // border: 3px solid red;
+
+    .marginSides {
+      width: 60%;
+      margin: auto;
+    }
+  }
+  .heroSect {
+    .heroContent {
+      margin: auto;
+      // border: 3px solid red;
+      width: 60%;
+    }
+  }
+}
+
+//media query styling
 @media only screen and (min-width: 992px) {
   //general styling
   .home {
+    // border: 3px solid blue;
     h4 {
       font-size: 32px;
       font-weight: 500;
@@ -358,9 +406,14 @@
       line-height: 72px;
       font-weight: 600;
     }
+    .marginSides {
+      width: auto;
+      // margin: 0 4rem;
+    }
   }
   //hero section styling
   .heroSect {
+    // padding: 0 6rem;
     h3 {
       font-size: 60px;
       margin-bottom: 25px;
@@ -375,6 +428,7 @@
 
     .heroContent {
       padding: 0.3rem 1.8rem 3.2rem 7.5rem;
+      width: auto;
       // border: 2px solid maroon;
 
       .heroText {
@@ -388,10 +442,7 @@
         align-items: center;
         margin: 0;
         margin-top: 30px;
-        .pryBtn {
-          //button wrapper main styling
-          width: 20.2rem;
-        }
+        // border: 3px solid fuchsia;
       }
     }
   }
@@ -476,7 +527,7 @@
   //Gift A Home Section styling
 
   .giftAHome {
-    margin: 0 6rem;
+    margin: 4rem 6rem;
     // border: 3px solid firebrick;
     h4 {
       font-size: 24px;
@@ -553,7 +604,7 @@
 
   .whatWeDoSect {
     // padding: 0 6rem;
-    margin: 0 6rem;
+    margin: 2rem 6rem;
     // margin-top: 8rem;
     .weStoryWrapping {
       flex-direction: row;
@@ -603,9 +654,10 @@
     display: flex;
     flex-direction: column;
     gap: 0rem;
-    h4 {
-      font-size: 24px;
-    }
+    // h4 {
+    //   font-size: 24px;
+    //   font-weight: 600;
+    // }
     .headerWrapper {
       // border: 2px solid blue;
       justify-content: center;
@@ -630,6 +682,7 @@
           // border: 2px solid burlywood;
           margin: 0 20px;
           font-size: 22px;
+          font-weight: 600;
         }
       }
     }
@@ -637,13 +690,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 2rem 0;
-      // border: 3px solid teal;
+      margin: 3rem 0;
+      //   border: 3px solid teal;
       button {
         @include blueBtn;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 1rem 0;
       }
     }
   }

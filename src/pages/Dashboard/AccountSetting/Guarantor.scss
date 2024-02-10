@@ -1,0 +1,71 @@
+
+.address-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.address-part > * {
+    flex: 1; /* This ensures that each item takes up equal space */
+    margin-right: 10px; /* Adjust the margin to reduce the gap between items */
+  }
+
+ 
+ .profileform-group{
+     align-items: center;
+ width:350px;
+ display: flex;
+ height: 48px;
+ border: 1px solid green;
+ border-radius: 16px;
+ gap: 10px;
+ }
+ 
+ 
+ 
+ 
+ .profileform-groupadd{
+     align-items: center;
+ width:820px;
+ display: flex;
+ height: 48px;
+ border: 1px solid green;
+ border-radius: 16px;
+ gap: 10px;
+ }
+ 
+ 
+ input{
+ margin-left: 10px;
+     background-color: transparent;
+     border: none;
+   margin-top: 0px;
+   outline: none;
+   font-size: 16px;
+   height: 20px;
+   width: 300px;
+ }
+ 
+ img{
+ 
+     margin: 0px 10px 0 10px;
+ }
+ 
+ label{
+ 
+    margin: 20px 0;
+     font-size: 18px;
+     font-weight: 500;
+     display: flex;   
+ }
+
+ 
+ .butt{
+    border-radius: 16px;
+background-color: #176a96;
+color: #fff;
+height: 48px;
+    width: 171px;
+    margin-top: 30px;
+   margin-left: 55em;
+}

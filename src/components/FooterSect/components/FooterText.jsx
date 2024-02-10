@@ -2,7 +2,6 @@ import logo from "../../../assets/images/ShelterStrideSideLogo.svg";
 function FooterText() {
   return (
     <div className="textWrapper">
-      {" "}
       {/* main text wrapper */}
       <div className="textBox">
         <div className="imgWrapper">

@@ -1,10 +1,10 @@
-import PaymentCard from "./payment/PaymentCard";
 import DonateText from "../components/payment/DonateText";
+import DonateOption from "./payment/DonateOption";
 function PaymentSect() {
   return (
     <section className="paymentSect">
       <DonateText />
-      <PaymentCard />
+      <DonateOption />
     </section>
   );
 }

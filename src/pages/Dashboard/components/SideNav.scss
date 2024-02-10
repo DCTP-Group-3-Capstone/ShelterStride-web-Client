@@ -1,0 +1,50 @@
+@import "../../../scss/base/variables";
+
+.sidebar-wrapper {
+    margin: 0;
+    padding: 2rem;
+    width: 300px;
+    background-color: $white;
+    height: 100vh;
+    border-right: 1px solid $blue-500;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+
+        img {
+            max-width: 200px;
+            height: auto;
+        }   
+    }
+
+    .nav-toggler {
+        background-color: $blue-200;
+        border-radius: 50%;
+        clip-path: circle(50% at 50% 50%);
+        display: grid;
+        place-items: center;
+        padding: 4px;
+    }   
+}
+
+.nav-items {
+    padding: 1rem 0;
+
+    .menu {
+        padding-left: 1rem;
+
+        .nav-item {
+            display: flex;
+            gap: 1rem;
+            place-items: center;
+        }
+    }
+}
