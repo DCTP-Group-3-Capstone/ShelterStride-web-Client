@@ -10,7 +10,11 @@ import Landing from "./pages/Landing/Home";
 import Donate from "./pages/DonationPage/Donation";
 import Rent from "./pages/RentPage/Rent";
 import Gift from "./pages/Landing/components/GiftAHome/GiftAHome";
-// import Subscribe from "./pages/
+import BuyProduct from "./pages/Buyahomeproductpage/BuyAHomeProduct";
+import RentProduct from "./pages/Rentahomeproductpage/RentAHomeProduct";
+import Subscribe from "./pages/SubscribePage/Subscribe";
+import Schedule from "./pages/ScheduleVisitPage/Schedule";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import Buy from "./pages/BuyPage/Buy";
 import ErrorPage from "./Error-page";
 import Hidenavbar from "./components/Hidenavbar";
@@ -30,7 +34,12 @@ function Home() {
         <Route path="/login" element={<Login />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/Gift" element={<Gift />} />
+        <Route path="/gift" element={<Gift />} />
+        <Route path="/buyProduct" element={<BuyProduct />} />
+        <Route path="/rentProduct" element={<RentProduct />} />
+        <Route path="/subscribe" element={<Subscribe />} />
+        <Route path="/scheduleVisit" element={<Schedule />} />
+        <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/signupbenefactor" element={<SignUpBenefactor />} />
         <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/Rent" element={<Rent />} />

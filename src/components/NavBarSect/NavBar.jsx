@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import Logo from "../../assets/images/shelterLogo.svg";
+import Logo from "../../assets/images/ShelterStrideSideLogo.svg";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
 

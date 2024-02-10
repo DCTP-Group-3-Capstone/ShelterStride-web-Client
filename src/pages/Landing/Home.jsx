@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Hero from "./components/Hero";
-// import Commitment from "./components/Commitment";
+// import NavBar from "../../components/NavBarSect/NavBar";
+import Commitment from "./components/Commitment";
 import ShelterStrideBlog from "./components/ShelterStrideBlog";
 import WhatWeDo from "./components/WhatWeDoSect/WhatWeDo";
 import Result from "./components/Result";
@@ -15,25 +16,10 @@ import "./home.scss";
 
 function Home() {
   return (
-    <div>
-      <DonationPage />
-    </div>
-    // <div className="home">
-    //   <Hero />
-    //   <div className="marginSides">
-    //     <Commitment />
-    //     <Result />
-    //     <GiftAHome />
-    //     <WhatWeDo />
-    //     <ShelterStrideBlog />
-    //     <Partners />
-    //   </div>
-    //   <Footer />
-    // </div>
     <div className="home">
       <Hero />
       <div className="marginSides">
-        {/* <Commitment /> */}
+        <Commitment />
         <Result />
         <GiftAHome />
         <WhatWeDo />
