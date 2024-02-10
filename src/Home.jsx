@@ -6,9 +6,11 @@ import Login from "./pages/Registeration/Login";
 import SignUp from "./pages/Registeration/SignUp";
 import SignUpBenefactor from "./pages/Registeration/SignUpBenefactor";
 import CreateAccount from "./pages/Registeration/CreateAccount";
+import Landing from "./pages/Landing/Home";
 import Donate from "./pages/DonationPage/Donation";
-import Blog from "./pages/Blog";
 import Rent from "./pages/RentPage/Rent";
+import Gift from "./pages/Landing/components/GiftAHome/GiftAHome";
+// import Subscribe from "./pages/
 import Buy from "./pages/BuyPage/Buy";
 import ErrorPage from "./Error-page";
 import Hidenavbar from "./components/Hidenavbar";
@@ -23,11 +25,12 @@ function Home() {
         </Hidenavbar>
       </Headroom>
       <Routes>
-        <Route path="/" element={<Blog />} />
+        <Route path="/" element={<Landing />} />
         {/* <Route path="/donate" element={<Donate />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/Gift" element={<Gift />} />
         <Route path="/signupbenefactor" element={<SignUpBenefactor />} />
         <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/Rent" element={<Rent />} />
