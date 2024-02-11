@@ -1,5 +1,5 @@
-@use "../../sass/components/button" as *;
-@use "../../sass/components/input" as *;
+@import "../../sass/components/button";
+@import "../../sass/components/input";
 @import "../../sass/base/variables";
 .donationPageWrapper {
   background-color: $white;
