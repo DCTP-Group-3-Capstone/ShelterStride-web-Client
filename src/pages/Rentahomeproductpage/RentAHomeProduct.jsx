@@ -15,7 +15,7 @@ function RentProduct() {
  // const history = useHistory();
 
   const handleGoBack = () => {
-    history.goBack(); // Navigate back to the previous page
+    history.goBack();  // Navigate back to the previous page
   };
 
   const handleOpenSubscribePopup = () => {

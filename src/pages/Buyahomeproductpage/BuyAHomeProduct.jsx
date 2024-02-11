@@ -1,4 +1,4 @@
-//import { useHistory } from 'react-router-dom';
+//import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import Footer from "../../components/FooterSect/Footer";
 import Land from "../Landing/img/land.svg";
@@ -41,12 +41,7 @@ function BuyProduct() {
     <section className="buyproduct-section">
    
 
-      <label>
-      <a onClick={handleBack} href="#">
-            Back
-          </a>
-      </label>
-
+    <label onClick={handleBack}>Back</label>
       <img className="details" src={Land} alt="landpic" />
 
       <div className="self-conprice">
