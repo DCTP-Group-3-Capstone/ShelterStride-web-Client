@@ -100,7 +100,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/signup"
-              className="nav-links-mobile"
+              className="nav-links-mobile-log-in"
               onClick={closeMobileMenu}
             >
               Sign Up

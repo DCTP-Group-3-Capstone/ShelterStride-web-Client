@@ -1,4 +1,5 @@
  import "/src/scss/pages/_login.scss";
+ 
 import Email from "../../assets/icon/Email.svg";
 import lock from "../../assets/icon/lock.svg";
 import See from "../../assets/icon/See.svg";
@@ -99,15 +100,15 @@ function Login() {
 
         Swal.fire({
           title: "Success",
-          text: "Signed up successfully",
+          text: "logged in successful",
           icon: "success",
           timer: 2000
         });
 
         // Set token in local storage
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("secret_token", data.token);
         // Redirect to profile page
-        navigate("/")
+        navigate("/donate")
       }
 
     } catch (error) {
